@@ -1,9 +1,11 @@
 import express from 'express';
+import indexRouter from './routes/router.js';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 
 const PORT = 8000;
 const app = express();
+<<<<<<< HEAD
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -16,9 +18,12 @@ const cookieConfig = {
 };
 
 const __dirname = path.resolve();
+=======
+>>>>>>> 17398dcdc67ea0bb9d16fa26b366165597531a82
 
-app.use(express.static(path.join(__dirname, 'static')));
+app.use('/', indexRouter);
 
+<<<<<<< HEAD
 app.get('/login', (req, res) => {
 	res.sendFile(__dirname + '/static/login.html');
 });
@@ -30,6 +35,8 @@ app.post('/login', (req, res) => {
 	//req.bpdy 데이터 비교
 	res.send({result: ' true'});
 });
+=======
+>>>>>>> 17398dcdc67ea0bb9d16fa26b366165597531a82
 app.listen(PORT, () => {
 	console.log('http://localhost:8000');
 });
