@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profileEdit.css">
+    <link rel="stylesheet" href="profileEdit2.css">
+    <link rel="stylesheet" href="profileEdit.js">
+    <title>Document</title>
+</head>
+<body>
+    <div class="title">
+        <h1>회원정보 수정</h1>
+        <br>
+        <br>
+        </div>
+    <div class="userInfoEdit">
+        <form id="pw" name="editForm">
+            <strong>회원정보입력</strong>
+            <hr>
+            <label>아이디<label>
+                <input type="text" name="userid" readonly> 
+                <hr>
+            <label>비밀번호<label>
+                <input type="password" name="userpw" > <span>8 ~ 20자리 이내로 영어, 숫자, 특수문자를 조합하여 만들어 주세요.</span>
+                <hr>
+            <label>비밀번호 확인<label>
+                <input type="password" name="userpwcheck" >
+                <hr>
+            <label>이름<label>
+                <input type="text" name="username" readonly><button>휴대폰 본인확인</button>
+                <br><span>[휴대폰 본인확인 및 성인인증 완료] 휴대폰 본인확인 후에는 이름과 휴대폰번호가 자동 입력되어 수동으로 입력할수 없게 됩니다.</span>
+                <hr>
+            <label>닉네임<label>
+                <input type="text" name="userNick" ><span>영문, 숫자로 4 ~ 15자리 이내로 만들어주세요.</span>
+                <hr>
+            <label>이메일<label>
+                <input type="text" name="userEmail" placeholder="example@naver.com">
+                <hr>
+            <label>휴대폰번호<label>
+            <input type="text" name="userId" ><span>-를 제외한 번호만 입력해주세요.</span>
+                <hr>
+            <label>주소<label>
+                <input type="text" name="userAdress"><button>우편번호찾기</button><br>
+                <input type="text" name="userAdress"><br>
+                <input type="text" name="userAdress"><br>
+                <hr>
+            
+            </div>
+            <div class="empty">
+            </div>
+            <div class="etc_setting">
+                <strong>기타개인설정</strong>
+                <hr>
+                <span>회원아이콘</span> <button>파일 선택</button>
+                <hr>
+                <span>메일링서비스</span><input type="checkbox"><span>정보 메일을 받겠습니다.</span>
+                <hr>
+                <span>SMS 수신여부</span><input type="checkbox"><span>휴대폰 문자메세지를 받겠습니다.</span>
+                <hr>
+                <span>자동등록방지</span>
+                <hr>
+            </div>
+            <div class="determine">
+                <button>취소</button><button>확인</button>
+            </div>
+        </form>
+</body>
+</html>
