@@ -2,7 +2,7 @@
  * 로그인 함수, 유효성 검사
  */
 async function loginFunc() {
-	const FORM = document.forms['signinform'];
+	const FORM = document.forms['loginform'];
 
 	if (FORM.user_id.value == '') {
 		alert('아이디를 입력해야 합니다.');
@@ -53,20 +53,23 @@ async function loginFunc() {
 
 	const data = {id: FORM.user_id.value, pw: FORM.user_pw.value};
 
-	console.log(data);
-	//console.log(data);
 	const res = await axios({
 		method: 'POST',
 		url: '/login',
 		data,
 	});
 
-	//데이터베이스에 있으면 메인화면으로 이동
+	//-------------------------------------------------------------------------------------
+
 	if (res.data.result) {
-		console.log('로그인 성공');
+		//로그인 인증이 필요한 경우 로컬 스토리지에 저장된 토큰 사용해서 확인 절차
+		localStorage.setItem('loginToken', res.data.token);
+		//로그인에 성공하면 메인화면으로 이동
+		alert('로그인 성공');
 		document.location.href = '/';
 	} else {
-		document.location.reload = 'login';
+		alert('로그인 실패');
+		document.location.reload();
 	}
 }
 
@@ -74,6 +77,5 @@ async function loginFunc() {
  * 회원가입 함수
  */
 function signupFunc() {
-	//회원가입 url입력
 	window.location.href = '/signup';
 }
