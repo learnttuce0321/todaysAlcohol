@@ -24,7 +24,6 @@ const postRegister = async (req, res) => {
         name,
         password: hash,
         nickname,
-        phone,
         email,
     }).then(() => {
         res.json({ result: true });
