@@ -59,7 +59,7 @@ async function allowRegister() {
         /^[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?$/;
 
     if (!emailCheck.test(email.value)) {
-        alert('올바른 이메일 주소를 입력해주세요.');
+        alert('올바른 이메일 주소형식을 입력해주세요.');
         password.focus();
         return false;
     }
@@ -74,11 +74,10 @@ async function allowRegister() {
                 nickname: nickname.value,
                 name: name.value,
                 email: email.value,
-                phone: phone.value,
             },
         });
         if (res.data.result) {
-            alert('회원가입을 축하드려요');
+            alert(`${nickname.value}님 환영합니다!`);
             document.location.href = '/';
             // console.log(res.data);
         }
