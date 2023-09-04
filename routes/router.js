@@ -1,11 +1,13 @@
 import express from 'express';
-import path from 'path';
+import { main, postRegister, register } from '../controll/Controll.js';
 
 const router = express.Router();
-const __dirname = path.join(path.resolve(), 'public');
+// const __dirname = path.join(path.resolve(), 'public');
 
-router.get('/', (req, res) => {
-    res.sendFile(__dirname + '/homePage/mainPage.html');
-});
+router.get('/', main);
+
+// 회원가입
+router.get('/register', register);
+router.post('/register', postRegister);
 
 export default router;
