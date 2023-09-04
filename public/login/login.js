@@ -51,7 +51,7 @@ async function loginFunc() {
 		return;
 	}
 
-	const data = {id: FORM.user_id.value, pw: FORM.user_pw.value};
+	const data = {userId: FORM.user_id.value, pw: FORM.user_pw.value};
 
 	const res = await axios({
 		method: 'POST',
@@ -61,14 +61,17 @@ async function loginFunc() {
 
 	//-------------------------------------------------------------------------------------
 
-	if (res.data.result) {
+	if (res.data.result == 'true') {
+		console.log(res.data.result);
 		//로그인 인증이 필요한 경우 로컬 스토리지에 저장된 토큰 사용해서 확인 절차
 		localStorage.setItem('loginToken', res.data.token);
+		console.log(res.data.result);
+
 		//로그인에 성공하면 메인화면으로 이동
-		alert('로그인 성공');
 		document.location.href = '/';
 	} else {
-		alert('로그인 실패');
+		console.log(res.data.result);
+		alert(res.data.msg);
 		document.location.reload();
 	}
 }
