@@ -7,10 +7,11 @@ const __dirname = path.join(path.resolve(), 'public');
 
 //암호화 비교
 import bcrypt from 'bcrypt';
+const saltNumber = 10;
 
 //JWT 발급
 import jwt from 'jsonwebtoken';
-
+// jwt 토큰 secret key
 const SECRET = 'secret_key';
 
 //쿠키발급
@@ -20,11 +21,11 @@ const cookieConfig = {
 };
 
 //로그인---------------------------------------------------------
-export const login = (req, res) => {
+const Clogin = (req, res) => {
 	res.sendFile(__dirname + '/login/login.html');
 };
 
-export const postLogin = async (req, res) => {
+const CpostLogin = async (req, res) => {
 	try {
 		const {userId, pw} = req.body;
 
@@ -35,9 +36,9 @@ export const postLogin = async (req, res) => {
 			res.json({result: false, msg: '존재하지 않는 회원입니다.'});
 		}
 
-		// const compare = comparePassword(pw, result.password);
-
-		const compare = true;
+		console.log(result.dataValues);
+		const compare = await comparePassword(pw, result.dataValues.password);
+		console.log('확인', compare);
 
 		if (compare == false) {
 			res.json({
@@ -45,7 +46,7 @@ export const postLogin = async (req, res) => {
 				msg: '비밀번호가 일치하지 않습니다.',
 			});
 		} else {
-			res.cookie('myCookie', userId, cookieConfig);
+			res.cookie('loginCookie', userId, cookieConfig);
 			const token = jwt.sign({id: req.body.id}, SECRET);
 			res.json({result: 'true', token});
 		}
@@ -55,6 +56,10 @@ export const postLogin = async (req, res) => {
 };
 
 //암호화 비교 함수------------------------------------------
-const comparePassword = (pw, dbPw) => {
-	return bcrypt.compareSync(pw, dbPw);
+const comparePassword = async (pw, dbPw) => {
+	return await bcrypt.compare(pw, dbPw);
 };
+
+const bcryptPassword = (password) => bcrypt.hash(password, 11);
+
+export {Clogin, CpostLogin};

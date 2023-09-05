@@ -4,9 +4,12 @@ import path from 'path';
 import db from './models/index.js';
 import cookieParser from 'cookie-parser';
 
+const PORT = 8000;
+const app = express();
+const __dirname = path.resolve();
+
 app.use(cookieParser());
 
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
@@ -17,11 +20,11 @@ app.set('view engine', 'ejs');
 app.use('/', indexRouter);
 
 app.use('*', (req, res) => {
-    res.render('404Page/404');
+	res.render('404Page/404');
 });
 
-db.sequelize.sync({ force: true }).then(() => {
-    app.listen(PORT, () => {
-        console.log(`http://localhost:8000`);
-    });
+db.sequelize.sync({force: true}).then(() => {
+	app.listen(PORT, () => {
+		console.log(`http://localhost:8000`);
+	});
 });
