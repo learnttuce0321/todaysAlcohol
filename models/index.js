@@ -14,12 +14,16 @@ const sequelize = new Sequelize(
     config
 );
 
+//
+import SurveyResult from './surveyResult.js';
+const tempSurveyResult = SurveyResult(sequelize);
+db.surveyResult = tempSurveyResult;
 // 모델
 // db에 User객체 생성
 // db.User = require('../models/User')(sequelize);
-import model from './User.js';
-const temp = model(sequelize);
-db.User = temp;
+import User from './User.js';
+const tempUser = User(sequelize);
+db.User = tempUser;
 // const model = require("./User");
 // const temp = model(sequelize);
 // db.User = temp;
