@@ -18,6 +18,15 @@ const sequelize = new Sequelize(
 import SurveyResult from './surveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
 db.surveyResult = tempSurveyResult;
+// 모델
+// db에 User객체 생성
+// db.User = require('../models/User')(sequelize);
+import User from './User.js';
+const tempUser = User(sequelize);
+db.User = tempUser;
+// const model = require("./User");
+// const temp = model(sequelize);
+// db.User = temp;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
