@@ -1,14 +1,14 @@
 import express from 'express';
-import {Clogin, CpostLogin} from '../controll/login/Clogin.js';
+import { Clogin, CpostLogin } from '../controll/login/Clogin.js';
 import {
-	Csurvey,
-	CsurveyResult,
-	CstoreSurveyPost,
-	CresultForUserPost,
-	CcurrentResultForUserPost,
+    Csurvey,
+    CsurveyResult,
+    CstoreSurveyPost,
+    CresultForUserPost,
+    CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
-import {Cmain} from '../controll/mainPage/CmainPage.js';
-import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
+import { Cmain } from '../controll/mainPage/CmainPage.js';
+import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
