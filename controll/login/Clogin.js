@@ -21,7 +21,7 @@ const cookieConfig = {
 
 //로그인---------------------------------------------------------
 const Clogin = (req, res) => {
-    res.sendFile(__dirname + '/login/login.html');
+    res.render('loginPage/loginPage');
 };
 
 const CpostLogin = async (req, res) => {

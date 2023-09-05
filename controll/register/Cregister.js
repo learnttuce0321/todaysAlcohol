@@ -5,7 +5,7 @@ const __dirname = path.join(path.resolve(), 'public');
 ////////////////////////////
 // GET
 const CRegister = (req, res) => {
-    res.sendFile(__dirname + '/register/register.html');
+    res.render('registerPage/registerPage');
 };
 
 ////////////////////////////
