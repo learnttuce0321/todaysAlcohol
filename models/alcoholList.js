@@ -1,8 +1,8 @@
 // const { DataTypes } = require('sequelize');
 import { DataTypes } from 'sequelize';
 
-const User = (sequelize) => {
-    return sequelize.define('User', {
+const AlcoholList = (sequelize) => {
+    return sequelize.define('AlcoholList', {
         // 컬럼 정의
         id: {
             type: DataTypes.INTEGER,
@@ -10,27 +10,35 @@ const User = (sequelize) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        userId: {
-            type: DataTypes.STRING(255),
-            allowNull: false,
-        },
         name: {
             type: DataTypes.STRING(255),
             allowNull: false,
         },
-        password: {
+        info: {
             type: DataTypes.STRING(255),
             allowNull: false,
         },
-        nickname: {
+        abv: {
             type: DataTypes.STRING(255),
             allowNull: false,
         },
-        email: {
+        recipe: {
             type: DataTypes.STRING(255),
+            allowNull: false,
+        },
+        ingredient: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
+        },
+        abvScore: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        tasteScore: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
     });
 };
 
-export default User;
+export default AlcoholList;

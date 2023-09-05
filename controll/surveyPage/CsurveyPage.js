@@ -15,7 +15,7 @@ const CstoreSurveyPost = async (req, res) => {
     const scores = CalculateDataForAlgorithm(req.body.checkedRadiosValue);
 
     if (req.body.userId) {
-        await models.surveyResult.create({
+        await models.SurveyResult.create({
             userId: req.body.userId,
             score1: scores[0],
             score2: scores[1],
@@ -31,7 +31,7 @@ const CresultForUserPost = (req, res) => {
 };
 
 const CcurrentResultForUserPost = async (req, res) => {
-    const result = await models.surveyResult.findOne({
+    const result = await models.SurveyResult.findOne({
         where: { userId: req.body.userId },
     });
     if (result) {
