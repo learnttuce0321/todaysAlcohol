@@ -29,7 +29,6 @@ router.post('/register', CRegisterPost);
 
 //로그인-------------------------------------
 router.get('/login', Clogin);
-
 router.post('/login', CpostLogin);
 
 //리스트--------------------------------------
