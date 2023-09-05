@@ -31,7 +31,7 @@ const CresultForUserPost = (req, res) => {
 };
 
 const CcurrentResultForUserPost = async (req, res) => {
-    const result = await models.surveyResult.findOne({
+    const result = await models.SurveyResult.findOne({
         where: { userId: req.body.userId },
     });
     if (result) {
