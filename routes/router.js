@@ -1,13 +1,18 @@
 import express from 'express';
+import {Clogin, CpostLogin} from '../controll/login/Clogin.js';
 import {
-    Csurvey,
-    CsurveyResult,
-    CstoreSurveyPost,
-    CresultForUserPost,
-    CcurrentResultForUserPost,
+	Csurvey,
+	CsurveyResult,
+	CstoreSurveyPost,
+	CresultForUserPost,
+	CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
-import { Cmain } from '../controll/mainPage/CmainPage.js';
-import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+import {Cmain} from '../controll/mainPage/CmainPage.js';
+import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
+// import {
+// 	alcohol_list,
+// 	alcohol_filteringList,
+// } from '../controll/alcohol-list/alcohol-list.js';
 import { CcocktailDetail } from '../controll/cocktailDetail/CcocktailDetail.js';
 
 const router = express.Router();
@@ -22,3 +27,16 @@ router.post('/survey/result/recent', CcurrentResultForUserPost); // 최근 설�
 // 회원가입
 router.get('/register', CRegister);
 router.post('/register', CRegisterPost);
+
+//로그인-------------------------------------
+router.get('/login', Clogin);
+
+router.post('/login', CpostLogin);
+
+//리스트--------------------------------------
+
+// router.get('/alcohol-list', alcohol_list);
+
+//router.get('/alcohol-list/cocktail', alcohol_filteringList);
+
+export default router;

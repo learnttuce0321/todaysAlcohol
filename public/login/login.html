@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		<title>login</title>
+	</head>
+	<body>
+		<form id="loginform">
+			<label for="user_id">id:</label>
+			<input type="text" id="user_id" placeholder="ID" />
+			<label for="user_pw">pw:</label>
+			<input type="password" id="user_pw" placeholder="PW" />
+
+			<button type="button" onclick="loginFunc()">로그인</button>
+			<button type="button" onclick="signupFunc()">회원가입</button>
+		</form>
+		<script  src="login.js"></script>
+	
+	</body>
+</html>
