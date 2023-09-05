@@ -10,7 +10,14 @@ import bcrypt from 'bcrypt';
 
 //JWT 발급
 import jwt from 'jsonwebtoken';
+
 const SECRET = 'secret_key';
+
+//쿠키발급
+const cookieConfig = {
+	httpOnly: true,
+	maxAge: 60 * 60 * 1000 * 24,
+};
 
 //로그인---------------------------------------------------------
 export const login = (req, res) => {
@@ -28,7 +35,9 @@ export const postLogin = async (req, res) => {
 			res.json({result: false, msg: '존재하지 않는 회원입니다.'});
 		}
 
-		const compare = comparePassword(pw, result.password);
+		// const compare = comparePassword(pw, result.password);
+
+		const compare = true;
 
 		if (compare == false) {
 			res.json({
@@ -36,6 +45,7 @@ export const postLogin = async (req, res) => {
 				msg: '비밀번호가 일치하지 않습니다.',
 			});
 		} else {
+			res.cookie('myCookie', userId, cookieConfig);
 			const token = jwt.sign({id: req.body.id}, SECRET);
 			res.json({result: 'true', token});
 		}

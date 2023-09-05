@@ -15,10 +15,6 @@ const sequelize = new Sequelize(
 );
 
 // 모델
-import model from './User.js';
-const temp = model(sequelize);
-db.User = temp;
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
