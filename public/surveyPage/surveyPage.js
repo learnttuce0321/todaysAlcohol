@@ -6,13 +6,10 @@
             radioParentDiv.style.display = 'none';
         });
     });
-
-    // 이후 코드 합칠 때 없앨 예정
-    localStorage.setItem('login', 'user');
 })();
 
 document.querySelector('button').addEventListener('click', async () => {
-    const userId = localStorage.getItem('login');
+    const userId = localStorage.getItem('loginToken');
     const checkedRadiosValue = [];
 
     document.querySelectorAll('input[type="radio"]').forEach((radio) => {

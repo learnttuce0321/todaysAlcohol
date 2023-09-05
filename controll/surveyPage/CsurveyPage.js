@@ -14,9 +14,9 @@ const CsurveyResult = (req, res) => {
 const CstoreSurveyPost = async (req, res) => {
     const scores = CalculateDataForAlgorithm(req.body.checkedRadiosValue);
 
-    if (req.body.userId) {
+    if (req.cookies.loginCookie) {
         await models.surveyResult.create({
-            userId: req.body.userId,
+            userId: req.cookies.loginCookie,
             score1: scores[0],
             score2: scores[1],
             score3: scores[2],
