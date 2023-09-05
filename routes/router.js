@@ -8,6 +8,7 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+import { CcocktailDetail } from '../controll/cocktailDetail/CcocktailDetail.js';
 
 const router = express.Router();
 
@@ -21,5 +22,3 @@ router.post('/survey/result/recent', CcurrentResultForUserPost); // 최근 설�
 // 회원가입
 router.get('/register', CRegister);
 router.post('/register', CRegisterPost);
-
-export default router;

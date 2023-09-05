@@ -3,7 +3,7 @@
 import Sequelize from 'sequelize';
 const env = process.env.NODE_ENV || 'development';
 // const config = require(__dirname + '/../config/config.json')[env];
-import cfg from '../config/config.json' assert { type: 'json' };
+import cfg from '../config/config.js';
 const config = cfg[env];
 const db = {};
 
