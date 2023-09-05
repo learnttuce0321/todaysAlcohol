@@ -13,6 +13,7 @@ import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
 // 	alcohol_list,
 // 	alcohol_filteringList,
 // } from '../controll/alcohol-list/alcohol-list.js';
+import { CcocktailDetail } from '../controll/cocktailDetail/CcocktailDetail.js';
 
 const router = express.Router();
 
