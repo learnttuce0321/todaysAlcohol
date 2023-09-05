@@ -1,20 +1,16 @@
 import path from 'path';
-import models from '../models/index.js';
+import models from '../../models/index.js';
 import bcrypt from 'bcrypt';
 const __dirname = path.join(path.resolve(), 'public');
 ////////////////////////////
 // GET
-const main = (req, res) => {
-    res.sendFile(__dirname + '/homePage/mainPage.html');
-};
-
-const register = (req, res) => {
+const CRegister = (req, res) => {
     res.sendFile(__dirname + '/register/register.html');
 };
 
 ////////////////////////////
 // POST
-const postRegister = async (req, res) => {
+const CRegisterPost = async (req, res) => {
     console.log(req.body);
     const { userId, name, password, nickname, email } = req.body;
     // create: 데이터 생성
@@ -30,7 +26,7 @@ const postRegister = async (req, res) => {
     });
 };
 
-export { main, register, postRegister };
+export { CRegister, CRegisterPost };
 
 ////////////////////////Function
 const bcryptPassword = (password) => bcrypt.hash(password, 11);
