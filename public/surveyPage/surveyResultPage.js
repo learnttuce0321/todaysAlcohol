@@ -1,5 +1,5 @@
 (async () => {
-    const userId = localStorage.getItem('login');
+    const userId = localStorage.getItem('loginToken');
     const calculatedScore = JSON.parse(localStorage.getItem('surveyResult'));
     localStorage.removeItem('surveyResult');
 
