@@ -1,5 +1,5 @@
 import express from 'express';
-import { Clogin, CpostLogin } from '../controll/login/Clogin.js';
+import { Clogin, CloginPost } from '../controll/login/Clogin.js';
 import {
     Csurvey,
     CsurveyResult,
@@ -9,6 +9,10 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+import {
+    CprofileEdit,
+    CprofileEditPatch,
+} from '../controll/updateUser/CupdateUser.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -29,7 +33,13 @@ router.post('/register', CRegisterPost);
 
 //로그인-------------------------------------
 router.get('/login', Clogin);
-router.post('/login', CpostLogin);
+router.post('/login', CloginPost);
+
+//회원정보수정 페이지 들어갔을 때--------------------
+router.get('/my-page/User-Info', CprofileEdit);
+
+//수정된 회원정보를 db에 저장할 때
+router.patch('/my-page/User-Info', CprofileEditPatch);
 
 //리스트--------------------------------------
 
