@@ -1,10 +1,6 @@
 //sequelize
 import models from '../../models/index.js';
 
-//경로 설정
-import path from 'path';
-const __dirname = path.join(path.resolve(), 'public');
-
 //암호화 비교
 import bcrypt from 'bcrypt';
 
@@ -24,7 +20,7 @@ const Clogin = (req, res) => {
     res.render('loginPage/loginPage');
 };
 
-const CpostLogin = async (req, res) => {
+const CloginPost = async (req, res) => {
     try {
         const { userId, pw } = req.body;
 
@@ -60,4 +56,4 @@ const comparePassword = async (pw, dbPw) => {
     return await bcrypt.compare(pw, dbPw);
 };
 
-export { Clogin, CpostLogin };
+export { Clogin, CloginPost };
