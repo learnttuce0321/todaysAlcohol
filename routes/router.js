@@ -9,10 +9,7 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
-import {
-    CprofileEdit,
-    CprofileEditPatch,
-} from '../controll/updateUser/CupdateUser.js';
+import { CAlcoholListDetail } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -35,16 +32,12 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//회원정보수정 페이지 들어갔을 때--------------------
-router.get('/my-page/User-Info', CprofileEdit);
-
-//수정된 회원정보를 db에 저장할 때
-router.patch('/my-page/User-Info', CprofileEditPatch);
-
 //리스트--------------------------------------
 
 // router.get('/alcohol-list', alcohol_list);
 //router.get('/alcohol-list/cocktail', alcohol_filteringList);
 
-// 상세 페이지----------------
+// 술 상세 페이지--------------------------------
+router.get('/alcohol-list/detail/:id', CAlcoholListDetail);
+
 export default router;
