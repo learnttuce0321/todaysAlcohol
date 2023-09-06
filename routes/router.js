@@ -34,7 +34,7 @@ router.post('/login', CpostLogin);
 //리스트--------------------------------------
 
 // router.get('/alcohol-list', alcohol_list);
-
 //router.get('/alcohol-list/cocktail', alcohol_filteringList);
 
+// 상세 페이지----------------
 export default router;
