@@ -1,0 +1,22 @@
+header {
+    box-sizing: border-box;
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+}
+header > div,
+header > div > div,
+nav {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+a,
+a:link,
+a:visited,
+a:hover a:active {
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+}

@@ -1,0 +1,12 @@
+body,
+div,
+p,
+section,
+ul,
+li {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
