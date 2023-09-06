@@ -4,31 +4,31 @@
     localStorage.removeItem('surveyResult');
 
     if (!userId) {
-        alert('금지');
-        window.location.replace('/');
-    } else if (userId && !calculatedScore) {
-        const recentData = await axios({
-            method: `POST`,
-            url: '/survey/result/recent',
-            data: {
-                userId,
-            },
-        });
-        console.log(
-            recentData.data.score1,
-            recentData.data.score2,
-            recentData.data.score3
-        );
-        if (recentData.data.result) {
+        if (!calculatedScore) {
+            alert('로그인 후 이용해 주세요');
+            window.location.replace('/login');
+        } else {
             const result = await axios({
                 method: 'POST',
                 url: '/survey/result/user',
                 data: {
-                    calculatedScore: [
-                        recentData.data.score1,
-                        recentData.data.score2,
-                        recentData.data.score3,
-                    ],
+                    calculatedScore,
+                },
+            });
+
+            if (result.data.result) {
+                document.querySelector('.loading').style.display = 'none';
+                recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
+                recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
+            }
+        }
+    } else {
+        if (calculatedScore) {
+            const result = await axios({
+                method: 'POST',
+                url: '/survey/result/user',
+                data: {
+                    calculatedScore,
                 },
             });
 
@@ -38,23 +38,39 @@
                 recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
             }
         } else {
-            alert('최근 결과 없음');
-            window.location.replace('/');
-        }
-    } else {
-        console.log(calculatedScore);
-        const result = await axios({
-            method: 'POST',
-            url: '/survey/result/user',
-            data: {
-                calculatedScore,
-            },
-        });
+            const recentData = await axios({
+                method: `POST`,
+                url: '/survey/result/recent',
+                data: {
+                    userId,
+                },
+            });
+            if (recentData.data.result) {
+                const result = await axios({
+                    method: 'POST',
+                    url: '/survey/result/user',
+                    data: {
+                        calculatedScore: [
+                            recentData.data.score1,
+                            recentData.data.score2,
+                            recentData.data.score3,
+                        ],
+                    },
+                });
 
-        if (result.data.result) {
-            document.querySelector('.loading').style.display = 'none';
-            recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
-            recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
+                if (result.data.result) {
+                    document.querySelector('.loading').style.display = 'none';
+                    recommendedAlcoholMainItem(
+                        result.data.alcoholList.mainAlcohol
+                    );
+                    recommemdedAlcoholSubItem(
+                        result.data.alcoholList.subAlcohol
+                    );
+                }
+            } else {
+                alert('최근 결과 없음');
+                window.location.replace('/survey');
+            }
         }
     }
 })();
