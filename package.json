@@ -4,8 +4,6 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=test app.js",
-        "start:pond": "cross-env MODE_ENV=prod node app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "type": "module",
