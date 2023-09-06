@@ -6,7 +6,7 @@
     if (!userId) {
         alert('금지');
         window.location.replace('/');
-    } else if (userId) {
+    } else if (userId && !calculatedScore) {
         const recentData = await axios({
             method: `POST`,
             url: '/survey/result/recent',
@@ -14,6 +14,11 @@
                 userId,
             },
         });
+        console.log(
+            recentData.data.score1,
+            recentData.data.score2,
+            recentData.data.score3
+        );
         if (recentData.data.result) {
             const result = await axios({
                 method: 'POST',
@@ -33,7 +38,7 @@
                 recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
             }
         } else {
-            alert('금지');
+            alert('최근 결과 없음');
             window.location.replace('/');
         }
     } else {
