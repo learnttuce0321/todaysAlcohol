@@ -31,21 +31,30 @@ const CresultForUserPost = (req, res) => {
 };
 
 const CcurrentResultForUserPost = async (req, res) => {
-    const result = await models.SurveyResult.findOne({
-        where: { userId: req.body.userId },
+    console.log(req.body);
+    // const result = await models.SurveyResult.findOne({
+    //     where: { userId: req.body.userId },
+    // });
+    // if (result) {
+    //     res.json({
+    //         result: true,
+    //         score1: result.dataValues.score1,
+    //         score2: result.dataValues.score2,
+    //         score3: result.dataValues.score3,
+    //     });
+    // } else {
+    //     res.json({
+    //         result: false,
+    //     });
+    // }
+    // todos: db랑 연결
+
+    res.json({
+        result: true,
+        score1: 10,
+        score2: 11,
+        score3: 7,
     });
-    if (result) {
-        res.json({
-            result: true,
-            score1: result.dataValues.score1,
-            score2: result.dataValues.score2,
-            score3: result.dataValues.score3,
-        });
-    } else {
-        res.json({
-            result: false,
-        });
-    }
 };
 
 ////////////////////////
