@@ -21,19 +21,18 @@ import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
 
-// const model = require("./User");
-// const temp = model(sequelize);
-// db.User = temp;
-
 // serveyResult : 설문조사 결과 DB
-import SurveyResult from './surveyResult.js';
+import SurveyResult from './SurveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
 db.surveyResult = tempSurveyResult;
 // alcoholList : 칵테일 리스트 DB
-
-import AlcoholList from './alcoholList.js';
+import AlcoholList from './AlcoholList.js';
 const tempAlcoholList = AlcoholList(sequelize);
 db.AlcoholList = tempAlcoholList;
+// likeAlcohol : 칵테일 좋아요 DB
+import LikeAlcohol from './LikeAlcohol.js';
+const tempLikeAlcohol = LikeAlcohol(sequelize);
+db.LikeAlcohol = tempLikeAlcohol;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

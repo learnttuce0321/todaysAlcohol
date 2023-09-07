@@ -6,14 +6,65 @@ import path from 'path';
 const __dirname = path.join(path.resolve(), 'public');
 
 const CAlcoholListDetail = (req, res) => {
-    console.log('dfs', req.params);
+    // console.log('dfs', req.params);
     models.AlcoholList.findOne({
         where: {
             id: req.params.id,
         },
     }).then((result) => {
+        // console.log(result);
         res.render('alcoholListDetail/alcoholListDetail', { data: result });
     });
 };
 
-export { CAlcoholListDetail };
+const CalcoholListLikePost = async (req, res) => {
+    const result = await models.LikeAlcohol.create({
+        userId: req.cookies.userIdCookie,
+        alcoholId: req.params.id,
+    });
+
+    if (result) {
+        res.json({ result: true });
+    } else {
+        res.json({ result: false });
+    }
+};
+
+const CfindAlcoholListLikePost = async (req, res) => {
+    const result = await models.LikeAlcohol.findOne({
+        where: {
+            userId: req.cookies.userIdCookie,
+            alcoholId: req.params.id,
+        },
+    });
+
+    if (result) {
+        res.json({ result: true });
+    } else {
+        res.json({ result: false });
+    }
+};
+
+const CdeleteAlcoholListLikePost = async (req, res) => {
+    const destroyTarget = await models.LikeAlcohol.findOne({
+        where: {
+            userId: req.cookies.userIdCookie,
+            alcoholId: req.params.id,
+        },
+    });
+
+    const result = await destroyTarget.destroy({
+        where: {
+            userId: req.cookies.userIdCookie,
+            alcoholId: req.params.id,
+        },
+    });
+    res.json({ result: true });
+};
+
+export {
+    CAlcoholListDetail,
+    CalcoholListLikePost,
+    CfindAlcoholListLikePost,
+    CdeleteAlcoholListLikePost,
+};

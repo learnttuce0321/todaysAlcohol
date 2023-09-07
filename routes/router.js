@@ -9,7 +9,12 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
-import { CAlcoholListDetail } from '../controll/alcoholListDetail/CalcoholListDetail.js';
+import {
+    CAlcoholListDetail,
+    CalcoholListLikePost,
+    CfindAlcoholListLikePost,
+    CdeleteAlcoholListLikePost,
+} from '../controll/alcoholListDetail/CalcoholListDetail.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -39,5 +44,8 @@ router.post('/login', CloginPost);
 
 // 술 상세 페이지--------------------------------
 router.get('/alcohol-list/detail/:id', CAlcoholListDetail);
+router.post('/alcohol-list/:id/like', CalcoholListLikePost);
+router.post('/alcohol-list/:id/like/find', CfindAlcoholListLikePost);
+router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 
 export default router;
