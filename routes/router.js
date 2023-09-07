@@ -15,6 +15,7 @@ import {
 	CfindAlcoholListLikePost,
 	CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
+
 import {alcoholList} from '../controll/alcoholList/CalcoholList.js';
 
 const router = express.Router();
