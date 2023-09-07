@@ -20,6 +20,7 @@ const sequelize = new Sequelize(
 import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
+
 // serveyResult : 설문조사 결과 DB
 import SurveyResult from './SurveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
@@ -28,7 +29,7 @@ db.surveyResult = tempSurveyResult;
 import AlcoholList from './AlcoholList.js';
 const tempAlcoholList = AlcoholList(sequelize);
 db.AlcoholList = tempAlcoholList;
-
+// likeAlcohol : 칵테일 좋아요 DB
 import LikeAlcohol from './LikeAlcohol.js';
 const tempLikeAlcohol = LikeAlcohol(sequelize);
 db.LikeAlcohol = tempLikeAlcohol;

@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+}
+header {
+    background-color: red;
+    display: flex;
+}
+
+.navber-left {
+    display: flex;
+}
+
+.nav-1 {
+    display: flex;
+    color: black;
+}
