@@ -24,7 +24,7 @@ db.User = tempUser;
 // serveyResult : 설문조사 결과 DB
 import SurveyResult from './SurveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
-db.surveyResult = tempSurveyResult;
+db.SurveyResult = tempSurveyResult;
 // alcoholList : 칵테일 리스트 DB
 import AlcoholList from './AlcoholList.js';
 const tempAlcoholList = AlcoholList(sequelize);

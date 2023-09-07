@@ -45,6 +45,7 @@
                     userId,
                 },
             });
+            console.log(recentData);
             if (recentData.data.result) {
                 const result = await axios({
                     method: 'POST',
