@@ -16,7 +16,14 @@
 
 		<script>
 			//axios로
-			function alcoholFunc() {}
+			(function () {
+				axios({
+					url: 'alcoholList',
+					method: 'get',
+				}).then(function (res) {
+					console.log('asdf', res);
+				});
+			})();
 		</script>
 	</body>
 </html>

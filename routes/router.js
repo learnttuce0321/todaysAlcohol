@@ -1,24 +1,21 @@
 import express from 'express';
-import { Clogin, CloginPost } from '../controll/login/Clogin.js';
+import {Clogin, CloginPost} from '../controll/login/Clogin.js';
 import {
-    Csurvey,
-    CsurveyResult,
-    CstoreSurveyPost,
-    CresultForUserPost,
-    CcurrentResultForUserPost,
+	Csurvey,
+	CsurveyResult,
+	CstoreSurveyPost,
+	CresultForUserPost,
+	CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
-import { Cmain } from '../controll/mainPage/CmainPage.js';
-import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+import {Cmain} from '../controll/mainPage/CmainPage.js';
+import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
 import {
-    CAlcoholListDetail,
-    CalcoholListLikePost,
-    CfindAlcoholListLikePost,
-    CdeleteAlcoholListLikePost,
+	CAlcoholListDetail,
+	CalcoholListLikePost,
+	CfindAlcoholListLikePost,
+	CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
-// import {
-// 	alcohol_list,
-// 	alcohol_filteringList,
-// } from '../controll/alcohol-list/alcohol-list.js';
+import {alcoholList} from '../controll/alcoholList/CalcoholList.js';
 
 const router = express.Router();
 
@@ -39,7 +36,7 @@ router.post('/login', CloginPost);
 
 //리스트--------------------------------------
 
-// router.get('/alcohol-list', alcohol_list);
+router.get('/alcoholList', alcoholList);
 //router.get('/alcohol-list/cocktail', alcohol_filteringList);
 
 // 술 상세 페이지--------------------------------
