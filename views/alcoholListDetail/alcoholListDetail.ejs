@@ -6,6 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <title>칵테일 상세리스트</title>
     </head>
     <body>
@@ -16,5 +17,13 @@
         <div><%= data.abv %>도</div>
         <div>재료: <%= data.ingredient %></div>
         <div>레시피: <%= data.recipe %></div>
+        <button
+            class="likeBtn"
+            type="button"
+            value="enabled"
+        >
+            좋아요
+        </button>
+        <script src="\alcoholListDetail\alcoholListDetail.js"></script>
     </body>
 </html>

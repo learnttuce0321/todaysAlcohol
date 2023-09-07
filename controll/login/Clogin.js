@@ -42,6 +42,7 @@ const CloginPost = async (req, res) => {
             });
         } else {
             res.cookie('loginCookie', userId, cookieConfig);
+            res.cookie('userIdCookie', result.dataValues.id);
             const token = jwt.sign({ id: req.body.id }, SECRET);
             console.log(token);
             res.json({ result: 'true', token });
