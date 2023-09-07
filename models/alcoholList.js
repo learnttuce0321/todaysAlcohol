@@ -19,7 +19,7 @@ const AlcoholList = (sequelize) => {
             allowNull: false,
         },
         abv: {
-            type: DataTypes.STRING(255),
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
         recipe: {

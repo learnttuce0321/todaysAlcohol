@@ -15,18 +15,22 @@ const sequelize = new Sequelize(
 );
 
 //
-import SurveyResult from './surveyResult.js';
-const tempSurveyResult = SurveyResult(sequelize);
-db.surveyResult = tempSurveyResult;
 // 모델
-// db에 User객체 생성
-// db.User = require('../models/User')(sequelize);
+// Users: 회원 정보 DB
 import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
+
 // const model = require("./User");
 // const temp = model(sequelize);
 // db.User = temp;
+
+// serveyResult : 설문조사 결과 DB
+import SurveyResult from './surveyResult.js';
+const tempSurveyResult = SurveyResult(sequelize);
+db.surveyResult = tempSurveyResult;
+// alcoholList : 칵테일 리스트 DB
+
 import AlcoholList from './alcoholList.js';
 const tempAlcoholList = AlcoholList(sequelize);
 db.AlcoholList = tempAlcoholList;
