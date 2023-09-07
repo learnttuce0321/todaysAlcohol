@@ -5,9 +5,9 @@ import db from './models/index.js';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 dotenv.config();
-console.log('DB_HOST:', process.env.MYSQL_RDS_HOST);
-console.log('DB_USER:', process.env.MYSQL_RDS_USERNAME);
-console.log('DB_PASS:', process.env.MYSQL_RDS_PASSWORD);
+console.log('DB_HOST:', process.env.MYSQL_HOST);
+console.log('DB_USER:', process.env.MYSQL_USERNAME);
+console.log('DB_PASS:', process.env.MYSQL_PASSWORD);
 
 const PORT = 8000;
 const app = express();
