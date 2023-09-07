@@ -38,6 +38,10 @@ const AlcoholList = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        numberIngredient: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
     });
 };
 

@@ -27,6 +27,9 @@ db.User = tempUser;
 // const model = require("./User");
 // const temp = model(sequelize);
 // db.User = temp;
+import AlcoholList from './alcoholList.js';
+const tempAlcoholList = AlcoholList(sequelize);
+db.AlcoholList = tempAlcoholList;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
