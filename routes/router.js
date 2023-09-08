@@ -19,6 +19,16 @@ import {
 	CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
+import {
+    CAlcoholListFilter,
+    CAlcoholListFiltering,
+    CdisplayFilteredResult,
+} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+// import {
+// 	alcohol_list,
+// 	alcohol_filteringList,
+// } from '../controll/alcohol-list/alcohol-list.js';
+
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
@@ -40,10 +50,15 @@ router.post('/login', CloginPost);
 
 router.get('/alcohol-list', CalcoholList);
 
-// 술 상세 페이지--------------------------------
+// 술 상세 페이지-----------------------------
 router.get('/alcohol-list/detail/:id', CAlcoholListDetail);
 router.post('/alcohol-list/:id/like', CalcoholListLikePost);
 router.post('/alcohol-list/:id/like/find', CfindAlcoholListLikePost);
 router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
+
+//카테고리 별 필터링---------------------------
+router.get('/alcohol-list/filter', CAlcoholListFilter); // 모달 창 띄우기
+router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
+router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
 export default router;
