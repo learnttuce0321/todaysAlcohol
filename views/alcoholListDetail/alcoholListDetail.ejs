@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <title>칵테일 상세리스트</title>
-    </head>
-    <body>
-        <h1>상세페이지</h1>
-        <div>이미지</div>
-        <div><%= data.name %></div>
-        <div><%= data.info %></div>
-        <div><%= data.abv %>도</div>
-        <div>재료: <%= data.ingredient %></div>
-        <div>레시피: <%= data.recipe %></div>
-        <button
-            class="likeBtn"
-            type="button"
-            value="enabled"
-        >
-            좋아요
-        </button>
-        <script src="\alcoholListDetail\alcoholListDetail.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<title>칵테일 상세리스트</title>
+	</head>
+	<body>
+		<h1>상세페이지</h1>
+		<div>이미지</div>
+		<div><%= data.name %></div>
+		<div><%= data.info %></div>
+		<div><%= data.abv %>도</div>
+		<div>재료: <%= data.ingredient %></div>
+		<div>레시피: <%= data.recipe %></div>
+		<button class="likeBtn" type="button" value="enabled">좋아요</button>
+		<script src="\alcoholListDetail\alcoholListDetail.js"></script>
+	</body>
 </html>

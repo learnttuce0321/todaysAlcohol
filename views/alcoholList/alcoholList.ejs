@@ -4,19 +4,35 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
 
 		<title>Document</title>
 	</head>
+	<!-- 임시로 헤더 지정-->
+	<div class="tmp"></div>
 	<body>
-		<form id="slect_form">
-			<h1></h1>
-			<input type="text" name="category" />
-			<button type="button" onclick="alcoholFunc()">버튼</button>
-		</form>
+		<section id="container">
+			<div id="wrapper">
+				<% for (let i=0; i < data.length; i++) {%>
 
-		<script>
-			//axios로
-			function alcoholFunc() {}
-		</script>
+				<div class="item">
+					<a href="/alcohol-list/detail/<%= data[i].id %>">
+						<img
+							class="thumbsnail"
+							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
+					/></a>
+					<h3 class="text_title"><%= data[i].name %></h3>
+					<p class="info"><%= data[i].info %></p>
+				</div>
+
+				<%}%> <% for (let i=0; i < 4; i++) {%>
+				<div class="hidden">
+					<img class="thumbsnail" src="" />
+					<h3 class="text_title"></h3>
+					<p class="info"></p>
+				</div>
+				<%}%>
+			</div>
+		</section>
 	</body>
 </html>
