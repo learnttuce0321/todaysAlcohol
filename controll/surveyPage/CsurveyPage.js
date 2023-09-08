@@ -1,4 +1,3 @@
-import { MgetRecommendAlcoholList } from '../../model/surveyPage/MsurveyPage.js';
 import models from '../../models/index.js';
 import { Op } from 'sequelize';
 ////////////////////////////
