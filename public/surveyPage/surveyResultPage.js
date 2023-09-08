@@ -45,7 +45,7 @@
                     userId,
                 },
             });
-            console.log(recentData);
+
             if (recentData.data.result) {
                 const result = await axios({
                     method: 'POST',
@@ -59,7 +59,6 @@
                     },
                 });
 
-                console.log(result.data.alcoholList);
                 if (result.data.result) {
                     document.querySelector('.loading').style.display = 'none';
                     recommendedAlcoholMainItem(

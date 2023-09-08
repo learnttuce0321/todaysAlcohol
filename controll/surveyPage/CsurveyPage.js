@@ -9,12 +9,15 @@ const Csurvey = (req, res) => {
 const CsurveyResult = (req, res) => {
     res.render('surveyPage/surveyResultPage');
 };
+const CsurveySelect = (req, res) => {
+    res.render('surveyPage/surveySelectPage');
+};
 
 ////////////////////////////
 // POST
 const CstoreSurveyPost = async (req, res) => {
     const scores = CalculateDataForAlgorithm(req.body.checkedRadiosValue);
-    console.log(scores);
+
     if (req.cookies.loginCookie) {
         await models.SurveyResult.create({
             userId: req.cookies.loginCookie,
@@ -27,8 +30,6 @@ const CstoreSurveyPost = async (req, res) => {
 };
 
 const CresultForUserPost = async (req, res) => {
-    console.log(req.body.calculatedScore);
-
     const result = await models.AlcoholList.findAll({
         where: {
             [Op.and]: [
@@ -50,8 +51,6 @@ const CresultForUserPost = async (req, res) => {
         result.length - 1,
         3
     );
-    console.log('length: ', result.length - 1);
-    console.log('random: ', index1, index2, index3);
 
     const recommendedAlcoholList = {
         mainAlcohol: result[0].dataValues,
@@ -116,7 +115,6 @@ const CalculateDataForAlgorithm = (recentSurvey) => {
         }
     });
 
-    console.log(score1, score2, score3);
     const data = [
         Math.min(Math.round(score1 / 3), 9),
         Math.min(Math.round(score2 / 3), 5),
@@ -150,6 +148,7 @@ function generateUniqueRandomNumbers(min, max, count) {
 
 export {
     Csurvey,
+    CsurveySelect,
     CsurveyResult,
     CstoreSurveyPost,
     CresultForUserPost,
