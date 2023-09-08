@@ -21,6 +21,9 @@ import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
 
+// const model = require("./User");
+// const temp = model(sequelize);
+// db.User = temp;
 // serveyResult : 설문조사 결과 DB
 import SurveyResult from './SurveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
