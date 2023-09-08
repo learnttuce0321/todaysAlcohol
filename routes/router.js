@@ -9,14 +9,15 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import {Cmain} from '../controll/mainPage/CmainPage.js';
 import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
+
+import {CalcoholList} from '../controll/alcoholList/CalcoholList.js';
+
 import {
 	CAlcoholListDetail,
 	CalcoholListLikePost,
 	CfindAlcoholListLikePost,
 	CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
-
-import {alcoholList} from '../controll/alcoholList/CalcoholList.js';
 
 const router = express.Router();
 
@@ -37,8 +38,7 @@ router.post('/login', CloginPost);
 
 //리스트--------------------------------------
 
-router.get('/alcoholList', alcoholList);
-//router.get('/alcohol-list/cocktail', alcohol_filteringList);
+router.get('/alcohol-list', CalcoholList);
 
 // 술 상세 페이지--------------------------------
 router.get('/alcohol-list/detail/:id', CAlcoholListDetail);

@@ -3,10 +3,11 @@ dotenv.config();
 const env = process.env;
 
 const development = {
-	username: 'user',
-	password: '1234',
-	database: 'kdt8',
-	host: '127.0.0.1',
+	username: env.MYSQL_RDS_USERNAME,
+	//env.MYSQL_USERNAME은 불러오고자 하는 데이터의 키값이므로 자유롭게 이름설정이 가능하다.
+	password: env.MYSQL_RDS_PASSWORD,
+	database: env.MYSQL_RDS_DATABASE,
+	host: env.MYSQL_RDS_HOST,
 	dialect: 'mysql',
 	//port: env.MYSQL_PORT
 };
