@@ -6,29 +6,29 @@ import { Op } from 'sequelize';
 import path from 'path';
 const __dirname = path.join(path.resolve(), 'public');
 
-// // modal filter 실행
-// const CAlcoholListFilter = (req, res) => {
-//     res.render('alcoholListFilter/alcoholListFilter');
-// };
+// modal filter 실행
+const CAlcoholListFilter = (req, res) => {
+    res.render('alcoholListFilter/alcoholListFilter');
+};
 
-// // modal filtering
-// const CAlcoholListFiltering = async (req, res) => {
-//     const { abvScore, tasteScore } = req.params;
-//     const abvScoreArray = abvScore.split(',').map(Number);
-//     const tasteScoreArray = tasteScore.split(',').map(Number);
+// modal filtering
+const CAlcoholListFiltering = async (req, res) => {
+    const { abvScore, tasteScore } = req.params;
+    const abvScoreArray = abvScore.split(',').map(Number);
+    const tasteScoreArray = tasteScore.split(',').map(Number);
 
-//     const result = await models.AlcoholList.findAll({
-//         where: {
-//             abvScore: {
-//                 [Op.in]: abvScoreArray,
-//             },
-//             tasteScore: {
-//                 [Op.in]: tasteScoreArray,
-//             },
-//         },
-//     });
-//     res.json(result);
-// };
+    const result = await models.AlcoholList.findAll({
+        where: {
+            abvScore: {
+                [Op.in]: abvScoreArray,
+            },
+            tasteScore: {
+                [Op.in]: tasteScoreArray,
+            },
+        },
+    });
+    res.json(result);
+};
 // modal filter값 출력
 const CdisplayFilteredResult = async (req, res) => {
     // const abvScores = req.query.abvScores;
@@ -70,4 +70,4 @@ const CdisplayFilteredResult = async (req, res) => {
     }
 };
 
-export { CdisplayFilteredResult };
+export { CAlcoholListFilter, CAlcoholListFiltering, CdisplayFilteredResult };
