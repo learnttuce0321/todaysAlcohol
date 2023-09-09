@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <a href="/my-page/user-info"><p>회원정보 수정하러 가기</p></a>
+        <p>내가 누른 좋아요 수: <%=data.likeLength%></p>
+        <p>내가 누른 좋아요</p>
+        <% for(let i=0; i<data.likeLength; i++) {%> 
+            <a href="/alcohol-list/detail/<%=data.likedAlcohol[i].alcoholId%>">
+                <h3><%=data.likedAlcohol[i].alcohol.name%></h3>
+                <p><%=data.likedAlcohol[i].alcohol.info%></p>
+            </a>
+        <%}%>
+
+        <a href="/">메인 페이지</a>
+    </body>
+</html>
+

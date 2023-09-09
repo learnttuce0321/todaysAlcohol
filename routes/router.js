@@ -1,18 +1,32 @@
 import express from 'express';
-import { Clogin, CloginPost } from '../controll/login/Clogin.js';
+import {Clogin, CloginPost} from '../controll/login/Clogin.js';
 import {
-    Csurvey,
-    CsurveyResult,
-    CstoreSurveyPost,
-    CresultForUserPost,
-    CcurrentResultForUserPost,
+	Csurvey,
+	CsurveySelect,
+	CsurveyResult,
+	CstoreSurveyPost,
+	CresultForUserPost,
+	CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
-import { Cmain } from '../controll/mainPage/CmainPage.js';
-import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+import {Cmain} from '../controll/mainPage/CmainPage.js';
+import {CRegisterPost, CRegister} from '../controll/register/Cregister.js';
+
+import {CalcoholList} from '../controll/alcoholList/CalcoholList.js';
+
 import {
-    CprofileEdit,
-    CprofileEditPatch,
-} from '../controll/updateUser/CupdateUser.js';
+	CAlcoholListDetail,
+	CalcoholListLikePost,
+	CfindAlcoholListLikePost,
+	CdeleteAlcoholListLikePost,
+} from '../controll/alcoholListDetail/CalcoholListDetail.js';
+
+import {
+	CAlcoholListFilter,
+	CAlcoholListFiltering,
+	CdisplayFilteredResult,
+} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import {CmyPage} from '../controll/myPage/CmyPage.js';
+import {CprofileEdit, CupdateUser} from '../controll/myPage/CupdateUser.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -21,6 +35,7 @@ import {
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
+router.get('/survey-select', CsurveySelect); // 설문조사 or 최근 결과 확인 선택
 router.get('/survey', Csurvey); // 설문조사 페이지 router
 router.get('/survey/result', CsurveyResult); // 설문조사 결과 페이지 router
 router.post('/survey/result', CstoreSurveyPost); // 설문조사 결과 db저장 api
@@ -35,16 +50,23 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//회원정보수정 페이지 들어갔을 때--------------------
-router.get('/my-page/User-Info', CprofileEdit);
-
-//수정된 회원정보를 db에 저장할 때
-router.patch('/my-page/User-Info', CprofileEditPatch);
+//로그인-------------------------------------
+router.get('/my-page', CmyPage);
+router.get('/my-page/user-info', CprofileEdit);
+router.patch('/my-page/user-info', CupdateUser);
 
 //리스트--------------------------------------
+router.get('/alcohol-list', CalcoholList);
 
-// router.get('/alcohol-list', alcohol_list);
+// 술 상세 페이지-----------------------------
+router.get('/alcohol-list/detail/:id', CAlcoholListDetail);
+router.post('/alcohol-list/:id/like', CalcoholListLikePost);
+router.post('/alcohol-list/:id/like/find', CfindAlcoholListLikePost);
+router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 
-//router.get('/alcohol-list/cocktail', alcohol_filteringList);
+//카테고리 별 필터링---------------------------
+// router.get('/alcohol-list/filter', CAlcoholListFilter); // 모달 창 띄우기
+// router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
+router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
 export default router;
