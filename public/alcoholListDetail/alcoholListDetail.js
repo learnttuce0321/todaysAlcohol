@@ -1,5 +1,6 @@
 (async () => {
     const likeBtn = document.querySelector('.likeBtn');
+    const loginToken = localStorage.getItem('loginToken');
     const result = await axios({
         method: 'POST',
         url: `/alcohol-list/${
@@ -7,7 +8,7 @@
         }/like/find`,
     });
 
-    if (result.data.result) {
+    if (result.data.result && loginToken) {
         likeBtn.value = 'disabled';
         likeBtn.style.backgroundColor = 'blue';
         likeBtn.style.color = 'white';
@@ -19,6 +20,7 @@ document.querySelector('.likeBtn').addEventListener('click', async (e) => {
     const likeBtn = document.querySelector('.likeBtn');
     const loginToken = localStorage.getItem('loginToken');
 
+    console.log(loginToken);
     if (loginToken) {
         if (likeBtn.value === 'enabled') {
             likeBtn.value = 'disabled';

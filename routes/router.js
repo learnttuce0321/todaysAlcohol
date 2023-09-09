@@ -2,6 +2,7 @@ import express from 'express';
 import { Clogin, CloginPost } from '../controll/login/Clogin.js';
 import {
     Csurvey,
+    CsurveySelect,
     CsurveyResult,
     CstoreSurveyPost,
     CresultForUserPost,
@@ -9,12 +10,16 @@ import {
 } from '../controll/surveyPage/CsurveyPage.js';
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
+
+import { CalcoholList } from '../controll/alcoholList/CalcoholList.js';
+
 import {
     CAlcoholListDetail,
     CalcoholListLikePost,
     CfindAlcoholListLikePost,
     CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
+
 import {
     CAlcoholListFilter,
     CAlcoholListFiltering,
@@ -28,6 +33,7 @@ import {
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
+router.get('/survey-select', CsurveySelect); // 설문조사 or 최근 결과 확인 선택
 router.get('/survey', Csurvey); // 설문조사 페이지 router
 router.get('/survey/result', CsurveyResult); // 설문조사 결과 페이지 router
 router.post('/survey/result', CstoreSurveyPost); // 설문조사 결과 db저장 api
@@ -44,8 +50,7 @@ router.post('/login', CloginPost);
 
 //리스트--------------------------------------
 
-// router.get('/alcohol-list', alcohol_list);
-//router.get('/alcohol-list/cocktail', alcohol_filteringList);
+router.get('/alcohol-list', CalcoholList);
 
 // 술 상세 페이지-----------------------------
 router.get('/alcohol-list/detail/:id', CAlcoholListDetail);

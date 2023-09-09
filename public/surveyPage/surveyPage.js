@@ -1,30 +1,3 @@
-// eventListner 설정을 위한 코드
-(() => {
-    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-        radio.addEventListener('click', () => {
-            const radioParentDiv = radio.parentNode.parentNode;
-            radioParentDiv.style.display = 'none';
-        });
-    });
-})();
-
-document.querySelector('button').addEventListener('click', async () => {
-    const userId = localStorage.getItem('loginToken');
-    const checkedRadiosValue = [];
-
-    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-        if (radio.checked) {
-            checkedRadiosValue.push(radio.value);
-        }
-    });
-
-    if (userId) {
-        AxiosForStoreSurveyResult(userId, checkedRadiosValue);
-    } else {
-        AxiosForStoreSurveyResult('anonymous', checkedRadiosValue);
-    }
-});
-
 /**
  * login user는 설문 결과 db, localstorage 저장 및 페이지 이동 / anonymous user는 설문 결과 localstorage 저장 및 페이지 이동
  * @param {*} userId
@@ -45,3 +18,76 @@ const AxiosForStoreSurveyResult = async (userId, checkedRadiosValue) => {
         window.location.replace('/survey/result');
     }
 };
+
+const setIndex = () => {
+    let index = 0;
+
+    return (op) => {
+        if (op === '+') {
+            if (index !== 8) {
+                index++;
+            }
+        } else if (op === '-') {
+            if (index !== 0) {
+                index--;
+            }
+        }
+
+        return index;
+    };
+};
+const getIndex = setIndex();
+
+// eventListner 설정을 위한 코드
+(() => {
+    document
+        .querySelectorAll('.surveyCard')
+        .forEach((item) => (item.style.display = 'none'));
+
+    document.querySelector('.surveyCard').style.display = 'block';
+    document.querySelector('.btn').style.display = 'none';
+})();
+
+document.querySelector('.beforeQuestionBtn').addEventListener('click', () => {
+    const formDoms = document.querySelectorAll('form[name="Qform"]');
+
+    const index = getIndex('-');
+
+    document.querySelector('.btn').style.display = 'none';
+    formDoms[index + 1].parentNode.style.display = 'none';
+    formDoms[index].parentNode.style.display = 'block';
+});
+
+document.querySelector('.afterQuestionBtn').addEventListener('click', () => {
+    const formDoms = document.querySelectorAll('form[name="Qform"]');
+    const index = getIndex('+');
+
+    if (index === 8) {
+        document.querySelector('.btn').style.display = 'block';
+    }
+    formDoms[index - 1].parentNode.style.display = 'none';
+    formDoms[index].parentNode.style.display = 'block';
+});
+
+document.querySelector('.btn').addEventListener('click', () => {
+    const userId = localStorage.getItem('loginToken');
+    const checkedRadiosValue = [];
+
+    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+        if (radio.checked) {
+            checkedRadiosValue.push(radio.value);
+        }
+    });
+
+    console.log(checkedRadiosValue.length);
+    if (checkedRadiosValue.length !== 9) {
+        alert('누르지 않은 문항이 있습니다.');
+    } else {
+        if (userId) {
+            AxiosForStoreSurveyResult(userId, checkedRadiosValue);
+        } else {
+            AxiosForStoreSurveyResult('anonymous', checkedRadiosValue);
+        }
+        console.log(123);
+    }
+});
