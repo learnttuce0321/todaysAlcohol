@@ -15,6 +15,13 @@ async function allowRegister() {
         userId.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
         return false; //return: 반환하다 return false:  아무것도 반환하지 말아라 아래 코드부터 아무것도 진행하지 말것
     }
+
+    if (!isNaN(userId.value.substr(0, 1))) {
+        alert('아이디는 숫자로 시작할 수 없습니다.');
+        userId.focus();
+        return;
+    }
+
     if (password.value == '') {
         alert('비밀번호를 입력하세요.');
         password.focus();
@@ -51,7 +58,7 @@ async function allowRegister() {
 
     if (email.value == '') {
         alert('이메일 주소를 입력하세요.');
-        email_id.focus();
+        email.focus();
         return false;
     }
     // email 형식 정규식
@@ -60,7 +67,7 @@ async function allowRegister() {
 
     if (!emailCheck.test(email.value)) {
         alert('올바른 이메일 주소형식을 입력해주세요.');
-        password.focus();
+        email.focus();
         return false;
     }
     try {
