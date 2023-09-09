@@ -23,7 +23,7 @@ import {
 import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
 import { CmyPage } from '../controll/myPage/CmyPage.js';
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
-
+import { CboardList } from '../controll/board/Cboard.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -65,5 +65,8 @@ router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 // router.get('/alcohol-list/filter', CAlcoholListFilter); // 모달 창 띄우기
 // router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
+
+// 게시판 -----------------------------------
+router.get('/community', CboardList);
 
 export default router;
