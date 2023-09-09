@@ -45,6 +45,7 @@
                     userId,
                 },
             });
+
             if (recentData.data.result) {
                 const result = await axios({
                     method: 'POST',
@@ -81,7 +82,8 @@ const recommendedAlcoholMainItem = (item) => {
     const div = document.createElement('div');
     div.innerHTML = `
         <h1>${item.name}</h1>
-        <p>술 설명~~~~</p>
+        <p>${item.info}</p>
+        <a href="/alcohol-list/detail/${item.id}">알아보기</a>
     `;
     mainSection.appendChild(div);
 };
@@ -90,14 +92,20 @@ const recommemdedAlcoholSubItem = (subAlcoholList) => {
 
     const div = document.createElement('div');
     div.innerHTML = `
-        <h3>${subAlcoholList[0].name}</h3>
-        <p>술 설명~~~~</p>
+        <a href="/alcohol-list/detail/${subAlcoholList[0].id}">
+            <h3>${subAlcoholList[0].name}</h3>
+            <p>${subAlcoholList[0].info}</p>
+        </a>
 
-        <h3>${subAlcoholList[1].name}</h3>
-        <p>술 설명~~~~</p>
+        <a href="/alcohol-list/detail/${subAlcoholList[1].id}">
+            <h3>${subAlcoholList[1].name}</h3>
+            <p>${subAlcoholList[1].info}</p>
+        </a>
 
-        <h3>${subAlcoholList[2].name}</h3>
-        <p>술 설명~~~~</p>
+        <a href="/alcohol-list/detail/${subAlcoholList[2].id}">
+            <h3>${subAlcoholList[2].name}</h3>
+            <p>${subAlcoholList[2].info}</p>
+        </a>
     `;
     subSection.appendChild(div);
 };

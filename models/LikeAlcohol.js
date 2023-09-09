@@ -14,10 +14,10 @@ const LikeAlcohol = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        alcoholId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // alcoholId: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
     });
 };
 

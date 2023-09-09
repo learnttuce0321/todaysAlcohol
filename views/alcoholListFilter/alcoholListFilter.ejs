@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>필터링 카테고리</title>
+        <link
+            rel="stylesheet"
+            href="\alcoholListFilter\alcoholListFilter.css"
+        />
+    </head>
+    <body>
+        <div id="container">
+            <h2>필터링 모달</h2>
+            <button id="filterBtnModal">필터(모달 창 열기 버튼)</button>
+        </div>
+
+        <div
+            id="modal"
+            class="modal-overlay"
+        >
+            <div class="modal-window">
+                <div class="title">
+                    <h2>필터</h2>
+                </div>
+                <div class="close-area">X</div>
+                <div class="content">
+                    <form id="filterForm">
+                        <label for="abvScores">도수 점수</label>
+                        <div
+                            class="rating-buttons"
+                            id="abvRatingButtons"
+                        >
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="1"
+                            >
+                                1
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="2"
+                            >
+                                2
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="3"
+                            >
+                                3
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="4"
+                            >
+                                4
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="5"
+                            >
+                                5
+                            </button>
+                        </div>
+                        <!-- <input type="text" id="abvScores" name="abvScores" /> -->
+                        <br />
+                        <label for="tasteScores">맛 점수:</label>
+                        <!-- <input
+                        type="text" id="tasteScores" name="tasteScores" /> -->
+                        <div
+                            class="rating-buttons"
+                            id="tasteRatingButtons"
+                        >
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="1"
+                            >
+                                1
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="2"
+                            >
+                                2
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="3"
+                            >
+                                3
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="4"
+                            >
+                                4
+                            </button>
+                            <button
+                                type="button"
+                                class="rating-button"
+                                data-value="5"
+                            >
+                                5
+                            </button>
+                        </div>
+                        <br />
+                        <button type="submit">필터 적용</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="\alcoholListFilter\alcoholListFilter.js"></script>
+    </body>
+</html>
