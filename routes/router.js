@@ -20,11 +20,7 @@ import {
     CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
-import {
-    CAlcoholListFilter,
-    CAlcoholListFiltering,
-    CdisplayFilteredResult,
-} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -59,8 +55,8 @@ router.post('/alcohol-list/:id/like/find', CfindAlcoholListLikePost);
 router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 
 //카테고리 별 필터링---------------------------
-router.get('/alcohol-list/filter', CAlcoholListFilter); // 모달 창 띄우기
-router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
+// router.get('/alcohol-list/filter', CAlcoholListFilter); // 모달 창 띄우기
+// router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
 export default router;
