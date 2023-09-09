@@ -4,17 +4,92 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="\alcoholListDetail\alcoholListDetail.css"
+		/>
+		<link rel="stylesheet" href="\commonCSS\header.css" />
 		<title>칵테일 상세리스트</title>
 	</head>
 	<body>
-		<h1>상세페이지</h1>
-		<div>이미지</div>
-		<div><%= data.name %></div>
-		<div><%= data.info %></div>
-		<div><%= data.abv %>도</div>
-		<div>재료: <%= data.ingredient %></div>
-		<div>레시피: <%= data.recipe %></div>
-		<button class="likeBtn" type="button" value="enabled">좋아요</button>
+		<header>
+			<div>
+				<div>
+					<i
+						style="font-size: 70px; color: yellow"
+						class="fa-solid fa-martini-glass-citrus"
+					></i>
+					<h3>오늘의 술</h3>
+				</div>
+				<nav>
+					<p><a href="/survey">칵테일 추천받기</a></p>
+					<p><a href="/">칵테일 알아보기</a></p>
+				</nav>
+			</div>
+			<div>
+				<p><a href="/login">로그인</a></p>
+				<p><a href="/register">회원가입</a></p>
+			</div>
+		</header>
+		<div class="main_container">
+			<div class="info_container">
+				<div>
+					<img
+						src="https://cocktail-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/70.Roy%20Rogers.jpg"
+					/>
+				</div>
+				<div class="alcohol_info">
+					<div class="name">
+						<div><%= data.name %></div>
+
+						<div><%= data.info %></div>
+						<div class="abv">도수: <%= data.abv %>도</div>
+					</div>
+					<div class="like">
+						<button class="likeBtn" type="button" value="enabled">
+							좋아요
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="content1">
+			<span>재료 정보 </span>
+			<div class="ingredient_container">
+				<table>
+					
+				<% for (value of data.ingredient.split('/')) {%>
+					<tr>
+						<td><p><%= value.split(' ')[0].replace('-',' ') %></p></td>
+						<td><p><%= value.split(' ')[1] %></p></td>
+					</tr>
+
+				<%}%>
+				</table>
+			</div>
+			</div>
+
+
+			<div class="content2">
+			<span>레시피 </span>
+			<div class="recipe_container">
+				<div class="recipe">
+				<% for (let i=0; i < data.recipe.split('/').length; i++ ) {%>
+				<p><%= data.recipe.split('/')[i] %></p>
+					
+				<%}%>
+			</div>
+			</table>
+			</div>
+		</div>
+		</div>
+		<br>
+		<br>
+
+		<br>
+
+		<br>
+
+
 		<script src="\alcoholListDetail\alcoholListDetail.js"></script>
 	</body>
 </html>
