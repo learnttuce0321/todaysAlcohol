@@ -8,10 +8,10 @@ const config = cfg[env];
 const db = {};
 
 const sequelize = new Sequelize(
-	config.database,
-	config.username,
-	config.password,
-	config
+    config.database,
+    config.username,
+    config.password,
+    config
 );
 
 //
@@ -20,10 +20,6 @@ const sequelize = new Sequelize(
 import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
-
-// const model = require("./User");
-// const temp = model(sequelize);
-// db.User = temp;
 // serveyResult : 설문조사 결과 DB
 import SurveyResult from './SurveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
@@ -36,6 +32,19 @@ db.AlcoholList = tempAlcoholList;
 import LikeAlcohol from './LikeAlcohol.js';
 const tempLikeAlcohol = LikeAlcohol(sequelize);
 db.LikeAlcohol = tempLikeAlcohol;
+
+db.AlcoholList.hasMany(db.LikeAlcohol, {
+    foreignKey: {
+        name: 'alcoholId',
+        allowNull: false,
+    },
+});
+db.LikeAlcohol.belongsTo(db.AlcoholList, {
+    foreignKey: {
+        name: 'alcoholId',
+        allowNull: false,
+    },
+});
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
