@@ -21,6 +21,14 @@ import {
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
 import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import {
+    CAlcoholListFilter,
+    CAlcoholListFiltering,
+    CdisplayFilteredResult,
+} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import { CmyPage } from '../controll/myPage/CmyPage.js';
+import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
+
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -44,8 +52,12 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//리스트--------------------------------------
+//로그인-------------------------------------
+router.get('/my-page', CmyPage);
+router.get('/my-page/user-info', CprofileEdit);
+router.patch('/my-page/user-info', CupdateUser);
 
+//리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
 
 // 술 상세 페이지-----------------------------

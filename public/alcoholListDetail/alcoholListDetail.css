@@ -1,0 +1,135 @@
+body {
+	margin: 0;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+	border-radius: 20px;
+}
+
+.main_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	gap: 80px;
+}
+
+.info_container {
+	background-color: #352f44;
+	width: 100%;
+	height: 500px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.alcohol_info {
+	width: 480px;
+	height: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
+
+	gap: 75px;
+}
+
+.name {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.name > div:nth-child(1) {
+	color: white;
+	font-size: 25px;
+	font-weight: bolder;
+}
+.name > div:nth-child(2) {
+	color: #b9b4c7;
+	font-size: 13px;
+	line-height: 25px;
+}
+
+.name > div:nth-child(3) {
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	color: #b9b4c7;
+	border: 1px solid #b9b4c7;
+	border-radius: 10px;
+	font-size: 12px;
+}
+
+.ingredient_container {
+	box-shadow: 0px 2px 10px #d8d9da;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.content1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 80%;
+}
+
+.ingredient {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+table {
+	width: 40%;
+	text-align: center;
+}
+
+tr > td:nth-child(1) {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.content2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 80%;
+}
+
+.recipe_container {
+	box-shadow: 0px 2px 10px #d8d9da;
+	display: flex;
+	justify-content: center;
+}
+
+.recipe {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 85%;
+}
+
+.recipe > p,
+td > p {
+	padding: 8px;
+	font-size: 15px;
+}
+
+.content1 > span,
+.content2 > span {
+	color: tomato;
+	padding: 10px;
+	font-size: larger;
+	font-weight: 800;
+}
