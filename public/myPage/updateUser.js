@@ -1,6 +1,7 @@
 // 회원정보 수정 함수, 유효성 검사
 
 const UpdateUser = async (req, res) => {
+    console.log(123123123);
     const userId = document.getElementById('userId');
     const password = document.getElementById('password');
     const passwordRe = document.getElementById('passwordRe');
@@ -64,7 +65,7 @@ const UpdateUser = async (req, res) => {
     try {
         const res = await axios({
             method: 'PATCH',
-            url: '/my-page/User-Info',
+            url: '/my-page/user-info',
             data: {
                 userId: userId.value,
                 password: password.value,
@@ -84,5 +85,5 @@ const UpdateUser = async (req, res) => {
 };
 
 const CancelUpdateUser = () => {
-    window.location.href = '/';
+    window.location.href = '/my-page';
 };
