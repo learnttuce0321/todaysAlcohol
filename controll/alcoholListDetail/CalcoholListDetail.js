@@ -6,19 +6,19 @@ import path from 'path';
 const __dirname = path.join(path.resolve(), 'public');
 
 const CAlcoholListDetail = (req, res) => {
-	console.log('dfs', req.params);
+	//console.log('dfs', req.params);
 	models.AlcoholList.findOne({
 		where: {
 			id: req.params.id,
 		},
 	}).then((result) => {
-		console.log('asdf', result);
+		//console.log('asdf', result);
 		res.render('alcoholListDetail/alcoholListDetail', {data: result});
 	});
 };
 
 const CalcoholListLikePost = async (req, res) => {
-	console.log(req.cookies.userIdCookie);
+	//console.log(req.cookies.userIdCookie);
 	let userId = req.cookies.userIdCookie;
 	if (userId) {
 		const result = await models.LikeAlcohol.create({

@@ -5,11 +5,32 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+		<link rel="stylesheet" href="\commonCSS\header.css" />
+
+		<style></style>
 
 		<title>Document</title>
 	</head>
 	<!-- 임시로 헤더 지정-->
-	<div class="tmp"></div>
+	<header>
+		<div>
+			<div>
+				<i
+					style="font-size: 70px; color: yellow"
+					class="fa-solid fa-martini-glass-citrus"
+				></i>
+				<h3>오늘의 술</h3>
+			</div>
+			<nav>
+				<p><a href="/survey">칵테일 추천받기</a></p>
+				<p><a href="/">칵테일 알아보기</a></p>
+			</nav>
+		</div>
+		<div>
+			<p><a href="/login">로그인</a></p>
+			<p><a href="/register">회원가입</a></p>
+		</div>
+	</header>
 	<body>
 		<section id="container">
 			<div id="wrapper">
@@ -21,7 +42,7 @@
 							class="thumbsnail"
 							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
 					/></a>
-					<h3 class="text_title"><%= data[i].name %></h3>
+					<p class="text_title"><%= data[i].name %></p>
 					<p class="info"><%= data[i].info %></p>
 				</div>
 
