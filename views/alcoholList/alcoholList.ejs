@@ -17,11 +17,38 @@
             rel="stylesheet"
             href="\alcoholListFilter\alcoholListFilter.css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="\alcoholList\alcoholList.css"
+        />
+        <link
+            rel="stylesheet"
+            href="\commonCSS\header.css"
+        />
         <title>Document</title>
     </head>
     <!-- 임시로 헤더 지정-->
-    <div class="tmp"></div>
     <body>
+        <header>
+            <div>
+                <div>
+                    <i
+                        style="font-size: 70px; color: yellow"
+                        class="fa-solid fa-martini-glass-citrus"
+                    ></i>
+                    <h3>오늘의 술</h3>
+                </div>
+                <nav>
+                    <p><a href="/survey">칵테일 추천받기</a></p>
+                    <p><a href="/">칵테일 알아보기</a></p>
+                </nav>
+            </div>
+            <div>
+                <p><a href="/login">로그인</a></p>
+                <p><a href="/register">회원가입</a></p>
+            </div>
+        </header>
         <!-- 모달 창 -->
         <div id="container">
             <button id="filterBtnModal">필터</button>
@@ -82,7 +109,7 @@
                         <br />
                         <label for="tasteScores">맛 점수:</label>
                         <!-- <input
-                        type="text" id="tasteScores" name="tasteScores" /> -->
+						type="text" id="tasteScores" name="tasteScores" /> -->
                         <div
                             class="rating-buttons"
                             id="tasteRatingButtons"
@@ -141,55 +168,9 @@
                             class="thumbsnail"
                             src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
                     /></a>
-                    <h3 class="text_title"><%= data[i].name %></h3>
+                    <p class="text_title"><%= data[i].name %></p>
                     <p class="info"><%= data[i].info %></p>
                 </div>
-=======
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
-		<link rel="stylesheet" href="\commonCSS\header.css" />
-
-		<style></style>
-
-		<title>Document</title>
-	</head>
-	<!-- 임시로 헤더 지정-->
-	<header>
-		<div>
-			<div>
-				<i
-					style="font-size: 70px; color: yellow"
-					class="fa-solid fa-martini-glass-citrus"
-				></i>
-				<h3>오늘의 술</h3>
-			</div>
-			<nav>
-				<p><a href="/survey">칵테일 추천받기</a></p>
-				<p><a href="/">칵테일 알아보기</a></p>
-			</nav>
-		</div>
-		<div>
-			<p><a href="/login">로그인</a></p>
-			<p><a href="/register">회원가입</a></p>
-		</div>
-	</header>
-	<body>
-		<section id="container">
-			<div id="wrapper">
-				<% for (let i=0; i < data.length; i++) {%>
-
-				<div class="item">
-					<a href="/alcohol-list/detail/<%= data[i].id %>">
-						<img
-							class="thumbsnail"
-							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
-					/></a>
-					<p class="text_title"><%= data[i].name %></p>
-					<p class="info"><%= data[i].info %></p>
-				</div>
 
                 <%}%> <% for (let i=0; i < 4; i++) {%>
                 <div class="hidden">

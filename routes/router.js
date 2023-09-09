@@ -21,11 +21,6 @@ import {
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
 import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
-import {
-    CAlcoholListFilter,
-    CAlcoholListFiltering,
-    CdisplayFilteredResult,
-} from '../controll/alcoholListFilter/CalcoholListFilter.js';
 import { CmyPage } from '../controll/myPage/CmyPage.js';
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
 
