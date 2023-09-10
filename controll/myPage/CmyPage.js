@@ -3,12 +3,6 @@ import models from '../../models/index.js';
 ////////////////////////////
 // GET
 const CmyPage = async (req, res) => {
-    const result = await models.LikeAlcohol.findAll({
-        where: {
-            userId: req.cookies.userIdCookie,
-        },
-    });
-
     // todos: S3 연결 후 사진 경로 포함 시키기
     const likedAlcoholList = await models.LikeAlcohol.findAll({
         attributes: ['alcoholId'],
@@ -27,21 +21,44 @@ const CmyPage = async (req, res) => {
         },
     });
 
-    likedAlcoholList.forEach((item) => {
-        console.log(item.dataValues);
-    });
     const likedAlcohol = [];
-    likedAlcoholList.forEach((item, index) => {
+    likedAlcoholList.forEach((item) => {
         likedAlcohol.push({
-            alcoholId: likedAlcoholList[index].dataValues.alcoholId,
+            alcoholId: item.dataValues.alcoholId,
             alcohol: item.dataValues.AlcoholList.dataValues,
+        });
+    });
+
+    const likedBoardList = await models.LikeBoard.findAll({
+        attributes: ['boardId'],
+        include: [
+            {
+                model: models.Board,
+                attributes: ['title'],
+                where: {
+                    id: models.Sequelize.col('LikeBoard.boardId'),
+                },
+            },
+        ],
+        where: {
+            userId: req.cookies.userIdCookie,
+        },
+    });
+
+    const likedBoard = [];
+    likedBoardList.forEach((item) => {
+        likedBoard.push({
+            boardId: item.dataValues.boardId,
+            board: item.dataValues.Board.dataValues,
         });
     });
 
     res.render('myPage/myPage', {
         data: {
-            likeLength: result.length || 0,
+            likeAlcoholLength: likedAlcohol.length || 0,
             likedAlcohol,
+            likeBoardLength: likedBoard.length || 0,
+            likedBoard,
         },
     });
 };
