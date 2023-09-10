@@ -68,6 +68,7 @@ db.LikeBoard.belongsTo(db.Board, {
     onDelete: 'CASCADE',
 });
 
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

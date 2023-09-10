@@ -34,6 +34,10 @@ import { CmyPage } from '../controll/myPage/CmyPage.js';
 
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
 
+
+import { CgetPosts } from '../controll/board/Cboard.js';
+import { CboardDetail } from '../controll/boardDetail/CboardDetail.js';
+
 import { CboardList } from '../controll/board/Cboard.js';
 
 import {
@@ -45,6 +49,7 @@ import {
     CfindBoardContentPost,
     CdeleteBoardPost,
 } from '../controll/boardDetail/CboardDetail.js';
+
 
 import {
     CwriteBoard,
@@ -99,8 +104,18 @@ router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 // router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
+
+//게시글---------------------------
+router.get('/community/write', CwriteBoard);
+router.post('/community/write/content', CwriteBoardPost);
+
+//board
+router.get('/community', CgetPosts);
+router.get('/community/:id', CboardDetail);
+
 //게시글 리스트---------------------------
-router.get('/community', CboardList);
+router.get('/community', CgetPosts);
+
 
 //게시글 상세 페이지---------------------------
 router.get('/community/detail/:id', CboardDetail); // 술 상세 페이지
