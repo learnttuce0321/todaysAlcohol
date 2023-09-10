@@ -2,15 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="\alcoholList\alcoholList.css"
-        />
+        <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
         <link
@@ -18,14 +12,8 @@
             href="\alcoholListFilter\alcoholListFilter.css"
         />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link
-            rel="stylesheet"
-            href="\alcoholList\alcoholList.css"
-        />
-        <link
-            rel="stylesheet"
-            href="\commonCSS\header.css"
-        />
+        <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+        <link rel="stylesheet" href="\commonCSS\header.css" />
         <title>Document</title>
     </head>
     <!-- 임시로 헤더 지정-->
@@ -53,22 +41,19 @@
         <div id="container">
             <button id="filterBtnModal">필터</button>
         </div>
-        <div
-            id="modal"
-            class="modal-overlay"
-        >
+        <div id="modal" class="modal-overlay">
             <div class="modal-window">
                 <div class="title">
                     <h2>필터</h2>
                 </div>
                 <div class="close-area">X</div>
                 <div class="content">
+                    점수를 통해 원하는 술을 찾아보세요! (중복 선택 가능)
+                </div>
+                <div class="content">
                     <form id="filterForm">
                         <label for="abvScores">도수 점수</label>
-                        <div
-                            class="rating-buttons"
-                            id="abvRatingButtons"
-                        >
+                        <div class="rating-buttons" id="abvRatingButtons">
                             <button
                                 type="button"
                                 class="rating-button"
@@ -107,13 +92,10 @@
                         </div>
                         <!-- <input type="text" id="abvScores" name="abvScores" /> -->
                         <br />
-                        <label for="tasteScores">맛 점수:</label>
+                        <label for="tasteScores">맛 점수</label>
                         <!-- <input
 						type="text" id="tasteScores" name="tasteScores" /> -->
-                        <div
-                            class="rating-buttons"
-                            id="tasteRatingButtons"
-                        >
+                        <div class="rating-buttons" id="tasteRatingButtons">
                             <button
                                 type="button"
                                 class="rating-button"
@@ -174,10 +156,7 @@
 
                 <%}%> <% for (let i=0; i < 4; i++) {%>
                 <div class="hidden">
-                    <img
-                        class="thumbsnail"
-                        src=""
-                    />
+                    <img class="thumbsnail" src="" />
                     <h3 class="text_title"></h3>
                     <p class="info"></p>
                 </div>
