@@ -14,7 +14,7 @@ const CwriteBoardPost = async (req, res) => {
     const userId = req.cookies.loginCookie;
 
     const result = await models.Board.create({
-        userId: req.cookies.userIdCookie,
+        userId: req.cookies.loginCookie,
         title: req.body.title,
         content: req.body.content,
         image: 'example-Img',

@@ -21,6 +21,6 @@ const submitHandler = async () => {
     });
 
     if (result.data.result) {
-        window.location.href = `/community/${result.data.id}`;
+        window.location.replace(`/community/detail/${result.data.id}`);
     }
 };
