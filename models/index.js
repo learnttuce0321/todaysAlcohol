@@ -32,6 +32,10 @@ db.AlcoholList = tempAlcoholList;
 import LikeAlcohol from './LikeAlcohol.js';
 const tempLikeAlcohol = LikeAlcohol(sequelize);
 db.LikeAlcohol = tempLikeAlcohol;
+// board : 게시판 DB
+import Board from './board.js';
+const tempBoard = Board(sequelize);
+db.Board = tempBoard;
 
 db.AlcoholList.hasMany(db.LikeAlcohol, {
     foreignKey: {
