@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>게시판 리스트</h1>
+		<article class="article">
+			<ul class="contents"></ul>
+			<div class="buttons"></div>
+		</article>
+		<%= data[0].title%>
+		<!-- Scripts -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
+		<table border="1" cellspacing="0">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>제목</th>
+					<th>내용</th>
+					<th>수정</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% for (let i =0; i < data.length; i++) { %>
+				<tr id="tr_<%= data[i].id %>">
+					<td><%= data[i].userId %></td>
+
+					<td>
+						<a href="/community/<%= data[i].id %>">
+							<%= data[i].title %>
+						</a>
+					</td>
+					<td><%= data[i].content %></td>
+					<td><%= data[i].image %></td>
+				</tr>
+				<% } %>
+			</tbody>
+		</table>
+		<script src="\board\boardList.js"></script>
+	</body>
+</html>
