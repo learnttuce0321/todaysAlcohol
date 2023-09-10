@@ -19,8 +19,12 @@
 (async () => {
     const result = await axios({
         method: 'POST',
-        url: `/community/${window.location.pathname.split('/')[3]}/writer`,
+        url: `/community/detail/${
+            window.location.pathname.split('/')[3]
+        }/writer`,
     });
+
+    console.log(result.data);
     if (!result.data.result) {
         document.querySelector('.deleteBtn').style.display = 'none';
     }
@@ -85,5 +89,15 @@ document.querySelector('.likeBtn').addEventListener('click', async () => {
 
 document.querySelector('.deleteBtn').addEventListener('click', async () => {
     if (confirm('삭제하시겠습니까?')) {
+        const result = await axios({
+            method: 'POST',
+            url: `/community/detail/${
+                window.location.pathname.split('/')[3]
+            }/delete`,
+        });
+
+        if (result.data.result) {
+            window.location.replace('/community');
+        }
     }
 });

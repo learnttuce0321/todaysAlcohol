@@ -65,6 +65,7 @@ db.LikeBoard.belongsTo(db.Board, {
         name: 'boardId',
         allowNull: false,
     },
+    onDelete: 'CASCADE',
 });
 
 db.sequelize = sequelize;

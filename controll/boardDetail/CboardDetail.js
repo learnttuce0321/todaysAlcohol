@@ -66,15 +66,21 @@ const CdeleteBoardLikePost = async (req, res) => {
 };
 
 const CfindBoardPost = async (req, res) => {
-    const result = await models.Board.findOne({
-        where: {
-            id: req.params.id,
-            userId: req.cookies.userIdCookie,
-        },
-    });
+    const userId = req.cookies.loginCookie;
 
-    if (result) {
-        res.json({ result: true });
+    if (userId) {
+        const result = await models.Board.findOne({
+            where: {
+                id: req.params.id,
+                userId: req.cookies.loginCookie,
+            },
+        });
+
+        if (result) {
+            res.json({ result: true });
+        } else {
+            res.json({ result: false });
+        }
     } else {
         res.json({ result: false });
     }
@@ -89,6 +95,23 @@ const CfindBoardContentPost = async (req, res) => {
     });
     res.json({ result: true, content: result.dataValues.content });
 };
+
+const CdeleteBoardPost = async (req, res) => {
+    const destroyTarget = await models.Board.findOne({
+        where: {
+            id: req.params.id,
+        },
+    });
+    console.log('destroyTarget', destroyTarget);
+    const result = await destroyTarget.destroy({
+        where: {
+            id: req.params.id,
+        },
+    });
+
+    console.log('result', result);
+    res.json({ result: true });
+};
 export {
     CboardDetail,
     CboardLikePost,
@@ -96,4 +119,5 @@ export {
     CdeleteBoardLikePost,
     CfindBoardPost,
     CfindBoardContentPost,
+    CdeleteBoardPost,
 };

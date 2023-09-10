@@ -41,6 +41,9 @@ import {
     CboardLikePost,
     CfindBoardLikePost,
     CdeleteBoardLikePost,
+    CfindBoardPost,
+    CfindBoardContentPost,
+    CdeleteBoardPost,
 } from '../controll/boardDetail/CboardDetail.js';
 
 import {
@@ -94,7 +97,10 @@ router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 �
 router.get('/community', CboardList);
 
 //게시글 상세 페이지---------------------------
-router.get('/community/:id', CboardDetail);
+router.get('/community/detail/:id', CboardDetail);
+router.post('/community/detail/:id/content', CfindBoardContentPost);
+router.post('/community/detail/:id/writer', CfindBoardPost);
+router.post('/community/detail/:id/delete', CdeleteBoardPost);
 router.post('/community/:id/like', CboardLikePost);
 router.post('/community/:id/like/find', CfindBoardLikePost);
 router.post('/community/:id/like/delete', CdeleteBoardLikePost);
