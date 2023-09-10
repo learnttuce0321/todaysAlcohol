@@ -2,10 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
     </head>
     <body>
@@ -24,10 +21,7 @@
             nomodule
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         ></script>
-        <table
-            border="1"
-            cellspacing="0"
-        >
+        <table border="1" cellspacing="0">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -43,7 +37,7 @@
                     <td><%= data[i].userId %></td>
 
                     <td>
-                        <a href="/communitiy/<%= data[i].id %>">
+                        <a href="/community/:id= <%= data[i].id %>">
                             <%= data[i].title %>
                         </a>
                     </td>

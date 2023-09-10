@@ -1,29 +1,47 @@
 import express from 'express';
+
 import { Clogin, CloginPost } from '../controll/login/Clogin.js';
+
 import {
-    Csurvey,
-    CsurveySelect,
-    CsurveyResult,
-    CstoreSurveyPost,
-    CresultForUserPost,
-    CcurrentResultForUserPost,
+	Csurvey,
+	CsurveySelect,
+	CsurveyResult,
+	CstoreSurveyPost,
+	CresultForUserPost,
+	CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
+
 import { Cmain } from '../controll/mainPage/CmainPage.js';
+
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
-import { CalcoholList } from '../controll/alcoholList/CalcoholList.js';
+import {CalcoholList} from '../controll/alcoholList/CalcoholList.js';
 
 import {
-    CAlcoholListDetail,
-    CalcoholListLikePost,
-    CfindAlcoholListLikePost,
-    CdeleteAlcoholListLikePost,
+	CAlcoholListDetail,
+	CalcoholListLikePost,
+	CfindAlcoholListLikePost,
+	CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
-import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import {
+	CAlcoholListFilter,
+	CAlcoholListFiltering,
+	CdisplayFilteredResult,
+} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+
 import { CmyPage } from '../controll/myPage/CmyPage.js';
+
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
-import { CboardList } from '../controll/board/Cboard.js';
+
+import {CboardList} from '../controll/board/Cboard.js';
+import {CboardDetail} from '../controll/boardDetail/CboardDetail.js';
+
+import {
+    CwriteBoard,
+    CwriteBoardPost,
+} from '../controll/communityPostPage/CwriteBoard.js';
+
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -66,7 +84,12 @@ router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 // router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
-// 게시판 -----------------------------------
+//게시글---------------------------
+router.get('/community/write', CwriteBoard);
+router.post('/community/write/content', CwriteBoardPost);
+
+//board
 router.get('/community', CboardList);
+router.get('/community/:id', CboardDetail);
 
 export default router;
