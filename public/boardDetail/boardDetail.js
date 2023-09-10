@@ -27,6 +27,7 @@
     console.log(result.data);
     if (!result.data.result) {
         document.querySelector('.deleteBtn').style.display = 'none';
+        document.querySelector('.modifyBtn').style.display = 'none';
     }
 })();
 
@@ -99,5 +100,13 @@ document.querySelector('.deleteBtn').addEventListener('click', async () => {
         if (result.data.result) {
             window.location.replace('/community');
         }
+    }
+});
+
+document.querySelector('.modifyBtn').addEventListener('click', () => {
+    if (confirm('수정하시겠습니까?')) {
+        window.location.href = `/community/write/${
+            window.location.pathname.split('/')[3]
+        }`;
     }
 });

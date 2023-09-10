@@ -14,10 +14,6 @@ const LikeBoard = (sequelize) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        // boardId: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
     });
 };
 

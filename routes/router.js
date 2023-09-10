@@ -51,6 +51,12 @@ import {
     CwriteBoardPost,
 } from '../controll/communityPostPage/CwriteBoard.js';
 
+import {
+    CmodifyBoard,
+    CmodifyBoardPost,
+    CmodifyBoardPatch,
+} from '../controll/communityPostPage/CmodifyBoard.js';
+
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -97,16 +103,20 @@ router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 �
 router.get('/community', CboardList);
 
 //게시글 상세 페이지---------------------------
-router.get('/community/detail/:id', CboardDetail);
-router.post('/community/detail/:id/content', CfindBoardContentPost);
-router.post('/community/detail/:id/writer', CfindBoardPost);
-router.post('/community/detail/:id/delete', CdeleteBoardPost);
-router.post('/community/:id/like', CboardLikePost);
-router.post('/community/:id/like/find', CfindBoardLikePost);
-router.post('/community/:id/like/delete', CdeleteBoardLikePost);
+router.get('/community/detail/:id', CboardDetail); // 술 상세 페이지
+router.post('/community/detail/:id/content', CfindBoardContentPost); // ejs버그로 인해 content만 가져오는 api
+router.post('/community/detail/:id/writer', CfindBoardPost); // 삭제 버튼의 유무(display)를 위한 api
+router.post('/community/detail/:id/delete', CdeleteBoardPost); // 게시문 삭제 요청
+router.post('/community/:id/like', CboardLikePost); // 게시물 좋아요
+router.post('/community/:id/like/find', CfindBoardLikePost); // 게시물 좋아요의 유무(눌렀는지)를 위한 api
+router.post('/community/:id/like/delete', CdeleteBoardLikePost); // 게시물 좋아요 삭제
 
 //게시글 작성---------------------------
-router.get('/community/write', CwriteBoard);
-router.post('/community/write/content', CwriteBoardPost);
+router.get('/community/write', CwriteBoard); // 게시물 작성 페이지
+router.post('/community/write/content', CwriteBoardPost); // 게시물 작성 저장
 
+//게시글 수정---------------------------
+router.get('/community/write/:id', CmodifyBoard);
+router.post('/community/write/:id', CmodifyBoardPost);
+router.patch('/community/write/:id', CmodifyBoardPatch);
 export default router;
