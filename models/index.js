@@ -50,10 +50,6 @@ db.LikeAlcohol.belongsTo(db.AlcoholList, {
     },
 });
 
-import Board from './board.js';
-const tempBoard = Board(sequelize);
-db.Board = tempBoard;
-
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
