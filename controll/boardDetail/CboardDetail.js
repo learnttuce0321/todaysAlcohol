@@ -14,4 +14,59 @@ const CboardDetail = (req, res) => {
     });
 };
 
-export { CboardDetail };
+const CboardLikePost = async (req, res) => {
+    const result = await models.LikeBoard.create({
+        userId: req.cookies.userIdCookie,
+        boardId: req.params.id,
+    });
+
+    if (result) {
+        res.json({ result: true });
+    } else {
+        res.json({ result: false });
+    }
+};
+
+const CfindBoardLikePost = async (req, res) => {
+    const userId = req.cookies.userIdCookie;
+
+    if (userId) {
+        const result = await models.LikeBoard.findOne({
+            where: {
+                userId: userId,
+                boardId: req.params.id,
+            },
+        });
+
+        if (result) {
+            res.json({ result: true });
+        } else {
+            res.json({ result: false });
+        }
+    } else {
+        res.json({ result: false });
+    }
+};
+
+const CdeleteBoardLikePost = async (req, res) => {
+    const destroyTarget = await models.LikeBoard.findOne({
+        where: {
+            userId: req.cookies.userIdCookie,
+            boardId: req.params.id,
+        },
+    });
+
+    const result = await destroyTarget.destroy({
+        where: {
+            userId: req.cookies.userIdCookie,
+            alcoholId: req.params.id,
+        },
+    });
+    res.json({ result: true });
+};
+export {
+    CboardDetail,
+    CboardLikePost,
+    CfindBoardLikePost,
+    CdeleteBoardLikePost,
+};

@@ -3,39 +3,45 @@ import express from 'express';
 import { Clogin, CloginPost } from '../controll/login/Clogin.js';
 
 import {
-	Csurvey,
-	CsurveySelect,
-	CsurveyResult,
-	CstoreSurveyPost,
-	CresultForUserPost,
-	CcurrentResultForUserPost,
+    Csurvey,
+    CsurveySelect,
+    CsurveyResult,
+    CstoreSurveyPost,
+    CresultForUserPost,
+    CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
 
 import { Cmain } from '../controll/mainPage/CmainPage.js';
 
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
-import {CalcoholList} from '../controll/alcoholList/CalcoholList.js';
+import { CalcoholList } from '../controll/alcoholList/CalcoholList.js';
 
 import {
-	CAlcoholListDetail,
-	CalcoholListLikePost,
-	CfindAlcoholListLikePost,
-	CdeleteAlcoholListLikePost,
+    CAlcoholListDetail,
+    CalcoholListLikePost,
+    CfindAlcoholListLikePost,
+    CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
 import {
-	CAlcoholListFilter,
-	CAlcoholListFiltering,
-	CdisplayFilteredResult,
+    CAlcoholListFilter,
+    CAlcoholListFiltering,
+    CdisplayFilteredResult,
 } from '../controll/alcoholListFilter/CalcoholListFilter.js';
 
 import { CmyPage } from '../controll/myPage/CmyPage.js';
 
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
 
-import {CboardList} from '../controll/board/Cboard.js';
-import {CboardDetail} from '../controll/boardDetail/CboardDetail.js';
+import { CboardList } from '../controll/board/Cboard.js';
+
+import {
+    CboardDetail,
+    CboardLikePost,
+    CfindBoardLikePost,
+    CdeleteBoardLikePost,
+} from '../controll/boardDetail/CboardDetail.js';
 
 import {
     CwriteBoard,
@@ -70,7 +76,7 @@ router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
 
-//리스트--------------------------------------
+//술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
 
 // 술 상세 페이지-----------------------------
@@ -84,12 +90,17 @@ router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 // router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
-//게시글---------------------------
+//게시글 리스트---------------------------
+router.get('/community', CboardList);
+
+//게시글 상세 페이지---------------------------
+router.get('/community/:id', CboardDetail);
+router.post('/community/:id/like', CboardLikePost);
+router.post('/community/:id/like/find', CfindBoardLikePost);
+router.post('/community/:id/like/delete', CdeleteBoardLikePost);
+
+//게시글 작성---------------------------
 router.get('/community/write', CwriteBoard);
 router.post('/community/write/content', CwriteBoardPost);
-
-//board
-router.get('/community', CboardList);
-router.get('/community/:id', CboardDetail);
 
 export default router;

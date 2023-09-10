@@ -15,12 +15,24 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
+
     <body>
         <h1><%=data.title%></h1>
 
         <div id="viewer"></div>
+        <div class="like">
+            <button
+                class="likeBtn"
+                type="button"
+                value="enabled"
+            >
+                좋아요
+            </button>
+        </div>
     </body>
+
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script>
         const viewer = toastui.Editor.factory({
@@ -29,4 +41,5 @@
             initialValue: '<%= data.content %>',
         });
     </script>
+    <script src="\boardDetail\boardDetail.js"></script>
 </html>
