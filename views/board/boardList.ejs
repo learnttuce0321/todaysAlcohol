@@ -9,6 +9,7 @@
         <title>Document</title>
     </head>
     <body>
+        <a href="/community/write">게시물 작성하러 가기</a>
         <h1>게시판 리스트</h1>
         <article class="article">
             <ul class="contents"></ul>
@@ -42,7 +43,7 @@
                     <td><%= data[i].userId %></td>
 
                     <td>
-                        <a href="/community/<%= data[i].id %>">
+                        <a href="/community/detail/<%= data[i].id %>">
                             <%= data[i].title %>
                         </a>
                     </td>

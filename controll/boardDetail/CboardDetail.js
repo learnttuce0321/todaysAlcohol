@@ -64,9 +64,36 @@ const CdeleteBoardLikePost = async (req, res) => {
     });
     res.json({ result: true });
 };
+
+const CfindBoardPost = async (req, res) => {
+    const result = await models.Board.findOne({
+        where: {
+            id: req.params.id,
+            userId: req.cookies.userIdCookie,
+        },
+    });
+
+    if (result) {
+        res.json({ result: true });
+    } else {
+        res.json({ result: false });
+    }
+};
+
+const CfindBoardContentPost = async (req, res) => {
+    const result = await models.Board.findOne({
+        attributes: ['content'],
+        where: {
+            id: req.params.id,
+        },
+    });
+    res.json({ result: true, content: result.dataValues.content });
+};
 export {
     CboardDetail,
     CboardLikePost,
     CfindBoardLikePost,
     CdeleteBoardLikePost,
+    CfindBoardPost,
+    CfindBoardContentPost,
 };
