@@ -1,3 +1,4 @@
+// client 좋아요 눌렀는지 확인
 (async () => {
     const likeBtn = document.querySelector('.likeBtn');
     const loginToken = localStorage.getItem('loginToken');

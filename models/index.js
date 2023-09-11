@@ -32,6 +32,14 @@ db.AlcoholList = tempAlcoholList;
 import LikeAlcohol from './LikeAlcohol.js';
 const tempLikeAlcohol = LikeAlcohol(sequelize);
 db.LikeAlcohol = tempLikeAlcohol;
+// board : 게시판 DB
+import Board from './board.js';
+const tempBoard = Board(sequelize);
+db.Board = tempBoard;
+// likeBoard : 게시판 좋아요 DB
+import LikeBoard from './likeBoard.js';
+const tempLikeBoard = LikeBoard(sequelize);
+db.LikeBoard = tempLikeBoard;
 
 db.AlcoholList.hasMany(db.LikeAlcohol, {
     foreignKey: {
@@ -46,9 +54,20 @@ db.LikeAlcohol.belongsTo(db.AlcoholList, {
     },
 });
 
-import Board from './board.js';
-const tempBoard = Board(sequelize);
-db.Board = tempBoard;
+db.Board.hasMany(db.LikeBoard, {
+    foreignKey: {
+        name: 'boardId',
+        allowNull: false,
+    },
+});
+db.LikeBoard.belongsTo(db.Board, {
+    foreignKey: {
+        name: 'boardId',
+        allowNull: false,
+    },
+    onDelete: 'CASCADE',
+});
+
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

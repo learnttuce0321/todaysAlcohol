@@ -10,12 +10,22 @@
     </head>
     <body>
         <a href="/my-page/user-info"><p>회원정보 수정하러 가기</p></a>
-        <p>내가 누른 좋아요 수: <%=data.likeLength%></p>
+        <h3>내가 누른 칵테일 좋아요 수: <%=data.likeAlcoholLength%></h3>
         <p>내가 누른 좋아요</p>
-        <% for(let i=0; i<data.likeLength; i++) {%> 
+        <% for(let i=0; i<data.likeAlcoholLength; i++) {%> 
             <a href="/alcohol-list/detail/<%=data.likedAlcohol[i].alcoholId%>">
                 <h3><%=data.likedAlcohol[i].alcohol.name%></h3>
                 <p><%=data.likedAlcohol[i].alcohol.info%></p>
+            </a>
+        <%}%>
+
+        <hr/>
+        
+        <h3>내가 누른 게시글 좋아요 수: <%=data.likeBoardLength%></h3>
+        <p>내가 누른 좋아요</p>
+        <% for(let i=0; i<data.likeBoardLength; i++) {%> 
+            <a href="/community/<%=data.likedBoard[i].boardId%>">
+                <h3><%=data.likedBoard[i].board.title%></h3>
             </a>
         <%}%>
 

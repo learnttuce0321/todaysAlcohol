@@ -1,5 +1,7 @@
 import express from 'express';
+
 import { Clogin, CloginPost } from '../controll/login/Clogin.js';
+
 import {
     Csurvey,
     CsurveySelect,
@@ -8,7 +10,9 @@ import {
     CresultForUserPost,
     CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
+
 import { Cmain } from '../controll/mainPage/CmainPage.js';
+
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
 import { CalcoholList } from '../controll/alcoholList/CalcoholList.js';
@@ -20,10 +24,44 @@ import {
     CdeleteAlcoholListLikePost,
 } from '../controll/alcoholListDetail/CalcoholListDetail.js';
 
-import { CdisplayFilteredResult } from '../controll/alcoholListFilter/CalcoholListFilter.js';
+import {
+    CAlcoholListFilter,
+    CAlcoholListFiltering,
+    CdisplayFilteredResult,
+} from '../controll/alcoholListFilter/CalcoholListFilter.js';
+
 import { CmyPage } from '../controll/myPage/CmyPage.js';
+
 import { CprofileEdit, CupdateUser } from '../controll/myPage/CupdateUser.js';
+
+
+import { CgetPosts } from '../controll/board/Cboard.js';
+import { CboardDetail } from '../controll/boardDetail/CboardDetail.js';
+
 import { CboardList } from '../controll/board/Cboard.js';
+
+import {
+    CboardDetail,
+    CboardLikePost,
+    CfindBoardLikePost,
+    CdeleteBoardLikePost,
+    CfindBoardPost,
+    CfindBoardContentPost,
+    CdeleteBoardPost,
+} from '../controll/boardDetail/CboardDetail.js';
+
+
+import {
+    CwriteBoard,
+    CwriteBoardPost,
+} from '../controll/communityPostPage/CwriteBoard.js';
+
+import {
+    CmodifyBoard,
+    CmodifyBoardPost,
+    CmodifyBoardPatch,
+} from '../controll/communityPostPage/CmodifyBoard.js';
+
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -52,7 +90,7 @@ router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
 
-//리스트--------------------------------------
+//술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
 
 // 술 상세 페이지-----------------------------
@@ -66,7 +104,34 @@ router.post('/alcohol-list/:id/like/delete', CdeleteAlcoholListLikePost);
 // router.get('/alcohol-list/filter:', CAlcoholListFiltering); // 필터링 창
 router.get('/alcohol-list/filteredResults', CdisplayFilteredResult); // 필터 결과창
 
-// 게시판 -----------------------------------
-router.get('/community', CboardList);
 
+//게시글---------------------------
+router.get('/community/write', CwriteBoard);
+router.post('/community/write/content', CwriteBoardPost);
+
+//board
+router.get('/community', CgetPosts);
+router.get('/community/:id', CboardDetail);
+
+//게시글 리스트---------------------------
+router.get('/community', CgetPosts);
+
+
+//게시글 상세 페이지---------------------------
+router.get('/community/detail/:id', CboardDetail); // 술 상세 페이지
+router.post('/community/detail/:id/content', CfindBoardContentPost); // ejs버그로 인해 content만 가져오는 api
+router.post('/community/detail/:id/writer', CfindBoardPost); // 삭제 버튼의 유무(display)를 위한 api
+router.post('/community/detail/:id/delete', CdeleteBoardPost); // 게시문 삭제 요청
+router.post('/community/:id/like', CboardLikePost); // 게시물 좋아요
+router.post('/community/:id/like/find', CfindBoardLikePost); // 게시물 좋아요의 유무(눌렀는지)를 위한 api
+router.post('/community/:id/like/delete', CdeleteBoardLikePost); // 게시물 좋아요 삭제
+
+//게시글 작성---------------------------
+router.get('/community/write', CwriteBoard); // 게시물 작성 페이지
+router.post('/community/write/content', CwriteBoardPost); // 게시물 작성 저장
+
+//게시글 수정---------------------------
+router.get('/community/write/:id', CmodifyBoard);
+router.post('/community/write/:id', CmodifyBoardPost);
+router.patch('/community/write/:id', CmodifyBoardPatch);
 export default router;
