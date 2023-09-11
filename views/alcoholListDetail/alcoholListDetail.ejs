@@ -8,28 +8,15 @@
 			rel="stylesheet"
 			href="\alcoholListDetail\alcoholListDetail.css"
 		/>
-		<link rel="stylesheet" href="\commonCSS\header.css" />
+		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+	
+		<link rel="stylesheet" href="/staticComponent/header2.css">
+		<link rel="stylesheet" href="/staticComponent/footer.css">
 		<title>칵테일 상세리스트</title>
 	</head>
 	<body>
 		<header>
-			<div>
-				<div>
-					<i
-						style="font-size: 70px; color: yellow"
-						class="fa-solid fa-martini-glass-citrus"
-					></i>
-					<h3>오늘의 술</h3>
-				</div>
-				<nav>
-					<p><a href="/survey">칵테일 추천받기</a></p>
-					<p><a href="/">칵테일 알아보기</a></p>
-				</nav>
-			</div>
-			<div>
-				<p><a href="/login">로그인</a></p>
-				<p><a href="/register">회원가입</a></p>
-			</div>
+			<div id='header'></div>
 		</header>
 		<div class="main_container">
 			<div class="info_container">
@@ -89,7 +76,10 @@
 
 		<br>
 
-
+ <footer>
+	<div id='footer'></div>
+ </footer>
 		<script src="\alcoholListDetail\alcoholListDetail.js"></script>
-	</body>
+		<script src='/staticComponent/footer.js'></script>
+		<script src="/staticComponent/header.js"></script>
 </html>

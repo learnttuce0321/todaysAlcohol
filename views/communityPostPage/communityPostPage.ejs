@@ -68,6 +68,30 @@
                 initialEditType: 'wysiwyg',
                 placeholder: '내용을 입력해 주세요',
             });
+
+            const imageArr = [];
+
+            editor.addHook('addImageBlobHook', async (blob, cb) => {
+                const formData = new FormData();
+                formData.append('data', blob);
+                console.log(formData);
+                try {
+                    const response = await axios({
+                        method: 'POST',
+                        url: `/community/write-img`,
+                        headers: {
+                            'Cache-Control': 'no-cache',
+                        },
+                        data: formData,
+                    });
+                    console.log(response);
+                    imageArr.push(response.data.imageUrl);
+                    console.log(response.data.imageUrl);
+                    cb(response.data.imageUrl, '이미지');
+                } catch (error) {
+                    console.log('S3업로드 중 오류 발생', error);
+                }
+            });
         </script>
         <script src="\communityPostPage\communityPostPage.js"></script>
     </body>

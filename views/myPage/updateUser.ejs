@@ -5,12 +5,16 @@
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/staticComponent/header2.css">
+    <link rel="stylesheet" href="/staticComponent/footer.css">
     <title>Document</title>
 
 <body>
+    <header>
+        <div id='header'></div>
+    </header>
     <div class="title">
         <h1>회원정보 수정</h1>
         <br>
@@ -47,7 +51,12 @@
                 <button type='button' onclick='CancelUpdateUser()'>취소</button>
             </div>
         </form>
+        <footer>
+            <div id='footer'></div>
+        </footer>
         <script src='/myPage/updateUser.js'></script>
+        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/header.js"></script>
     </body>
 
 </html>

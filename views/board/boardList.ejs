@@ -2,22 +2,21 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <link
-            rel="stylesheet"
-            href="\board\boardList.css"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="\board\boardList.css" />
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
             rel="stylesheet"
         />
-
+        <link rel="stylesheet" href="/staticComponent/header2.css">
+        <link rel="stylesheet" href="/staticComponent/footer.css">
         <title>Document</title>
     </head>
     <body>
+        <header>
+            <div id='header'></div>
+        </header>
         <section class="container">
             <div class="main_container">
                 <div class="title">
@@ -42,7 +41,7 @@
                             <td><%= posts[i].id %></td>
 
                             <td>
-                                <a href="/community/:id= <%= posts[i].id %>">
+                                <a href="/community/detail/<%= posts[i].id %>">
                                     <%= posts[i].title %>
                                 </a>
                             </td>
@@ -107,6 +106,12 @@
             </div> -->
             </div>
         </section>
-        <!-- <script src="\board\boardList.js"></script> -->
+        <footer>
+            <div id="footer"></div>
+        </footer>
+        <script src="\board\boardList.js"></script>
+        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/header.js"></script>
+
     </body>
 </html>
