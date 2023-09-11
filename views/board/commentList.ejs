@@ -6,42 +6,18 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <title>Document</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
-        />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>Document</title>
     </head>
-
     <body>
-        <button class="deleteBtn">삭제하기</button>
-        <button class="modifyBtn">수정하기</button>
-        <h1><%=data.title%></h1>
-
-        <div id="viewer"></div>
-        <div class="like">
-            <button
-                class="likeBtn"
-                type="button"
-                value="enabled"
-            >
-                좋아요
-            </button>
-        </div>
-
-        <!-- 댓글 테스트 -->
         <form name="commentList">
             <div class="comment_wrap">
                 <section class="article_wrap">
                     <ul class="commentList">
-                        <% for (let i =0; i < data.length; i++) { %>
+                        <% for (let i =0; i < comments.length; i++) { %>
                         <li>
-                            <div><%= data[i].content%></div>
+                            <div><%= comments[i].content%></div>
                         </li>
                         <% } %>
                     </ul>
@@ -63,9 +39,6 @@
                 </section>
             </div>
         </form>
-        <script src="\board\comment.js"></script>
+        <script src="board\comment.js"></script>
     </body>
-
-    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <script src="\boardDetail\boardDetail.js"></script>
 </html>

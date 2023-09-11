@@ -57,6 +57,8 @@ import {
     CmodifyBoardPatch,
 } from '../controll/communityPostPage/CmodifyBoard.js';
 
+import { CcreateComment, CcommentList } from '../controll/board/Ccomment.js';
+
 // import {
 // 	alcohol_list,
 // 	alcohol_filteringList,
@@ -127,4 +129,9 @@ router.post('/community/write/content', CwriteBoardPost); // 게시물 작성 �
 router.get('/community/write/:id', CmodifyBoard);
 router.post('/community/write/:id', CmodifyBoardPost);
 router.patch('/community/write/:id', CmodifyBoardPatch);
+
+// 게시물 댓글 개발용 라우터
+// router.get('/comment', CcommentList);
+router.get('/community/detail/:postId', CcommentList);
+router.post('/community/detail/:postId', CcreateComment);
 export default router;
