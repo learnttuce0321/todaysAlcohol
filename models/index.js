@@ -21,11 +21,11 @@ import User from './User.js';
 const tempUser = User(sequelize);
 db.User = tempUser;
 // serveyResult : 설문조사 결과 DB
-import SurveyResult from './SurveyResult.js';
+import SurveyResult from './surveyResult.js';
 const tempSurveyResult = SurveyResult(sequelize);
 db.SurveyResult = tempSurveyResult;
 // alcoholList : 칵테일 리스트 DB
-import AlcoholList from './AlcoholList.js';
+import AlcoholList from './alcoholList.js';
 const tempAlcoholList = AlcoholList(sequelize);
 db.AlcoholList = tempAlcoholList;
 // likeAlcohol : 칵테일 좋아요 DB
