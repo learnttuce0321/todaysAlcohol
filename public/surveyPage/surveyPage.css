@@ -1,0 +1,92 @@
+main,
+h1,
+p,
+label,
+form,
+div,
+input {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+[type='radio'],
+span {
+    vertical-align: -3px;
+}
+
+.surveyCard {
+    width: 100vw;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.surveyCard > h1 {
+    margin-bottom: 1rem;
+}
+.btn__container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+form[name='Qform'] div {
+    margin: 0.8rem 0.3rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+form[name='Qform'] input {
+    margin-right: 0.4rem;
+}
+.shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (min-width: 820px) {
+    .surveyCard {
+        padding: 1.3rem;
+    }
+    .surveyCard > h1 {
+        margin: 1rem 0 2rem;
+        padding: 0rem 0.5rem;
+        font-size: 1.5rem;
+    }
+    [type='radio'],
+    span {
+        vertical-align: 0px;
+    }
+    form[name='Qform'] div {
+        margin: 0.8rem;
+        padding: 0.7rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    form[name='Qform'] input {
+        margin-right: 0.4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .surveyCard {
+        padding: 2rem;
+    }
+    .surveyCard > h1 {
+        margin: 1rem 0 2rem;
+        padding: 0rem 0.5rem;
+        font-size: 1.5rem;
+    }
+    [type='radio'],
+    span {
+        vertical-align: 0px;
+    }
+    form[name='Qform'] div {
+        margin: 0.8rem;
+        padding: 0.7rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    form[name='Qform'] input {
+        margin-right: 0.4rem;
+    }
+}

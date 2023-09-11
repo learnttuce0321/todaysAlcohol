@@ -38,7 +38,6 @@ const setIndex = () => {
 };
 const getIndex = setIndex();
 
-// eventListner 설정을 위한 코드
 (() => {
     document
         .querySelectorAll('.surveyCard')
@@ -46,6 +45,19 @@ const getIndex = setIndex();
 
     document.querySelector('.surveyCard').style.display = 'block';
     document.querySelector('.btn').style.display = 'none';
+})();
+
+(() => {
+    document
+        .querySelectorAll('input[type="radio"]')
+        .forEach((item, index, list) => {
+            item.addEventListener('click', () => {
+                list.forEach((item) => {
+                    item.parentNode.classList.remove('shadow');
+                });
+                item.parentNode.classList.add('shadow');
+            });
+        });
 })();
 
 document.querySelector('.beforeQuestionBtn').addEventListener('click', () => {
