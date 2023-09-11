@@ -11,7 +11,7 @@ import {
     CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
 
-import { Cmain } from '../controll/mainPage/CmainPage.js';
+import { Cmain, CmainPost } from '../controll/mainPage/CmainPage.js';
 
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
@@ -65,6 +65,7 @@ import {
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
+router.post('/', CmainPost);
 router.get('/survey-select', CsurveySelect); // 설문조사 or 최근 결과 확인 선택
 router.get('/survey', Csurvey); // 설문조사 페이지 router
 router.get('/survey/result', CsurveyResult); // 설문조사 결과 페이지 router
