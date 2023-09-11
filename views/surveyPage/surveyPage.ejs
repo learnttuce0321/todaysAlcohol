@@ -9,408 +9,457 @@
         <title>Document</title>
         <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="/staticComponent/header2.css">
-        <link rel="stylesheet" href="/staticComponent/footer.css">
-        <style>
-            main {
-                margin: 0px;
-            }
-            .surveyCard {
-                width: 80vw;
-                padding: 0rem 5rem;
-                display: flex;
-                flex-direction: column;
-            }
-            .btn,
-            .beforeQuestionBtn {
-                margin: 0.5rem 5rem;
-            }
-        </style>
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="\surveyPage\surveyPage.css"
+        />
     </head>
     <body>
         <header>
-            <div id='header'></div>
+            <div id="header"></div>
         </header>
         <main>
             <div class="surveyCard">
                 <h1>Q. 평소에 귀찮음을 자주 느끼 나요?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q1"
-                        id="Q1A1"
-                        value="5"
-                    />
-                    <label for="Q1A1">1) 모든게 귀찮아요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q1"
-                        id="Q1A2"
-                        value="6"
-                    />
-                    <label for="Q1A2">2) 할일을 겨우 끝내는 정도에요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q1"
-                        id="Q1A3"
-                        value="7"
-                    />
-                    <label for="Q1A3">3) 그냥 그래요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q1"
-                        id="Q1A4"
-                        value="8"
-                    />
-                    <label for="Q1A4">4) 해야할 건 최선을 다해요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q1"
-                        id="Q1A5"
-                        value="9"
-                    />
-                    <label for="Q1A5">5) 무엇이든 열심히 해요.</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q1"
+                            id="Q1A1"
+                            value="5"
+                        />
+                        <label for="Q1A1">1) 모든게 귀찮아요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q1"
+                            id="Q1A2"
+                            value="6"
+                        />
+                        <label for="Q1A2"
+                            >2) 할일을 겨우 끝내는 정도에요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q1"
+                            id="Q1A3"
+                            value="7"
+                        />
+                        <label for="Q1A3">3) 그냥 그래요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q1"
+                            id="Q1A4"
+                            value="8"
+                        />
+                        <label for="Q1A4">4) 해야할 건 최선을 다해요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q1"
+                            id="Q1A5"
+                            value="9"
+                        />
+                        <label for="Q1A5">5) 무엇이든 열심히 해요.</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 칵테일을 만들 때 재료가 다양하다면?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q2"
-                        id="Q2A1"
-                        value="9"
-                    />
-                    <label for="Q2A1">1) 새로운 조합은 항상 기대되요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q2"
-                        id="Q2A2"
-                        value="8"
-                    />
-                    <label for="Q2A2"
-                        >2) 단순한 칵테일은 맛이 지루한 것 같아요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q2"
-                        id="Q2A3"
-                        value="7"
-                    />
-                    <label for="Q2A3"
-                        >3) 맛에 대한 의심과 기대가 동시에 생겨요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q2"
-                        id="Q2A4"
-                        value="6"
-                    />
-                    <label for="Q2A4"
-                        >4) 오랫동안 고민하고 만들어 볼 것 같아요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q2"
-                        id="Q2A5"
-                        value="5"
-                    />
-                    <label for="Q2A5">5) 으악! 벌써 맛없을 것 같아요·</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q2"
+                            id="Q2A1"
+                            value="9"
+                        />
+                        <label for="Q2A1"
+                            >1) 새로운 조합은 항상 기대되요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q2"
+                            id="Q2A2"
+                            value="8"
+                        />
+                        <label for="Q2A2"
+                            >2) 단순한 칵테일은 맛이 지루한 것 같아요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q2"
+                            id="Q2A3"
+                            value="7"
+                        />
+                        <label for="Q2A3"
+                            >3) 맛에 대한 의심과 기대가 동시에 생겨요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q2"
+                            id="Q2A4"
+                            value="6"
+                        />
+                        <label for="Q2A4"
+                            >4) 오랫동안 고민하고 만들어 볼 것 같아요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q2"
+                            id="Q2A5"
+                            value="5"
+                        />
+                        <label for="Q2A5"
+                            >5) 으악! 벌써 맛없을 것 같아요·</label
+                        >
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 칵테일의 레시피가 너무 길다면?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q3"
-                        id="Q3A1"
-                        value="4"
-                    />
-                    <label for="Q3A1">1) 만들기 전에 포기할 것 같아요</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q3"
-                        id="Q3A2"
-                        value="5"
-                    />
-                    <label for="Q3A2"
-                        >2) 레시피를 대충 보고 만들어 먹을 것 같아요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q3"
-                        id="Q3A3"
-                        value="7"
-                    />
-                    <label for="Q3A3"
-                        >3) 레시피가 뭐죠? 제맘대로 만들어 먹을 거에요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q3"
-                        id="Q3A4"
-                        value="9"
-                    />
-                    <label for="Q3A4">4) 레시피는 보라고 있는거에요.</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q3"
+                            id="Q3A1"
+                            value="4"
+                        />
+                        <label for="Q3A1"
+                            >1) 만들기 전에 포기할 것 같아요</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q3"
+                            id="Q3A2"
+                            value="5"
+                        />
+                        <label for="Q3A2"
+                            >2) 레시피를 대충 보고 만들어 먹을 것 같아요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q3"
+                            id="Q3A3"
+                            value="7"
+                        />
+                        <label for="Q3A3"
+                            >3) 레시피가 뭐죠? 제맘대로 만들어 먹을
+                            거에요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q3"
+                            id="Q3A4"
+                            value="9"
+                        />
+                        <label for="Q3A4">4) 레시피는 보라고 있는거에요.</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 평소에 단 걸 좋아하나요?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q4"
-                        id="Q4A1"
-                        value="5"
-                    />
-                    <label for="Q4A1"
-                        >1) 당뇨병에 걸릴 수도 있을 것 같아요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q4"
-                        id="Q4A2"
-                        value="4"
-                    />
-                    <label for="Q4A2">2) 항상 단 것이 먹고 싶어요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q4"
-                        id="Q4A3"
-                        value="3"
-                    />
-                    <label for="Q4A3">3) 있으면 먹지만 찾아먹진 않아요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q4"
-                        id="Q4A4"
-                        value="3"
-                    />
-                    <label for="Q4A4">4) 쓴 것을 싫어해서 먹는 정도에요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q4"
-                        id="Q4A5"
-                        value="2"
-                    />
-                    <label for="Q4A5">5) 사탕도 안좋아해요.</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q4"
+                            id="Q4A1"
+                            value="5"
+                        />
+                        <label for="Q4A1"
+                            >1) 당뇨병에 걸릴 수도 있을 것 같아요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q4"
+                            id="Q4A2"
+                            value="4"
+                        />
+                        <label for="Q4A2">2) 항상 단 것이 먹고 싶어요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q4"
+                            id="Q4A3"
+                            value="3"
+                        />
+                        <label for="Q4A3"
+                            >3) 있으면 먹지만 찾아먹진 않아요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q4"
+                            id="Q4A4"
+                            value="3"
+                        />
+                        <label for="Q4A4"
+                            >4) 쓴 것을 싫어해서 먹는 정도에요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q4"
+                            id="Q4A5"
+                            value="2"
+                        />
+                        <label for="Q4A5">5) 사탕도 안좋아해요.</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 칵테일을 마실 때 같이 먹고 싶은 음식은?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q5"
-                        id="Q5A1"
-                        value="3"
-                    />
-                    <label for="Q5A1">1) 초콜릿 케이크</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q5"
-                        id="Q5A2"
-                        value="5"
-                    />
-                    <label for="Q5A2">2) 카나페</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q5"
-                        id="Q5A3"
-                        value="4"
-                    />
-                    <label for="Q5A3">3) 과일 안주</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q5"
-                        id="Q5A4"
-                        value="4"
-                    />
-                    <label for="Q5A4">4) 스테이크</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q5"
+                            id="Q5A1"
+                            value="3"
+                        />
+                        <label for="Q5A1">1) 초콜릿 케이크</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q5"
+                            id="Q5A2"
+                            value="5"
+                        />
+                        <label for="Q5A2">2) 카나페</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q5"
+                            id="Q5A3"
+                            value="4"
+                        />
+                        <label for="Q5A3">3) 과일 안주</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q5"
+                            id="Q5A4"
+                            value="4"
+                        />
+                        <label for="Q5A4">4) 스테이크</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 평소 시트러스(레몬, 라임)를 평소 좋아하나요?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q6"
-                        id="Q6A1"
-                        value="5"
-                    />
-                    <label for="Q6A1">1) 완전 좋아해요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q6"
-                        id="Q6A2"
-                        value="4"
-                    />
-                    <label for="Q6A2">2) 좋아해요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q6"
-                        id="Q6A3"
-                        value="3"
-                    />
-                    <label for="Q6A3">3) 싫어해요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q6"
-                        id="Q6A4"
-                        value="2"
-                    />
-                    <label for="Q6A4">4) 완전 싫어해요.</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q6"
+                            id="Q6A1"
+                            value="5"
+                        />
+                        <label for="Q6A1">1) 완전 좋아해요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q6"
+                            id="Q6A2"
+                            value="4"
+                        />
+                        <label for="Q6A2">2) 좋아해요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q6"
+                            id="Q6A3"
+                            value="3"
+                        />
+                        <label for="Q6A3">3) 싫어해요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q6"
+                            id="Q6A4"
+                            value="2"
+                        />
+                        <label for="Q6A4">4) 완전 싫어해요.</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 술 도수에 대해 어떻게 생각하시나요?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q7"
-                        id="Q7A1"
-                        value="5"
-                    />
-                    <label for="Q7A1"
-                        >1) 도수가 높아도 저에겐 "음료수"인걸요?</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q7"
-                        id="Q7A2"
-                        value="4"
-                    />
-                    <label for="Q7A2"
-                        >2) 도수보다는 맛을 중요하게 생각해요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q7"
-                        id="Q7A3"
-                        value="3"
-                    />
-                    <label for="Q7A3"
-                        >3) 내일을 걱정하는 숫자라고 생각해요.</label
-                    >
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q7"
-                        id="Q7A4"
-                        value="2"
-                    />
-                    <label for="Q7A4"
-                        >4) 도수가 낮으면 더 많이 마실 수 있어서 낮은 것이
-                        좋아요.</label
-                    >
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q7"
+                            id="Q7A1"
+                            value="5"
+                        />
+                        <label for="Q7A1"
+                            >1) 도수가 높아도 저에겐 "음료수"인걸요?</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q7"
+                            id="Q7A2"
+                            value="4"
+                        />
+                        <label for="Q7A2"
+                            >2) 도수보다는 맛을 중요하게 생각해요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q7"
+                            id="Q7A3"
+                            value="3"
+                        />
+                        <label for="Q7A3"
+                            >3) 내일을 걱정하는 숫자라고 생각해요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q7"
+                            id="Q7A4"
+                            value="2"
+                        />
+                        <label for="Q7A4"
+                            >4) 도수가 낮으면 더 많이 마실 수 있어서 낮은 것이
+                            좋아요.</label
+                        >
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q. 칵테일을 마시는 목적이 뭔가요?</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q8"
-                        id="Q8A1"
-                        value="5"
-                    />
-                    <label for="Q8A1">1) 오늘 맛있게 취할래요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q8"
-                        id="Q8A2"
-                        value="4"
-                    />
-                    <label for="Q8A2">2) 잔잔한 분위기를 즐기고 싶어요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q8"
-                        id="Q8A3"
-                        value="3"
-                    />
-                    <label for="Q8A3">3) 데이트 때 마시기로 했어요.</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q8"
-                        id="Q8A4"
-                        value="2"
-                    />
-                    <label for="Q8A4">4) 간단하게 마시고 싶어요.</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q8"
+                            id="Q8A1"
+                            value="5"
+                        />
+                        <label for="Q8A1">1) 오늘 맛있게 취할래요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q8"
+                            id="Q8A2"
+                            value="4"
+                        />
+                        <label for="Q8A2"
+                            >2) 잔잔한 분위기를 즐기고 싶어요.</label
+                        >
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q8"
+                            id="Q8A3"
+                            value="3"
+                        />
+                        <label for="Q8A3">3) 데이트 때 마시기로 했어요.</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q8"
+                            id="Q8A4"
+                            value="2"
+                        />
+                        <label for="Q8A4">4) 간단하게 마시고 싶어요.</label>
+                    </div>
                 </form>
             </div>
             <div class="surveyCard">
                 <h1>Q9</h1>
                 <form name="Qform">
-                    <input
-                        type="radio"
-                        name="Q9"
-                        id="Q9A1"
-                        value="5"
-                    />
-                    <label for="Q9A1">5</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q9"
-                        id="Q9A2"
-                        value="4"
-                    />
-                    <label for="Q9A2">4</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q9"
-                        id="Q9A3"
-                        value="3"
-                    />
-                    <label for="Q9A3">3</label>
-                    <br />
-                    <input
-                        type="radio"
-                        name="Q9"
-                        id="Q9A3"
-                        value="2"
-                    />
-                    <label for="Q9A3">2</label>
-                    <br />
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q9"
+                            id="Q9A1"
+                            value="5"
+                        />
+                        <label for="Q9A1">5</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q9"
+                            id="Q9A2"
+                            value="4"
+                        />
+                        <label for="Q9A2">4</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q9"
+                            id="Q9A3"
+                            value="3"
+                        />
+                        <label for="Q9A3">3</label>
+                    </div>
+                    <div>
+                        <input
+                            type="radio"
+                            name="Q9"
+                            id="Q9A3"
+                            value="2"
+                        />
+                        <label for="Q9A3">2</label>
+                    </div>
                 </form>
             </div>
-            <div>
+            <div class="btn__container">
                 <button
                     type="button"
                     class="beforeQuestionBtn"
@@ -419,23 +468,23 @@
                 </button>
                 <button
                     type="button"
+                    class="btn"
+                >
+                    결과 보러 가기
+                </button>
+                <button
+                    type="button"
                     class="afterQuestionBtn"
                 >
                     다음
                 </button>
             </div>
-            <button
-                type="button"
-                class="btn"
-            >
-                결과 보러 가기
-            </button>
         </main>
         <footer>
-            <div id='footer'></div>
+            <div id="footer"></div>
         </footer>
         <script src="./surveyPage/surveyPage.js"></script>
-        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/footer.js"></script>
         <script src="/staticComponent/header.js"></script>
     </body>
 </html>

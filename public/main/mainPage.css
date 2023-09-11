@@ -15,8 +15,7 @@ h1 {
 
 .randomCocktail__title__container {
     background: #fff;
-    padding: 2rem;
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+    padding: 1.5rem;
     border-bottom: 1px solid lightgray;
     margin: 3rem 0 2rem;
     display: flex;

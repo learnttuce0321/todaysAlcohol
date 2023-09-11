@@ -56,6 +56,7 @@ a {
     display: flex;
     font-size: 15px;
     color: white;
+    z-index: 100;
 }
 
 .navbar-left {
