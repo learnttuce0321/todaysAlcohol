@@ -15,10 +15,17 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
+        
+        <link rel="stylesheet" href="/staticComponent/header2.css">
+        <link rel="stylesheet" href="/staticComponent/footer.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
     </head>
 
     <body>
+        <header>
+            <div id='header'></div>
+        </header>
         <button class="deleteBtn">삭제하기</button>
         <button class="modifyBtn">수정하기</button>
         <h1><%=data.title%></h1>
@@ -33,8 +40,13 @@
                 좋아요
             </button>
         </div>
+        <footer>
+            <div id='footer'></div>
+        </footer>
     </body>
 
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script src="\boardDetail\boardDetail.js"></script>
+    <script src='/staticComponent/footer.js'></script>
+    <script src="/staticComponent/header.js"></script>
 </html>

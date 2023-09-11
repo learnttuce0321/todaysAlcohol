@@ -6,9 +6,15 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+        <link rel="stylesheet" href="/staticComponent/header2.css">
+        <link rel="stylesheet" href="/staticComponent/footer.css">
         <title>Document</title>
     </head>
     <body>
+        <header>
+            <div id='header'></div>
+        </header>
         <a href="/my-page/user-info"><p>회원정보 수정하러 가기</p></a>
         <h3>내가 누른 칵테일 좋아요 수: <%=data.likeAlcoholLength%></h3>
         <p>내가 누른 좋아요</p>
@@ -30,6 +36,11 @@
         <%}%>
 
         <a href="/">메인 페이지</a>
+        <footer>
+            <div id='footer'></div>
+        </footer>
+        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/header.js"></script>
     </body>
 </html>
 

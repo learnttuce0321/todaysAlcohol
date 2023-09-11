@@ -18,7 +18,7 @@
         method: 'POST',
         url: `/`,
     });
-
+    
     let HTML = ``;
     result.data.randomAlcoholList.forEach((item) => {
         HTML += `

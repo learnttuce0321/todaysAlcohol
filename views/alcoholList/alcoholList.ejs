@@ -6,36 +6,20 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <link
             rel="stylesheet"
             href="\alcoholListFilter\alcoholListFilter.css"
         />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
-        <link rel="stylesheet" href="\commonCSS\header.css" />
+        <link rel="stylesheet" href="/staticComponent/header2.css">
+        <link rel="stylesheet" href="/staticComponent/footer.css">
         <title>Document</title>
     </head>
-    <!-- 임시로 헤더 지정-->
     <body>
         <header>
-            <div>
-                <div>
-                    <i
-                        style="font-size: 70px; color: yellow"
-                        class="fa-solid fa-martini-glass-citrus"
-                    ></i>
-                    <h3>오늘의 술</h3>
-                </div>
-                <nav>
-                    <p><a href="/survey">칵테일 추천받기</a></p>
-                    <p><a href="/">칵테일 알아보기</a></p>
-                </nav>
-            </div>
-            <div>
-                <p><a href="/login">로그인</a></p>
-                <p><a href="/register">회원가입</a></p>
-            </div>
+            <div id='header'></div>
         </header>
         <!-- 모달 창 -->
         <div id="container">
@@ -164,5 +148,10 @@
                 <%}%>
             </div>
         </section>
+        <footer>
+            <div id='footer'></div>
+        </footer>
+        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/header.js"></script>
     </body>
 </html>

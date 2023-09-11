@@ -56,6 +56,7 @@ import {
     CmodifyBoardPost,
     CmodifyBoardPatch,
 } from '../controll/communityPostPage/CmodifyBoard.js';
+import { Clogout } from '../controll/logout/Clogout.js';
 
 // import {
 // 	alcohol_list,
@@ -81,10 +82,13 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//로그인-------------------------------------
+//마이 페이지-------------------------------------
 router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
+
+//로그아웃-------------------------------------
+router.post('/logout', Clogout)
 
 //술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
