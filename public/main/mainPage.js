@@ -18,15 +18,15 @@
         method: 'POST',
         url: `/`,
     });
-    
+
     let HTML = ``;
     result.data.randomAlcoholList.forEach((item) => {
         HTML += `
-        <div>
+        <div class="randomCocktail__item">
             <a href="/alcohol-list/detail/${item.id}">
                 <img
                     class="thumbsnail"
-                    src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
+                    src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/${item.id}.jpg"
                 />
                 <p class="text_title">${item.name}</p>
                 <p class="info">${item.info}</p>
@@ -34,5 +34,37 @@
         </div>
         `;
     });
+    // HTML += `
+    //     <div class="randomCocktail__item">
+    //         <a href="">
+    //             <img
+    //                 class="hidden"
+    //                 src=""
+    //             />
+    //             <p class="text_title"></p>
+    //             <p class="info"></p>
+    //         </a>
+    //     </div>
+    //     <div class="randomCocktail__item">
+    //         <a href="">
+    //             <img
+    //                 class="hidden"
+    //                 src=""
+    //             />
+    //             <p class="text_title"></p>
+    //             <p class="info"></p>
+    //         </a>
+    //     </div>
+    //     <div class="randomCocktail__item">
+    //         <a href="">
+    //             <img
+    //                 class="hidden"
+    //                 src=""
+    //             />
+    //             <p class="text_title"></p>
+    //             <p class="info"></p>
+    //         </a>
+    //     </div>
+    //     `;
     document.querySelector('#randomCocktail').innerHTML = HTML;
 })();

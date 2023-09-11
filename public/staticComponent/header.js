@@ -5,7 +5,7 @@ const headers = `
 </div>
     <div class='navbar-menu'>
         <div class='navbar-left'>
-            <li><a href="/survey">칵테일 추천받기</a></li>
+            <li><a href="/survey-select">칵테일 추천받기</a></li>
             <li><a href="/alcohol-list">칵테일 알아보기</a></li>
             <li><a href="/community">게시판</a></li>
         </div>
