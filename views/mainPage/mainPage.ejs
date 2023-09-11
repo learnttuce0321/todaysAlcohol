@@ -16,6 +16,33 @@
             rel="stylesheet"
             href="\main\mainPage.css"
         />
+        <script src="https:/cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <style>
+            img {
+                border-radius: 20px;
+            }
+
+            .thumbsnail {
+                max-width: 100%;
+            }
+
+            .text_title {
+                font-weight: 600;
+                text-align: left;
+                font-size: 20px;
+                margin: 5px 0 5px 0;
+            }
+            .info {
+                display: block;
+                color: #7f8487;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 100%;
+                margin: 0;
+            }
+        </style>
     </head>
 
     <body>
@@ -39,5 +66,14 @@
                 <p><a href="/register">회원가입</a></p>
             </div>
         </header>
+        <main>
+            <carousel>개발 중</carousel>
+            <article
+                id="randomCocktail"
+                style="display: flex"
+            ></article>
+        </main>
+
+        <script src="\main\mainPage.js"></script>
     </body>
 </html>
