@@ -20,8 +20,18 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="/staticComponent/header2.css">
-        <link rel="stylesheet" href="/staticComponent/footer.css">
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/main/mainPage.css"
+        />
 
         <style>
             .carousel-inner > .carousel-item > img {
@@ -34,7 +44,7 @@
 
     <body>
         <header>
-            <div id='header'></div>
+            <div id="header"></div>
         </header>
         <main>
             <carousel>
@@ -92,18 +102,21 @@
                 </div>
             </carousel>
             <br />
-            <h1>이런 술도 있어요!</h1>
+
+            <div class="randomCocktail__title__container">
+                <h1 class="randomCocktail__title">이런 술도 있어요!</h1>
+                <i class="fa-solid fa-plus"></i>
+            </div>
             <article
                 id="randomCocktail"
-                style="display: flex"
+                class="randonCocktail"
             ></article>
         </main>
         <footer>
-            <div id='footer'></div>
+            <div id="footer"></div>
         </footer>
         <script src="\main\mainPage.js"></script>
-        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/footer.js"></script>
         <script src="/staticComponent/header.js"></script>
     </body>
-    
 </html>

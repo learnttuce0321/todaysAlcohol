@@ -40,9 +40,39 @@
                 좋아요
             </button>
         </div>
-        <footer>
+        <!-- 댓글 테스트 -->
+        <form name="commentList">
+            <div class="comment_wrap">
+                <section class="article_wrap">
+                    <ul class="commentList">
+                        <% for (let i =0; i < data.length; i++) { %>
+                        <li>
+                            <div><%= data[i].content%></div>
+                        </li>
+                        <% } %>
+                    </ul>
+                </section>
+                <section id="comment_wrap">
+                    <input
+                        id="comment"
+                        type="text"
+                        placeholder="댓글 달기..."
+                    />
+                    <button
+                        type="button"
+                        class="comment_btn"
+                        onclick="writeComment()"
+                    >
+                        게시
+                    </button>
+                    <!-- jquery -->
+                </section>
+            </div>
+        </form>
+        <script src="\board\comment.js"></script>
             <div id='footer'></div>
         </footer>
+
     </body>
 
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>

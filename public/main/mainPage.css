@@ -3,10 +3,84 @@ div,
 p,
 section,
 ul,
-li {
+li,
+h1 {
     box-sizing: border-box;
 }
 
-body {
+body,
+h1 {
     margin: 0;
+}
+
+.randomCocktail__title__container {
+    background: #fff;
+    padding: 1.5rem;
+    border-bottom: 1px solid lightgray;
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.randomCocktail__title__container svg {
+    font-size: 25px;
+    margin-right: 2rem;
+}
+.randomCocktail__title__container svg:hover {
+    font-size: 25px;
+    color: grey;
+    cursor: pointer;
+}
+
+.randonCocktail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 0.7rem;
+    padding: 1.3px;
+}
+.randomCocktail__item {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    width: 270px;
+}
+.randomCocktail__item img {
+    border-radius: 20px;
+    /* min-height: 450px;
+    max-height: 450px; */
+    object-fit: cover;
+}
+.thumbsnail {
+    max-width: 100%;
+}
+
+.text_title {
+    font-weight: 600;
+    text-align: left;
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+}
+.info {
+    display: block;
+    color: #7f8487;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    margin: 0;
+}
+.hidden {
+    background-color: white;
+    flex-basis: 270px;
+    content-visibility: hidden;
+}
+
+@media screen and (min-width: 940px) {
+    .randomCocktail__item {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+    }
 }

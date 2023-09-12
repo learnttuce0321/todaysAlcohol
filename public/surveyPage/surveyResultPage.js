@@ -76,36 +76,80 @@
     }
 })();
 
+/**
+ * 추천받은 mainAlcohol DOM객체 생성
+ * @param {object} item recommendedMainAlcohol
+ */
 const recommendedAlcoholMainItem = (item) => {
     const mainSection = document.querySelector('.mainRecommendedAlcohol');
 
+    console.log(item);
     const div = document.createElement('div');
     div.innerHTML = `
-        <h1>${item.name}</h1>
-        <p>${item.info}</p>
-        <a href="/alcohol-list/detail/${item.id}">알아보기</a>
+            <div class="main__alcohol">
+				<div>
+					<img
+						src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/${item.id}.jpg"
+					/>
+				</div>
+				<div class="main__alcohol__info">
+					<div class="name">
+						<div>${item.name}</div>
+
+						<div>${item.info}</div>
+						<div class="abv">도수: ${item.abv}도</div>
+					</div>
+                    <button type="button" class="detailBtn" onclick="clickedDetailBtn(${item.id})"><i class="fa-solid fa-angles-right"></i></button>
+				</div>
+			</div>
+        
     `;
     mainSection.appendChild(div);
 };
+/**
+ * 추천받은 subAlcohols DOM객체 생성
+ * @param {object[]} subAlcoholList recommendedSubalcoholList
+ */
 const recommemdedAlcoholSubItem = (subAlcoholList) => {
     const subSection = document.querySelector('.subRecommendedAlcohol');
 
-    const div = document.createElement('div');
-    div.innerHTML = `
-        <a href="/alcohol-list/detail/${subAlcoholList[0].id}">
-            <h3>${subAlcoholList[0].name}</h3>
-            <p>${subAlcoholList[0].info}</p>
-        </a>
-
-        <a href="/alcohol-list/detail/${subAlcoholList[1].id}">
-            <h3>${subAlcoholList[1].name}</h3>
-            <p>${subAlcoholList[1].info}</p>
-        </a>
-
-        <a href="/alcohol-list/detail/${subAlcoholList[2].id}">
-            <h3>${subAlcoholList[2].name}</h3>
-            <p>${subAlcoholList[2].info}</p>
-        </a>
+    // const div = document.createElement('div');
+    const subAlcoholSection = document.querySelector('.subRecommendedAlcohol');
+    subAlcoholSection.innerHTML = `
+        <div class="subCocktail__item">
+            <a href="/alcohol-list/detail/${subAlcoholList[0].id}">
+                <img
+                    class="thumbsnail"
+                    src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/${subAlcoholList[0].id}.jpg"
+                />
+                <p class="text_title">${subAlcoholList[0].name}</p>
+                <p class="info">${subAlcoholList[0].info}</p>
+            </a>
+        </div>
+        <div class="subCocktail__item">
+            <a href="/alcohol-list/detail/${subAlcoholList[1].id}">
+                <img
+                    class="thumbsnail"
+                    src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/${subAlcoholList[1].id}.jpg"
+                />
+                <p class="text_title">${subAlcoholList[1].name}</p>
+                <p class="info">${subAlcoholList[1].info}</p>
+            </a>
+        </div>
+        <div class="subCocktail__item">
+            <a href="/alcohol-list/detail/${subAlcoholList[2].id}">
+                <img
+                    class="thumbsnail"
+                    src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/${subAlcoholList[2].id}.jpg"
+                />
+                <p class="text_title">${subAlcoholList[2].name}</p>
+                <p class="info">${subAlcoholList[2].info}</p>
+            </a>
+        </div>
     `;
     subSection.appendChild(div);
+};
+
+const clickedDetailBtn = (id) => {
+    window.location.href = `/alcohol-list/detail/${id}`;
 };

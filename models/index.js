@@ -36,6 +36,11 @@ db.LikeAlcohol = tempLikeAlcohol;
 import Board from './board.js';
 const tempBoard = Board(sequelize);
 db.Board = tempBoard;
+// comment: 게시판 댓글 DB
+import Comment from './comment.js';
+const tempComment = Comment(sequelize);
+db.Comment = tempComment;
+
 // likeBoard : 게시판 좋아요 DB
 import LikeBoard from './likeBoard.js';
 const tempLikeBoard = LikeBoard(sequelize);
@@ -67,7 +72,6 @@ db.LikeBoard.belongsTo(db.Board, {
     },
     onDelete: 'CASCADE',
 });
-
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
