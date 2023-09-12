@@ -5,15 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 		<link
 			rel="stylesheet"
 			href="\alcoholListFilter\alcoholListFilter.css"
 		/>
-
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
-
-		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		<link rel="stylesheet" href="\commonCSS\header.css" />
 		<title>Document</title>
 	</head>
 	<!-- 임시로 헤더 지정-->
@@ -38,22 +38,18 @@
 			</div>
 		</header>
 		<!-- 모달 창 -->
-		<div>
-			<button id="filterBtnModal">
-				<i class="fa-solid fa-plus"></i>
-			</button>
+		<div id="container">
+			<button id="filterBtnModal">필터</button>
 		</div>
 		<div id="modal" class="modal-overlay">
 			<div class="modal-window">
 				<div class="title">
-					<P>자세히 찾아보기</P>
-
-					<div class="close-area">X</div>
+					<h2>필터</h2>
 				</div>
-				<!-- <div class="content">
+				<div class="close-area">X</div>
+				<div class="content">
 					점수를 통해 원하는 술을 찾아보세요! (중복 선택 가능)
-				</div> -->
-
+				</div>
 				<div class="content">
 					<form id="filterForm">
 						<label for="abvScores">도수 점수</label>
@@ -149,19 +145,13 @@
 				<% for (let i=0; i < data.length; i++) {%>
 
 				<div class="item">
-					<a
-						href="/alcohol-list/detail/<%= data[i].id %>"
-						class="a_box"
-					>
-						<div class="thumbsnail_box">
-							<img
-								class="thumbsnail"
-								src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data[i].id%>.jpg"
-							/>
-						</div>
-						<p class="text_title"><%= data[i].name %></p>
-						<p class="info"><%= data[i].info %></p>
-					</a>
+					<a href="/alcohol-list/detail/<%= data[i].id %>">
+						<img
+							class="thumbsnail"
+							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
+					/></a>
+					<p class="text_title"><%= data[i].name %></p>
+					<p class="info"><%= data[i].info %></p>
 				</div>
 
 				<%}%> <% for (let i=0; i < 4; i++) {%>

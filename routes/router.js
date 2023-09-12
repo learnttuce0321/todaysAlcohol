@@ -11,7 +11,7 @@ import {
     CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
 
-import { Cmain } from '../controll/mainPage/CmainPage.js';
+import { Cmain, CmainPost } from '../controll/mainPage/CmainPage.js';
 
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
@@ -56,6 +56,9 @@ import {
     CmodifyBoardPost,
     CmodifyBoardPatch,
 } from '../controll/communityPostPage/CmodifyBoard.js';
+import { Clogout } from '../controll/logout/Clogout.js';
+
+import { CcreateComment, CcommentList } from '../controll/board/Ccomment.js';
 
 // import {
 // 	alcohol_list,
@@ -65,6 +68,7 @@ import {
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
+router.post('/', CmainPost);
 router.get('/survey-select', CsurveySelect); // 설문조사 or 최근 결과 확인 선택
 router.get('/survey', Csurvey); // 설문조사 페이지 router
 router.get('/survey/result', CsurveyResult); // 설문조사 결과 페이지 router
@@ -80,10 +84,13 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//로그인-------------------------------------
+//마이 페이지-------------------------------------
 router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
+
+//로그아웃-------------------------------------
+router.post('/logout', Clogout)
 
 //술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
@@ -127,4 +134,9 @@ router.post('/community/write/content', CwriteBoardPost); // 게시물 작성 �
 router.get('/community/write/:id', CmodifyBoard);
 router.post('/community/write/:id', CmodifyBoardPost);
 router.patch('/community/write/:id', CmodifyBoardPatch);
+
+// 게시물 댓글 개발용 라우터
+// router.get('/comment', CcommentList);
+router.get('/community/detail/:postId', CcommentList);
+router.post('/community/detail/:postId', CcreateComment);
 export default router;

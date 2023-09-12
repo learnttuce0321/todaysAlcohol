@@ -6,27 +6,38 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="\surveyPage\surveyResultPage.css"
+        />
         <title>Document</title>
-        <style>
-            a,
-            a:link,
-            a:visited,
-            a:hover a:active {
-                text-decoration: none;
-                color: black;
-                margin: 1rem;
-            }
-        </style>
     </head>
+    <header>
+        <div id="header"></div>
+    </header>
     <body>
         <section class="loading">
             <h1>로딩중</h1>
         </section>
-        <section class="mainRecommendedAlcohol"></section>
-        <section class="subRecommendedAlcohol"></section>
-        <a href="/">메인페이지</a>
 
+        <section class="mainRecommendedAlcohol"></section>
+        <h1 class="subAlcoholTitle">다른 술도 추천해 줄게요!</h1>
+        <section class="subRecommendedAlcohol"></section>
+        <footer>
+            <div id="footer"></div>
+        </footer>
         <script src="\surveyPage\surveyResultPage.js"></script>
+        <script src="/staticComponent/footer.js"></script>
+        <script src="/staticComponent/header.js"></script>
     </body>
 </html>

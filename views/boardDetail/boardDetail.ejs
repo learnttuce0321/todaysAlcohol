@@ -15,10 +15,17 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
+        
+        <link rel="stylesheet" href="/staticComponent/header2.css">
+        <link rel="stylesheet" href="/staticComponent/footer.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
     </head>
 
     <body>
+        <header>
+            <div id='header'></div>
+        </header>
         <button class="deleteBtn">삭제하기</button>
         <button class="modifyBtn">수정하기</button>
         <h1><%=data.title%></h1>
@@ -33,8 +40,43 @@
                 좋아요
             </button>
         </div>
+        <!-- 댓글 테스트 -->
+        <form name="commentList">
+            <div class="comment_wrap">
+                <section class="article_wrap">
+                    <ul class="commentList">
+                        <% for (let i =0; i < data.length; i++) { %>
+                        <li>
+                            <div><%= data[i].content%></div>
+                        </li>
+                        <% } %>
+                    </ul>
+                </section>
+                <section id="comment_wrap">
+                    <input
+                        id="comment"
+                        type="text"
+                        placeholder="댓글 달기..."
+                    />
+                    <button
+                        type="button"
+                        class="comment_btn"
+                        onclick="writeComment()"
+                    >
+                        게시
+                    </button>
+                    <!-- jquery -->
+                </section>
+            </div>
+        </form>
+        <script src="\board\comment.js"></script>
+            <div id='footer'></div>
+        </footer>
+
     </body>
 
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <script src="\boardDetail\boardDetail.js"></script>
+    <script src='/staticComponent/footer.js'></script>
+    <script src="/staticComponent/header.js"></script>
 </html>

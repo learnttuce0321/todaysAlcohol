@@ -47,7 +47,6 @@ body {
 .info {
 	display: block;
 	color: #7f8487;
-
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
