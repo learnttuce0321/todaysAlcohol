@@ -44,7 +44,7 @@ const getIndex = setIndex();
         .forEach((item) => (item.style.display = 'none'));
 
     document.querySelector('.surveyCard').style.display = 'block';
-    document.querySelector('.btn').style.display = 'none';
+    document.querySelector('.btn').style.visibility = 'hidden';
 })();
 
 (() => {
@@ -65,7 +65,7 @@ document.querySelector('.beforeQuestionBtn').addEventListener('click', () => {
 
     const index = getIndex('-');
 
-    document.querySelector('.btn').style.display = 'none';
+    document.querySelector('.btn').style.visibility = 'hidden';
     formDoms[index + 1].parentNode.style.display = 'none';
     formDoms[index].parentNode.style.display = 'block';
 });
@@ -75,7 +75,7 @@ document.querySelector('.afterQuestionBtn').addEventListener('click', () => {
     const index = getIndex('+');
 
     if (index === 8) {
-        document.querySelector('.btn').style.display = 'block';
+        document.querySelector('.btn').style.visibility = 'visible';
     }
     formDoms[index - 1].parentNode.style.display = 'none';
     formDoms[index].parentNode.style.display = 'block';

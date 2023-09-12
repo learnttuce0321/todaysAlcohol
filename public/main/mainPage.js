@@ -1,18 +1,3 @@
-// /**
-//  * 현재 윈도우 크기 구하는 함수
-//  * @returns {string} 현재 윈도우 종류
-//  */
-// const getSize = () => {
-//     const innerWidth = window.innerWidth;
-
-//     if (innerWidth < 390) {
-//         return 'phone';
-//     } else if (innerWidth < 820) {
-//         return 'pad';
-//     } else {
-//         return 'desktop';
-//     }
-// };
 (async () => {
     const result = await axios({
         method: 'POST',
@@ -34,37 +19,9 @@
         </div>
         `;
     });
-    // HTML += `
-    //     <div class="randomCocktail__item">
-    //         <a href="">
-    //             <img
-    //                 class="hidden"
-    //                 src=""
-    //             />
-    //             <p class="text_title"></p>
-    //             <p class="info"></p>
-    //         </a>
-    //     </div>
-    //     <div class="randomCocktail__item">
-    //         <a href="">
-    //             <img
-    //                 class="hidden"
-    //                 src=""
-    //             />
-    //             <p class="text_title"></p>
-    //             <p class="info"></p>
-    //         </a>
-    //     </div>
-    //     <div class="randomCocktail__item">
-    //         <a href="">
-    //             <img
-    //                 class="hidden"
-    //                 src=""
-    //             />
-    //             <p class="text_title"></p>
-    //             <p class="info"></p>
-    //         </a>
-    //     </div>
-    //     `;
     document.querySelector('#randomCocktail').innerHTML = HTML;
 })();
+
+document.querySelector('#goAlcoholList').addEventListener('click', () => {
+    window.location.href = '/alcohol-list';
+});

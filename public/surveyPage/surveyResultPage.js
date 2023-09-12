@@ -147,7 +147,6 @@ const recommemdedAlcoholSubItem = (subAlcoholList) => {
             </a>
         </div>
     `;
-    subSection.appendChild(div);
 };
 
 const clickedDetailBtn = (id) => {
