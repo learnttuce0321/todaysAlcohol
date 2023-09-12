@@ -1,0 +1,136 @@
+main,
+h1,
+p,
+label,
+form,
+div,
+input {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+[type='radio'] {
+    vertical-align: -3px;
+}
+
+.surveyCard {
+    width: 100vw;
+    padding: 1rem 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+}
+.surveyCard > h1 {
+    margin-bottom: 1rem;
+}
+.btn__container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0.5rem;
+}
+.btn__container button {
+    background-color: white;
+    color: gray;
+    border: none;
+}
+.btn__container svg {
+    font-size: 2em;
+}
+.beforeQuestionBtn {
+    transform: rotate(-90deg);
+}
+.afterQuestionBtn {
+    transform: rotate(90deg);
+}
+form[name='Qform'] div {
+    margin: 0.8rem 0.3rem;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+form[name='Qform'] input {
+    margin-right: 0.4rem;
+}
+.btn {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: black !important;
+    border: 2px solid white !important;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.btn:active {
+    border: 2px solid black !important;
+}
+.shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@media screen and (min-width: 820px) {
+    .surveyCard {
+        padding: 1.3rem 1.3rem 0rem;
+    }
+    .surveyCard > h1 {
+        margin: 1rem 0 2rem;
+        padding: 0rem 0.5rem;
+        font-size: 1.5rem;
+    }
+    .btn__container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 0.5rem;
+    }
+    .btn {
+        font-size: 1.3rem;
+    }
+    [type='radio'],
+    span {
+        vertical-align: 0px;
+    }
+    form[name='Qform'] div {
+        margin: 0.8rem;
+        padding: 0.7rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    form[name='Qform'] input {
+        margin-right: 0.4rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .surveyCard {
+        padding: 2rem 10rem;
+    }
+    .surveyCard > h1 {
+        margin: 1rem 0 2rem;
+        padding: 0rem 0.5rem;
+        font-size: 1.5rem;
+    }
+    .btn__container {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        margin: 0.5rem;
+    }
+    .btn {
+        font-size: 1rem;
+    }
+    [type='radio'],
+    span {
+        vertical-align: 0px;
+    }
+    form[name='Qform'] div {
+        margin: 0.8rem;
+        padding: 0.7rem;
+        border: 1px solid white;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    form[name='Qform'] input {
+        margin-right: 0.4rem;
+    }
+}

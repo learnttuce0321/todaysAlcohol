@@ -6,31 +6,52 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <link rel="stylesheet" href="/staticComponent/header2.css">
-        <link rel="stylesheet" href="/staticComponent/footer.css">
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="\surveyPage\surveySelectPage.css"
+        />
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <title>Document</title>
     </head>
     <body>
         <header>
-            <div id='header'></div>
+            <div id="header"></div>
         </header>
-        <button
-            type="button"
-            class="doSurvey"
-        >
-            설문조사 하기
-        </button>
-        <button
-            type="button"
-            class="doRecent"
-        >
-            최근 결과 보기
-        </button>
+        <main>
+            <div class="select__title__container">
+                <h1 class="select__title">둘 중 하나를 선택해 주세요</h1>
+                <p>* 로그인 시 설문결과가 저장됩니다.</p>
+                <p>* 최근 결과 보기는 로그인 후 사용 가능합니다.</p>
+            </div>
+
+            <div class="select__container">
+                <button
+                    type="button"
+                    class="doSurvey"
+                >
+                    설문조사 하기
+                </button>
+                <button
+                    type="button"
+                    class="doRecent"
+                >
+                    최근 결과 보기
+                </button>
+            </div>
+        </main>
         <footer>
-            <div id='footer'></div>
+            <div id="footer"></div>
         </footer>
         <script src="\surveyPage\surveySelectPage.js"></script>
-        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/footer.js"></script>
         <script src="/staticComponent/header.js"></script>
     </body>
 </html>
