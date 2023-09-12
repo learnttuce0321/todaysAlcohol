@@ -40,11 +40,18 @@ db.Board = tempBoard;
 import Comment from './comment.js';
 const tempComment = Comment(sequelize);
 db.Comment = tempComment;
-
 // likeBoard : 게시판 좋아요 DB
 import LikeBoard from './likeBoard.js';
 const tempLikeBoard = LikeBoard(sequelize);
 db.LikeBoard = tempLikeBoard;
+// Room : 생성한 socket채팅방 DB
+import Room from './room.js';
+const tempRoom = Room(sequelize);
+db.Room = tempRoom;
+// UserInRoom : Users-Rooms 다대다 join 테이블
+import UserInRoom from './userInRoom.js';
+const tempUserInRoom = UserInRoom(sequelize);
+db.UserInRoom = tempUserInRoom;
 
 db.AlcoholList.hasMany(db.LikeAlcohol, {
     foreignKey: {
@@ -71,6 +78,19 @@ db.LikeBoard.belongsTo(db.Board, {
         allowNull: false,
     },
     onDelete: 'CASCADE',
+});
+
+db.UserInRoom.belongsTo(db.User, {
+    foreignKey: {
+        name: 'userId',
+        allowNull: false,
+    },
+});
+db.UserInRoom.belongsTo(db.Room, {
+    foreignKey: {
+        name: 'roomId',
+        allowNull: false,
+    },
 });
 
 db.sequelize = sequelize;
