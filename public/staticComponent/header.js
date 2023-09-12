@@ -74,14 +74,16 @@ window.addEventListener('resize', () => {
 })();
 
 (() => {
-    const loginToken = localStorage.getItem('loginToken');
-    console.log('123');
+        const loginToken = localStorage.getItem('loginToken')
+        // console.log('123');
 
-    if (loginToken) {
+        if(loginToken) {
+
         const login = document.querySelector('#login');
         const register = document.querySelector('#register');
         const mypage = document.querySelector('#mypage');
         const logout = document.querySelector('#logout');
+
 
         login.classList.add('disappear');
         register.classList.add('disappear');
@@ -94,9 +96,14 @@ window.addEventListener('resize', () => {
 const logout = document.querySelector('#logout');
 
 logout.addEventListener('click', () => {
-    localStorage.removeItem('loginToken');
+  console.log("logout")
+  // 쿠키 만료일을 이전 날짜로 설정하여 쿠키를 삭제합니다.
+  document.cookie = 'loginCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+  document.cookie = 'userIdCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+  localStorage.removeItem('loginToken')
     axios({
-        method: 'POST',
-        url: '/logout',
-    });
-});
+      method : 'POST',
+      url: '/logout'
+    })
+})
