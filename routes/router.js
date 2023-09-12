@@ -136,7 +136,7 @@ router.patch('/community/write/:id', CmodifyBoardPatch);
 
 // 게시물 댓글 개발용 라우터
 // router.get('/comment', CcommentList);
-router.get('/community/detail/:postId/comments', CcommentList);
+router.get('/community/detail/:postId/comments', CgetCommentsList);
 router.get('/community/detail/:postId', CgetCommentsList);
 router.post('/community/detail/:postId', CcreateComment);
 
