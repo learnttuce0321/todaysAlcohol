@@ -7,11 +7,12 @@ import path from 'path';
 const CcommentList = async (req, res) => {
     const postId = req.params.postId;
     try {
+        console.log('postId', postId);
         const comments = await models.Comment.findAll({
             where: { postId },
         });
         console.log(comments);
-        res.render('boardDetail/boardDetail', { data: comments });
+        res.json({ comments });
     } catch (error) {
         console.log(error);
     }
@@ -32,12 +33,16 @@ const CcreateComment = async (req, res) => {
         });
     });
 };
-// const CgetCommentsList = async (req, res) => {
-//     const postId = req.params.postId;
-//     const comments = await models.Comment.findAll({
-//         where: { postId },
-//     });
-//     res.json({ comments });
-// };
 
-export { CcreateComment, CcommentList };
+const CgetCommentsList = async (req, res) => {
+    const postId = req.params.postId;
+    try {
+        const result = await axios.get(`/community/detail/${postId}/comments`);
+        const comments = result.data.comments;
+        res.render('boardDetail/boardDetail', { comments });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export { CcreateComment, CcommentList, CgetCommentsList };
