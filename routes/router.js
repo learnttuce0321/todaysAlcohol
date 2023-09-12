@@ -132,4 +132,5 @@ router.post('/community/write/content', CwriteBoardPost); // 게시물 작성 �
 router.get('/community/write/:id', CmodifyBoard);
 router.post('/community/write/:id', CmodifyBoardPost);
 router.patch('/community/write/:id', CmodifyBoardPatch);
+
 export default router;

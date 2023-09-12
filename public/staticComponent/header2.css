@@ -38,9 +38,9 @@ a {
 .navbar {
   display: flex;
   height: 70px;
-  width: 101%;
+  width: 100%;
   background-color: #583E26;
-  /* justify-content: space-between; */
+  justify-content: start;
   align-items: center;
   position: relative;
 }
