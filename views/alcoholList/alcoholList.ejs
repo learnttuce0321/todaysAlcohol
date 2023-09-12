@@ -1,157 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
-        <link
-            rel="stylesheet"
-            href="\alcoholListFilter\alcoholListFilter.css"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="\alcoholList\alcoholList.css" />
-        <link rel="stylesheet" href="/staticComponent/header2.css">
-        <link rel="stylesheet" href="/staticComponent/footer.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <header>
-            <div id='header'></div>
-        </header>
-        <!-- 모달 창 -->
-        <div id="container">
-            <button id="filterBtnModal">필터</button>
-        </div>
-        <div id="modal" class="modal-overlay">
-            <div class="modal-window">
-                <div class="title">
-                    <h2>필터</h2>
-                </div>
-                <div class="close-area">X</div>
-                <div class="content">
-                    점수를 통해 원하는 술을 찾아보세요! (중복 선택 가능)
-                </div>
-                <div class="content">
-                    <form id="filterForm">
-                        <label for="abvScores">도수 점수</label>
-                        <div class="rating-buttons" id="abvRatingButtons">
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="1"
-                            >
-                                1
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="2"
-                            >
-                                2
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="3"
-                            >
-                                3
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="4"
-                            >
-                                4
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="5"
-                            >
-                                5
-                            </button>
-                        </div>
-                        <!-- <input type="text" id="abvScores" name="abvScores" /> -->
-                        <br />
-                        <label for="tasteScores">맛 점수</label>
-                        <!-- <input
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+		<link
+			rel="stylesheet"
+			href="\alcoholListFilter\alcoholListFilter.css"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+		<link rel="stylesheet" href="\commonCSS\header.css" />
+		<title>Document</title>
+	</head>
+	<!-- 임시로 헤더 지정-->
+	<body>
+		<header>
+			<div>
+				<div>
+					<i
+						style="font-size: 70px; color: yellow"
+						class="fa-solid fa-martini-glass-citrus"
+					></i>
+					<h3>오늘의 술</h3>
+				</div>
+				<nav>
+					<p><a href="/survey">칵테일 추천받기</a></p>
+					<p><a href="/">칵테일 알아보기</a></p>
+				</nav>
+			</div>
+			<div>
+				<p><a href="/login">로그인</a></p>
+				<p><a href="/register">회원가입</a></p>
+			</div>
+		</header>
+		<!-- 모달 창 -->
+		<div id="container">
+			<button id="filterBtnModal">필터</button>
+		</div>
+		<div id="modal" class="modal-overlay">
+			<div class="modal-window">
+				<div class="title">
+					<h2>필터</h2>
+				</div>
+				<div class="close-area">X</div>
+				<div class="content">
+					점수를 통해 원하는 술을 찾아보세요! (중복 선택 가능)
+				</div>
+				<div class="content">
+					<form id="filterForm">
+						<label for="abvScores">도수 점수</label>
+						<div class="rating-buttons" id="abvRatingButtons">
+							<button
+								type="button"
+								class="rating-button"
+								data-value="1"
+							>
+								1
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="2"
+							>
+								2
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="3"
+							>
+								3
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="4"
+							>
+								4
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="5"
+							>
+								5
+							</button>
+						</div>
+						<!-- <input type="text" id="abvScores" name="abvScores" /> -->
+						<br />
+						<label for="tasteScores">맛 점수</label>
+						<!-- <input
 						type="text" id="tasteScores" name="tasteScores" /> -->
-                        <div class="rating-buttons" id="tasteRatingButtons">
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="1"
-                            >
-                                1
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="2"
-                            >
-                                2
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="3"
-                            >
-                                3
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="4"
-                            >
-                                4
-                            </button>
-                            <button
-                                type="button"
-                                class="rating-button"
-                                data-value="5"
-                            >
-                                5
-                            </button>
-                        </div>
-                        <br />
-                        <button type="submit">필터 적용</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <script src="\alcoholListFilter\alcoholListFilter.js"></script>
-        <!-- 모달 끝 -->
-        <section id="container">
-            <div id="wrapper">
-                <% for (let i=0; i < data.length; i++) {%>
+						<div class="rating-buttons" id="tasteRatingButtons">
+							<button
+								type="button"
+								class="rating-button"
+								data-value="1"
+							>
+								1
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="2"
+							>
+								2
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="3"
+							>
+								3
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="4"
+							>
+								4
+							</button>
+							<button
+								type="button"
+								class="rating-button"
+								data-value="5"
+							>
+								5
+							</button>
+						</div>
+						<br />
+						<button type="submit" class="filter_btn">검색</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="\alcoholListFilter\alcoholListFilter.js"></script>
+		<!-- 모달 끝 -->
+		<section id="container">
+			<div id="wrapper">
+				<% for (let i=0; i < data.length; i++) {%>
 
-                <div class="item">
-                    <a href="/alcohol-list/detail/<%= data[i].id %>">
-                        <img
-                            class="thumbsnail"
-                            src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
-                        />
-                        <p class="text_title"><%= data[i].name %></p>
-                        <p class="info"><%= data[i].info %></p>
-                    </a>
-                </div>
+				<div class="item">
+					<a href="/alcohol-list/detail/<%= data[i].id %>">
+						<img
+							class="thumbsnail"
+							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
+					/></a>
+					<p class="text_title"><%= data[i].name %></p>
+					<p class="info"><%= data[i].info %></p>
+				</div>
 
-                <%}%> <% for (let i=0; i < 4; i++) {%>
-                <div class="hidden">
-                    <img class="thumbsnail" src="" />
-                    <h3 class="text_title"></h3>
-                    <p class="info"></p>
-                </div>
-                <%}%>
-            </div>
-        </section>
-        <footer>
-            <div id='footer'></div>
-        </footer>
-        <script src='/staticComponent/footer.js'></script>
-        <script src="/staticComponent/header.js"></script>
-    </body>
+				<%}%> <% for (let i=0; i < 4; i++) {%>
+				<div class="hidden">
+					<img class="thumbsnail" src="" />
+					<h3 class="text_title"></h3>
+					<p class="info"></p>
+				</div>
+				<%}%>
+			</div>
+		</section>
+	</body>
 </html>

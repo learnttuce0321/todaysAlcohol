@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
 		<link
 			rel="stylesheet"
 			href="\alcoholListDetail\alcoholListDetail.css"
@@ -22,7 +23,7 @@
 			<div class="info_container">
 				<div>
 					<img
-						src="https://cocktail-bucket.s3.ap-northeast-2.amazonaws.com/TB_COCK_MASTER/70.Roy%20Rogers.jpg"
+						src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data.id%>.jpg"
 					/>
 				</div>
 				<div class="alcohol_info">
@@ -32,9 +33,9 @@
 						<div><%= data.info %></div>
 						<div class="abv">도수: <%= data.abv %>도</div>
 					</div>
-					<div class="like">
+					<div class="btn_box">
 						<button class="likeBtn" type="button" value="enabled">
-							좋아요
+							<i class="fa-solid fa-heart" ></i>
 						</button>
 					</div>
 				</div>
