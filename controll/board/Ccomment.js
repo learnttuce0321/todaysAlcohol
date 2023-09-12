@@ -7,11 +7,12 @@ import path from 'path';
 const CcommentList = async (req, res) => {
     const postId = req.params.postId;
     try {
+        console.log('postId', postId);
         const comments = await models.Comment.findAll({
             where: { postId },
         });
         console.log(comments);
-        res.render('boardDetail/boardDetail', { data: comments });
+        res.json({ comments });
     } catch (error) {
         console.log(error);
     }
@@ -32,12 +33,43 @@ const CcreateComment = async (req, res) => {
         });
     });
 };
+
+// 페이징기능X
 // const CgetCommentsList = async (req, res) => {
 //     const postId = req.params.postId;
-//     const comments = await models.Comment.findAll({
-//         where: { postId },
-//     });
-//     res.json({ comments });
+//     try {
+//         const comments = await models.Comment.findAll({
+//             where: { postId },
+//         });
+//         // res.render('boardDetail/boardDetail', { comments });
+//         res.json({ comments });
+//     } catch (error) {
+//         console.log(error);
+//     }
 // };
 
-export { CcreateComment, CcommentList };
+const CgetCommentsList = async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const perPage = 5; // 한 페이지에 게시물 개수
+    const offset = (page - 1) * perPage;
+    const postId = req.params.postId;
+    try {
+        const totalCount = await models.Comment.count({
+            where: { postId },
+        });
+        const comments = await models.Comment.findAll({
+            where: { postId },
+            limit: perPage,
+            offset,
+            order: [['createdAt', 'ASC']], // 정렬 순서
+        });
+        // res.render('boardDetail/boardDetail', { comments });
+        const totalPages = Math.ceil(totalCount / perPage);
+
+        res.json({ comments, page, totalPages });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export { CcreateComment, CcommentList, CgetCommentsList };
