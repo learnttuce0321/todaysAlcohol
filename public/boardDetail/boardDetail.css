@@ -10,8 +10,10 @@ button {
 }
 
 .commentBtn {
+    background-color: white;
     border: 1px solid gray;
 }
+
 .commentBtn:hover {
     background-color: rgb(140, 111, 77);
     color: white;
@@ -32,10 +34,15 @@ button {
     /* margin-left: 50px; */
 }
 /* 댓글 다는 부분 */
-#comment_wrap {
-    padding-top: 20px;
+.comment_wrap {
+    /* padding-top: 20px; */
+    /* background-color: rgba(218, 206, 171, 0.655); */
     /* padding-bottom: 50px; */
 }
+/* 댓글 li 리스트 */
+/* .commentListWrap {
+    background-color: #f2d7bd48;
+} */
 
 /* 게시물 내용 */
 .toastui-editor-contents > p {
@@ -50,7 +57,12 @@ li {
 
 /* 댓글 목록 */
 .commentList {
+    background-color: #f2d7bd48;
     font-size: 15px;
+    /* background-color: beige; */
+}
+.commentList > li {
+    border-bottom: 1px solid #2b5059;
 }
 /* 
 .backButton {
@@ -82,12 +94,12 @@ h1 {
     font-size: 13px;
 }
 .commentPagination > li > a {
-    color: #ec9704;
+    color: #719ba6;
     text-decoration: none;
 }
 .commentPagination > li > a:hover,
 .commentPagination > li > a:active {
-    color: #5a3b08;
+    color: #594634;
     text-decoration: none;
 }
 
@@ -107,6 +119,9 @@ h1 {
     }
     .entireBtn {
         padding: 0 2rem;
+    }
+    .commentListWrap {
+        background-color: #f2d7bd48;
     }
 }
 
@@ -148,7 +163,7 @@ h1 {
         margin-top: 10px;
         /* border: none; */
         margin-left: -50px;
-        width: 45%;
+        width: 4 5%;
     }
     .entireBtn {
         padding: 0 2rem;
@@ -159,5 +174,8 @@ h1 {
         margin-right: 10px;
         margin-bottom: 10px;
         font-size: 13px;
+    }
+    .commentListWrap {
+        background-color: #f2d7bd48;
     }
 }
