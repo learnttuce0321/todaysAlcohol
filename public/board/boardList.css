@@ -15,6 +15,7 @@ body {
     height: 80vh;
     display: flex;
     flex-direction: column;
+    padding: 2rem;
 }
 
 table {
@@ -65,9 +66,24 @@ td {
 
 .postBoardBtn {
     background-color: transparent;
+    border: 1px solid gray;
+    border-radius: 10%;
     float: right;
 }
+.postBoardBtn:hover {
+    background-color: rgb(140, 111, 77);
+    color: white;
+}
 
+td > a {
+    color: #ec9704;
+    text-decoration: none;
+}
+
+td > a:hover {
+    color: #5a3b08;
+    text-decoration: none;
+}
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
     .main_container {
         /* background-color: #f0f0f0; */

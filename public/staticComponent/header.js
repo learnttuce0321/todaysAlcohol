@@ -8,6 +8,7 @@ const headers = `
             <li><a href="/survey-select">칵테일 추천받기</a></li>
             <li><a href="/alcohol-list">칵테일 알아보기</a></li>
             <li><a href="/community">게시판</a></li>
+            <li><a href="/find-friends">채팅방</a></li>
         </div>
         <div class='navbar-right '>
             <li id='login' ><a href="/login">로그인</a></li>

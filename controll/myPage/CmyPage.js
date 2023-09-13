@@ -1,5 +1,7 @@
 import models from '../../models/index.js';
 
+import moment from 'moment';
+
 ////////////////////////////
 // GET
 const CmyPage = async (req, res) => {
@@ -50,6 +52,9 @@ const CmyPage = async (req, res) => {
 		likedBoard.push({
 			boardId: item.dataValues.boardId,
 			board: item.dataValues.Board.dataValues,
+			boardDate: moment(
+				item.dataValues.Board.dataValues.createdAt
+			).format('YYYY-MM-DD'),
 		});
 	});
 
@@ -57,7 +62,6 @@ const CmyPage = async (req, res) => {
 		where: {userId: req.cookies.loginCookie},
 	});
 
-	console.log(likedBoard);
 	res.render('myPage/myPage', {
 		data: {
 			likeAlcoholLength: likedAlcohol.length || 0,
