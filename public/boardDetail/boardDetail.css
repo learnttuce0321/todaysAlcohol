@@ -93,11 +93,6 @@ h1 {
         padding-bottom: 0px;
     }
 
-    /* 댓글 전체 감싸는부분 */
-    .comment_wrap {
-        /* margin-left: 20px; */
-    }
-
     /* 게시물 부분 */
     .article_wrap {
         margin-top: 20px;
