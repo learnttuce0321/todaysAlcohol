@@ -20,10 +20,13 @@
             href="/staticComponent/footer.css"
         />
 
+        <!-- 보기 편하게 CSS추가해주었습니다. -->
         <style>
             #editor {
+                /* border : 1px solid; */
                 margin: 0 auto;
             }
+            /* !!여기!! 새로운 div태그 스타일 추가해줫습니다. */
         </style>
 
         <!-- TOAST UI Editor CDN URL(CSS)-->
@@ -35,14 +38,19 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="/communityPostPage/communityPostPage.css"
+        />
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
     </head>
     <body>
-        <div id="wrapper_ch">
-            <header>
-                <div id="header"></div>
-            </header>
+        <header>
+            <div id="header"></div>
+        </header>
+        <div class="wrapContainer">
             <input
                 type="text"
                 placeholder="제목을 입력하세요"
@@ -52,6 +60,18 @@
 
             <div id="editor"></div>
             <br />
+
+            <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+            <script>
+                let editor;
+            </script>
+            <script src="\communityPostPage\modifyBoardPage.js"></script>
+            <button
+                type="button"
+                onclick="location.href='/community'"
+            >
+                취소
+            </button>
             <button
                 type="button"
                 onclick="submitHandler()"
@@ -62,13 +82,7 @@
         <footer>
             <div id="footer"></div>
         </footer>
-
-        <script src="/staticComponent/footer.js"></script>
-        <script src="/staticComponent/header.js"></script>
-        <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-        <script>
-            let editor;
-        </script>
-        <script src="\communityPostPage\modifyBoardPage.js"></script>
     </body>
+    <script src="/staticComponent/footer.js"></script>
+    <script src="/staticComponent/header.js"></script>
 </html>
