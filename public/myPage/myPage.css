@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+}
+
+.main_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	padding-top: 100px;
+
+	gap: 80px;
+}
+
+.userInfo_container {
+	width: 70%;
+	height: 240px;
+	box-shadow: 0px 2px 10px #d8d9da;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.userInfo_container > div > p {
+	font-size: 3.5em;
+}
+
+.like_box > p {
+	font-size: 15px;
+}
+
+.move_update {
+	border: 1px solid gray;
+	color: black;
+	border-radius: 20px;
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.likeAlcohol_container {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.likeAlcohol_container > div > p {
+	font-size: 25px;
+}
+
+.likeBoard_container {
+	width: 100%;
+	height: 500px;
+}
+
+.likeBoard_container {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.likeBoard_container > div > p {
+	font-size: 25px;
+}
+
+.likeBoard_table {
+	width: 100%;
+	text-align: center;
+	background-color: #d8d9da;
+}
+
+.table_menu > td {
+	font-size: 20px;
+	height: 150px;
+}
+
+.table_vlaue > td:nth-child(1),
+td:nth-child(2),
+td:nth-child(3) {
+	font-size: 14px;
+	height: 40px;
+	width: 180px;
+}

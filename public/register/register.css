@@ -2,57 +2,27 @@
   margin: 0;
   padding: 0;
 }
-
-.title {
-  text-align: center;
-}
-
 h1 {
   padding-top: 30px;
   font-size: 30px;
+  text-align: center;
 }
-
 h2 {
   padding: 20px;
 }
-
 .top-hr {
   height: 2px;
   background-color: black;
   border: 0px;
 }
-
+.div {
+  height: 78px;
+}
 label {
   padding: 30px 0px 30px 40px; 
   display: inline-block;
   width: 160px;
 }
-
-/* span{
-  padding-left:  10px;
-  font-size: 15px;
-} */
-
-.pw_div {
-  display: flex;
-}
-
-.pw_down {
-  margin-left: 30px;
-  line-height: 78px;
-  font-size: 13px;
-}
-
-.nick_div {
-  display: flex;
-}
-
-.nick_down {
-  margin-left: 30px;
-  line-height: 78px;
-  font-size: 13px;
-}
-
 b {
   padding: 0;
   font-size: 15px;
@@ -65,17 +35,40 @@ input {
   height: 30px;
   padding-left: 10px;
 }
+
+.pw_div {
+  display: flex;
+}
+
+.pw-top {
+  display: flex;
+}
+.pw_down {
+  margin-left: 30px;
+  line-height: 78px;
+  font-size: 13px;
+}
+
+.div_nick {
+  display: flex;
+}
+
+.nick_down {
+  margin-left: 30px;
+  line-height: 78px;
+  font-size: 13px;
+}
+
 .determine {
   text-align: center;
   padding: 20px;
 }
-/* .determine > button {
-  padding: 20px;
-} */
+
 button {
   margin: 20px;
   outline: none;
 }
+
 .custom-btn {
   width: 130px;
   height: 40px;
@@ -143,7 +136,6 @@ button {
 .cencel-btn:active {
   top: 2px;
 }
-
 @media screen and (max-width: 820px) {
   label {
     width: 100px;
@@ -151,36 +143,31 @@ button {
 }
 
 @media screen and (max-width: 390px) {
-  /* span {
-    font-size: 3px;
-    display: block;
-    text-align: center;
-    padding-bottom:  8px;
-  }
-  .pw_label {
-    padding: 20px 0px 20px 40px;
-  }
-  .nick_label {
-    padding: 20px 0px 20px 40px;
-  
-  } */
   .pw_div {
     display: block;
     height: 78px;
   }
+
   .pw_label {
     padding: 20px 0px 20px 40px ;
   }
 
   .pw_top {
+    display: flex;
     height: 40px;
   }
+
   .pw_down {
     font-size: 4px;
     height: 20px;
     line-height: 40px;
     margin-left: 40px;
-    
+  }
+  .password {
+    margin-top: 13px;
+  }
+  .div_nick {
+    display: block;
   }
   .nick_div {
     display: block;
@@ -191,6 +178,7 @@ button {
   }
 
   .nick_top {
+    display: block;
     height: 40px;
   }
   .nick_down {
@@ -198,5 +186,8 @@ button {
     height: 20px;
     line-height: 40px;
     margin-left: 40px;
+  }
+  .nickname {
+    margin-top: 13px;
   }
 }

@@ -57,11 +57,27 @@ import {
     CmodifyBoardPatch,
 } from '../controll/communityPostPage/CmodifyBoard.js';
 
+import { Clogout } from '../controll/logout/Clogout.js';
+
 import {
     CcreateComment,
     CcommentList,
     CgetCommentsList,
 } from '../controll/board/Ccomment.js';
+
+import {
+    CcreateRoomPost,
+    CfindFriends,
+    CfindRoomPost,
+    CjoinRoomPost,
+    CparticipationPost,
+} from '../controll/findFriendPage/CfindFriendPage.js';
+import {
+    CbeforeChatPost,
+    CchatRoom,
+    CchatRoomPost,
+    CgetUserIdPost,
+} from '../controll/findFriendPage/CchatRoomPage.js';
 
 // import {
 // 	alcohol_list,
@@ -91,6 +107,8 @@ router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
 
+//로그아웃-------------------------------------
+router.post('/logout', Clogout);
 //술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
 
@@ -139,5 +157,18 @@ router.patch('/community/write/:id', CmodifyBoardPatch);
 router.get('/community/detail/:postId/comments', CgetCommentsList);
 router.get('/community/detail/:postId', CgetCommentsList);
 router.post('/community/detail/:postId', CcreateComment);
+
+// 술 친구 찾기 페이지
+router.get('/find-friends', CfindFriends);
+router.post('/find-friends/findRoom', CfindRoomPost);
+router.post('/find-friends/joinRoom', CjoinRoomPost);
+router.post('/find-friends/participation', CparticipationPost);
+router.post('/find-friends/register-room', CcreateRoomPost);
+
+// 채팅 페이지
+router.get('/find-friends/chat-room/:chatRoomId', CchatRoom);
+router.post('/find-friends/chat-room/getUserId', CgetUserIdPost);
+router.post('/find-friends/chat-room/:chatRoomId', CchatRoomPost);
+router.post('/find-friends/chat-room/:chatRoomId/beforeChat', CbeforeChatPost);
 
 export default router;
