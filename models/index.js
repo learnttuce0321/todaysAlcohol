@@ -52,6 +52,10 @@ db.Room = tempRoom;
 import UserInRoom from './userInRoom.js';
 const tempUserInRoom = UserInRoom(sequelize);
 db.UserInRoom = tempUserInRoom;
+// ChatLog : Users-Rooms 다대다 join 테이블
+import ChatLog from './chatLog.js';
+const tempChatLog = ChatLog(sequelize);
+db.ChatLog = tempChatLog;
 
 db.AlcoholList.hasMany(db.LikeAlcohol, {
     foreignKey: {
@@ -87,6 +91,19 @@ db.UserInRoom.belongsTo(db.User, {
     },
 });
 db.UserInRoom.belongsTo(db.Room, {
+    foreignKey: {
+        name: 'roomId',
+        allowNull: false,
+    },
+});
+
+db.ChatLog.belongsTo(db.User, {
+    foreignKey: {
+        name: 'userId',
+        allowNull: false,
+    },
+});
+db.ChatLog.belongsTo(db.Room, {
     foreignKey: {
         name: 'roomId',
         allowNull: false,
