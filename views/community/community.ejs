@@ -16,63 +16,64 @@
 		<link rel="stylesheet" href="/staticComponent/footer.css">
 	</head>
 	<body>
+		<div id='wrapper_ch'>
 		<header>
 			<div id='header'></div>
 		</header>
-
-		<section class="container">
-			<div class="main_container">
-				<div class="title">
-					<p>게시판 별 게시글</p>
-					<p>게시글 클릭시 해당 게시판으로 이동합니다.</p>
-				</div>
-				<table>
-					<tr class="menu">
-						<td>이름</td>
-						<td>제목</td>
-						<td>날짜</td>
-						<td>좋아요</td>
-					</tr>
-					<tbody>
-						<% for (let i=0; i < 21; i++) {%>
-
-						<tr>
-							<td>홍길동</td>
-							<td><a href="/">코딩온 2차 프로젝트</a></td>
-							<td>23.09.09.11.30</td>
-							<td>25</td>
+			<section class="container">
+				<div class="main_container">
+					<div class="title">
+						<p>게시판 별 게시글</p>
+						<p>게시글 클릭시 해당 게시판으로 이동합니다.</p>
+					</div>
+					<table>
+						<tr class="menu">
+							<td>이름</td>
+							<td>제목</td>
+							<td>날짜</td>
+							<td>좋아요</td>
 						</tr>
-						<% } %>
-					</tbody>
-				</table>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination">
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Previous">
-								<span aria-hidden="true">&laquo;</span>
-							</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">1</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">2</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#">3</a>
-						</li>
-						<li class="page-item">
-							<a class="page-link" href="#" aria-label="Next">
-								<span aria-hidden="true">&raquo;</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
+						<tbody>
+							<% for (let i=0; i < 21; i++) {%>
+	
+							<tr>
+								<td>홍길동</td>
+								<td><a href="/">코딩온 2차 프로젝트</a></td>
+								<td>23.09.09.11.30</td>
+								<td>25</td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">1</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">2</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#">3</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</section>
 			</div>
 			<footer>
 				<div id='footer'></div>
 			</footer>
-		</section>
 		<script src='/staticComponent/footer.js'></script>
 		<script src="/staticComponent/header.js"></script>
 	</body>
