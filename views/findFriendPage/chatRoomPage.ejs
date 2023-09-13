@@ -9,21 +9,35 @@
         <title>Document</title>
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		<link rel="stylesheet" href="/staticComponent/header2.css">
+		<link rel="stylesheet" href="/staticComponent/footer.css">
     </head>
     <body>
-        <input
-            type="text"
-            placeholder="chat"
-            name="chat"
-        />
-        <button
-            type="button"
-            class="send"
-        >
-            보내기
-        </button>
-        <!-- <span id="size">0명</span> -->
-        <div id="chatArea"></div>
+        <div id='wrapper_ch'>
+            <header>
+                <div id='header'></div>
+            </header>
+            <input
+                type="text"
+                placeholder="chat"
+                name="chat"
+            />
+            <button
+                type="button"
+                class="send"
+            >
+                보내기
+            </button>
+            <!-- <span id="size">0명</span> -->
+            <div id="chatArea"></div>
+        </div>
+        <footer>
+            <div id='footer'></div>
+        </footer>
+        
         <script src="\findFriendPage\chatRoomPage.js"></script>
+        <script src='/staticComponent/footer.js'></script>
+		<script src="/staticComponent/header.js"></script>
     </body>
 </html>
