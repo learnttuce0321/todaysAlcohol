@@ -1,5 +1,5 @@
 const postId = window.location.pathname.split('/')[3];
-console.log(postId);
+// console.log(postId);
 
 const ul = document.querySelector('.commentList');
 function writeComment() {
@@ -13,7 +13,7 @@ function writeComment() {
             content: form.comment.value,
         },
     }).then((result) => {
-        console.log(result);
+        // console.log(result);
         const html = `            
                 <li>
                 <div>${result.data.userId}</div>
