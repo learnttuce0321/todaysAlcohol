@@ -77,6 +77,7 @@ import {
     CchatRoom,
     CchatRoomPost,
     CgetUserIdPost,
+    CgetUserNamePost,
 } from '../controll/findFriendPage/CchatRoomPage.js';
 
 // import {
@@ -169,6 +170,7 @@ router.post('/find-friends/register-room', CcreateRoomPost);
 // 채팅 페이지
 router.get('/find-friends/chat-room/:chatRoomId', CchatRoom);
 router.post('/find-friends/chat-room/getUserId', CgetUserIdPost);
+router.post('/find-friends/chat-room/getUserName', CgetUserNamePost);
 router.post('/find-friends/chat-room/:chatRoomId', CchatRoomPost);
 router.post('/find-friends/chat-room/:chatRoomId/beforeChat', CbeforeChatPost);
 

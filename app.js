@@ -69,8 +69,19 @@ app.use('*', (req, res) => {
 
 const countInRoom = (chatRoomId) => {
     const clients = io.sockets.adapter.rooms.get(chatRoomId);
-    console.log(clients);
-    return clients.size;
+    return clients?.size;
+};
+const getParticipant = (chatRoomId) => {
+    const clients = io.sockets.adapter.rooms.get(chatRoomId);
+    const participants = [];
+    if (clients) {
+        clients.forEach((socketId) => {
+            const userSocket = io.sockets.sockets.get(socketId);
+            // console.log(userSocket);
+            participants.push(userSocket.userId);
+        });
+    }
+    return participants;
 };
 
 io.on('connection', (socket) => {
@@ -84,19 +95,22 @@ io.on('connection', (socket) => {
     socket.on('joinRoom', (data) => {
         socket.join(data.chatRoomId);
         socket.room = data.chatRoomId;
-        // const size = countInRoom(data.chatRoomId);
-        // io.to(socket.room).emit('size', { size });
+        socket.userId = data.userId;
+
+        const size = countInRoom(data.chatRoomId);
+        const participants = getParticipant(data.chatRoomId);
+        io.to(socket.room).emit('size', { size, participants });
     });
 
     socket.on('send', (data) => {
-        console.log(data.userId);
-        console.log(io.sockets.adapter.rooms);
         io.to(socket.room).emit('newMessage', data);
     });
+
     socket.on('disconnect', () => {
         if (socket.room) {
-            // const size = countInRoom(socket.room);
-            // io.to(socket.room).emit('size', { size });
+            const size = countInRoom(socket.room);
+            const participants = getParticipant;
+            io.to(socket.room).emit('size', { size, participants });
             socket.leave(socket.room);
         }
     });

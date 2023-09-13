@@ -1,4 +1,4 @@
-// const socket = io();
+const socket = io();
 
 const participate = async (roomId, e) => {
     const result = await axios({
@@ -22,12 +22,13 @@ const participate = async (roomId, e) => {
 
     if (result.data.result) {
         const participationContainer = document.querySelector('#participation');
+        console.log(result.data.participation[0]);
         result.data.participation.forEach((room) => {
             const div = document.createElement('div');
             div.innerHTML = `
                 <a href="/find-friends/chat-room/${room.roomId}">
                     <h1>${room.roomName}</h1>
-                    <p>${room.roomInfo}</p>
+                    <p>${room.info}</p>
                 </a>
             `;
             participationContainer.appendChild(div);
@@ -60,13 +61,9 @@ document.querySelector('.createRoomBtn').addEventListener('click', async () => {
             data,
         });
 
-        // socket.emit('createRoom', {
-        //     ...data,
-        //     // userName: result.data.userName,
-        //     chatRoomId: result.data.chatRoomId,
-        // });
+        console.log(result.data);
         alert(`${data.roomName}이 생성되었습니다.`);
-        window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
+        window.location.href = `/find-friends/chat-room/${result.data.chatRoomId}`;
 
         roomName.value = '';
         roomInfo.value = '';
@@ -104,8 +101,3 @@ document.querySelector('.find').addEventListener('click', async () => {
         allRoom.innerHTML = '<h1>검색결과 없음</h1>';
     }
 });
-
-// socket.on('createRoom', (data) => {
-//     alert(`${data.roomName}이 생성되었습니다.`);
-//     window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
-// });

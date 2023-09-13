@@ -1,4 +1,5 @@
 import models from '../../models/index.js';
+import { Op } from 'sequelize';
 
 const CchatRoom = (req, res) => {
     res.render('findFriendPage/chatRoomPage');
@@ -79,5 +80,32 @@ const CbeforeChatPost = async (req, res) => {
 const CgetUserIdPost = (req, res) => {
     res.json({ loginUserId: req.cookies.userIdCookie });
 };
+const CgetUserNamePost = async (req, res) => {
+    console.log('arr', req.body);
+    try {
+        const result = await models.User.findAll({
+            where: {
+                id: {
+                    [Op.in]: req.body.userIdArr,
+                },
+            },
+        });
 
-export { CchatRoom, CchatRoomPost, CbeforeChatPost, CgetUserIdPost };
+        const userNameArr = [];
+        result.forEach((item) => {
+            userNameArr.push(item.dataValues.name);
+        });
+
+        res.json({ userNameArr });
+    } catch (error) {
+        console.log('에러발생');
+    }
+};
+
+export {
+    CchatRoom,
+    CchatRoomPost,
+    CbeforeChatPost,
+    CgetUserIdPost,
+    CgetUserNamePost,
+};
