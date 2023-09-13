@@ -4,10 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+
 		<link rel="stylesheet" href="\alcoholListFilter\alcoholListFilter.css"/>
 		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
 		<link rel="stylesheet" href="/staticComponent/header2.css">
 		<link rel="stylesheet" href="/staticComponent/footer.css">
+
 		<title>Document</title>
 	</head>
 	<body>
@@ -15,17 +18,17 @@
 			<div id='header'></div>
 		</header>
 		<!-- 모달 창 -->
-		<div id="container">
-			<button id="filterBtnModal">필터</button>
+		<div>
+			<button id="filterBtnModal">
+				<i class="fa-solid fa-plus"></i>
+			</button>
 		</div>
 		<div id="modal" class="modal-overlay">
 			<div class="modal-window">
 				<div class="title">
-					<h2>필터</h2>
-				</div>
-				<div class="close-area">X</div>
-				<div class="content">
-					점수를 통해 원하는 술을 찾아보세요! (중복 선택 가능)
+					<P>자세히 찾아보기</P>
+
+					<div class="close-area">X</div>
 				</div>
 				<div class="content">
 					<form id="filterForm">
@@ -67,11 +70,8 @@
 								5
 							</button>
 						</div>
-						<!-- <input type="text" id="abvScores" name="abvScores" /> -->
 						<br />
 						<label for="tasteScores">맛 점수</label>
-						<!-- <input
-						type="text" id="tasteScores" name="tasteScores" /> -->
 						<div class="rating-buttons" id="tasteRatingButtons">
 							<button
 								type="button"
@@ -115,20 +115,24 @@
 				</div>
 			</div>
 		</div>
-		<script src="\alcoholListFilter\alcoholListFilter.js"></script>
 		<!-- 모달 끝 -->
 		<section id="container">
 			<div id="wrapper">
 				<% for (let i=0; i < data.length; i++) {%>
-
 				<div class="item">
-					<a href="/alcohol-list/detail/<%= data[i].id %>">
-						<img
-							class="thumbsnail"
-							src="https://img.etoday.co.kr/pto_db/2016/06/20160624045430_893102_992_829.jpg"
-					/></a>
-					<p class="text_title"><%= data[i].name %></p>
-					<p class="info"><%= data[i].info %></p>
+					<a
+						href="/alcohol-list/detail/<%= data[i].id %>"
+						class="a_box"
+					>
+						<div class="thumbsnail_box">
+							<img
+								class="thumbsnail"
+								src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data[i].id%>.jpg"
+							/>
+						</div>
+						<p class="text_title"><%= data[i].name %></p>
+						<p class="info"><%= data[i].info %></p>
+					</a>
 				</div>
 
 				<%}%> <% for (let i=0; i < 4; i++) {%>
@@ -140,7 +144,11 @@
 				<%}%>
 			</div>
 		</section>
+		<footer>
+			<div id="footer"></div>
+		</footer>
+		<script src="\alcoholListFilter\alcoholListFilter.js"></script>
+		<script src="/staticComponent/footer.js"></script>
 		<script src="/staticComponent/header.js"></script>
-
 	</body>
 </html>

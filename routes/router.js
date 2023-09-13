@@ -11,7 +11,7 @@ import {
     CcurrentResultForUserPost,
 } from '../controll/surveyPage/CsurveyPage.js';
 
-import { Cmain, CmainPost } from '../controll/mainPage/CmainPage.js';
+import { Cmain } from '../controll/mainPage/CmainPage.js';
 
 import { CRegisterPost, CRegister } from '../controll/register/Cregister.js';
 
@@ -59,7 +59,26 @@ import {
 
 import { Clogout } from '../controll/logout/Clogout.js';
 
-import { CcreateComment, CcommentList } from '../controll/board/Ccomment.js';
+
+import {
+    CcreateComment,
+    CcommentList,
+    CgetCommentsList,
+} from '../controll/board/Ccomment.js';
+
+import {
+    CcreateRoomPost,
+    CfindFriends,
+    CfindRoomPost,
+    CjoinRoomPost,
+    CparticipationPost,
+} from '../controll/findFriendPage/CfindFriendPage.js';
+import {
+    CbeforeChatPost,
+    CchatRoom,
+    CchatRoomPost,
+    CgetUserIdPost,
+} from '../controll/findFriendPage/CchatRoomPage.js';
 
 // import {
 // 	alcohol_list,
@@ -69,7 +88,6 @@ import { CcreateComment, CcommentList } from '../controll/board/Ccomment.js';
 const router = express.Router();
 
 router.get('/', Cmain); // 메인 페이지 router
-router.post('/', CmainPost);
 router.get('/survey-select', CsurveySelect); // 설문조사 or 최근 결과 확인 선택
 router.get('/survey', Csurvey); // 설문조사 페이지 router
 router.get('/survey/result', CsurveyResult); // 설문조사 결과 페이지 router
@@ -85,14 +103,14 @@ router.post('/register', CRegisterPost);
 router.get('/login', Clogin);
 router.post('/login', CloginPost);
 
-//마이 페이지-------------------------------------
+//로그인-------------------------------------
 router.get('/my-page', CmyPage);
 router.get('/my-page/user-info', CprofileEdit);
 router.patch('/my-page/user-info', CupdateUser);
 
-//로그아웃-------------------------------------
-router.post('/logout', Clogout)
 
+//로그아웃-------------------------------------
+router.post('/logout', Clogout);
 //술 리스트--------------------------------------
 router.get('/alcohol-list', CalcoholList);
 
@@ -138,6 +156,21 @@ router.patch('/community/write/:id', CmodifyBoardPatch);
 
 // 게시물 댓글 개발용 라우터
 // router.get('/comment', CcommentList);
-router.get('/community/detail/:postId', CcommentList);
+router.get('/community/detail/:postId/comments', CgetCommentsList);
+router.get('/community/detail/:postId', CgetCommentsList);
 router.post('/community/detail/:postId', CcreateComment);
+
+// 술 친구 찾기 페이지
+router.get('/find-friends', CfindFriends);
+router.post('/find-friends/findRoom', CfindRoomPost);
+router.post('/find-friends/joinRoom', CjoinRoomPost);
+router.post('/find-friends/participation', CparticipationPost);
+router.post('/find-friends/register-room', CcreateRoomPost);
+
+// 채팅 페이지
+router.get('/find-friends/chat-room/:chatRoomId', CchatRoom);
+router.post('/find-friends/chat-room/getUserId', CgetUserIdPost);
+router.post('/find-friends/chat-room/:chatRoomId', CchatRoomPost);
+router.post('/find-friends/chat-room/:chatRoomId/beforeChat', CbeforeChatPost);
+
 export default router;

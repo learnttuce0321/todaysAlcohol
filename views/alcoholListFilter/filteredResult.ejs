@@ -9,10 +9,15 @@
 			href="\alcoholListFilter\alcoholListFilter.css"
 		/>
 		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		<link rel="stylesheet" href="/staticComponent/header2.css" />
+		<link rel="stylesheet" href="/staticComponent/footer.css" />
 		<title>필터 결과값</title>
 	</head>
+
 	<body>
-		<h1>결과값</h1>
+		<header>
+			<div id="header"></div>
+		</header>
 		<!-- 모달 창 -->
 		<div>
 			<button id="filterBtnModal">
@@ -115,8 +120,11 @@
 				</div>
 			</div>
 		</div>
-		<script src="\alcoholListFilter\alcoholListFilter.js"></script>
+
 		<section id="container">
+			<div class="result_box">
+				총 <%= filteredData.length %>개의 칵테일이 검색되었습니다!
+			</div>
 			<div id="wrapper">
 				<% filteredData.forEach(item => { %>
 				<div class="item">
@@ -141,9 +149,12 @@
 			</div>
 		</section>
 		<div class="move_list_box">
-			<a href="/alcohol-list" class="move_list">모두 보기</a>
+			<a href="/alcohol-list" class="move_list">목록으로 돌아가기</a>
 		</div>
 
 		<script src="/public/alcoholListFilter/filteredResult.js"></script>
+		<script src="\alcoholListFilter\alcoholListFilter.js"></script>
+		<script src="/staticComponent/footer.js"></script>
+		<script src="/staticComponent/header.js"></script>
 	</body>
 </html>
