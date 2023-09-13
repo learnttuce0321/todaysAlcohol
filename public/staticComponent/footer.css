@@ -5,6 +5,9 @@
     font-weight: lighter;
     font-style: normal;
 }
+#wrapper_ch {
+    min-height: 100vh;
+}
 body {
     margin: 0px;
     font-size: 10px;

@@ -11,14 +11,19 @@
             name="viewport"
             content="width=device-width, initial-scale=1"
         />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
 
-        <!-- 보기 편하게 CSS추가해주었습니다. -->
         <style>
             #editor {
-                /* border : 1px solid; */
                 margin: 0 auto;
             }
-            /* !!여기!! 새로운 div태그 스타일 추가해줫습니다. */
         </style>
 
         <!-- TOAST UI Editor CDN URL(CSS)-->
@@ -34,22 +39,32 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <input
-            type="text"
-            placeholder="제목을 입력하세요"
-            name="title"
-            required
-        />
+        <div id="wrapper_ch">
+            <header>
+                <div id="header"></div>
+            </header>
+            <input
+                type="text"
+                placeholder="제목을 입력하세요"
+                name="title"
+                required
+            />
 
-        <div id="editor"></div>
-        <br />
-        <button
-            type="button"
-            onclick="submitHandler()"
-        >
-            수정하기
-        </button>
+            <div id="editor"></div>
+            <br />
+            <button
+                type="button"
+                onclick="submitHandler()"
+            >
+                수정하기
+            </button>
+        </div>
+        <footer>
+            <div id="footer"></div>
+        </footer>
 
+        <script src="/staticComponent/footer.js"></script>
+        <script src="/staticComponent/header.js"></script>
         <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
         <script>
             let editor;

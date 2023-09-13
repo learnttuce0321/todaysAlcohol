@@ -11,6 +11,14 @@
             name="viewport"
             content="width=device-width, initial-scale=1"
         />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
 
         <!-- 보기 편하게 CSS추가해주었습니다. -->
         <style>
@@ -34,21 +42,32 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <input
-            type="text"
-            placeholder="제목을 입력하세요"
-            name="title"
-            required
-        />
+        <div id="wrapper_ch">
+            <header>
+                <div id="header"></div>
+            </header>
+            <input
+                type="text"
+                placeholder="제목을 입력하세요"
+                name="title"
+                required
+            />
 
-        <div id="editor"></div>
-        <br />
-        <button
-            type="button"
-            onclick="submitHandler()"
-        >
-            작성하기
-        </button>
+            <div id="editor"></div>
+            <br />
+            <button
+                type="button"
+                onclick="submitHandler()"
+            >
+                작성하기
+            </button>
+        </div>
+        <footer>
+            <div id="footer"></div>
+        </footer>
+
+        <script src="/staticComponent/footer.js"></script>
+        <script src="/staticComponent/header.js"></script>
 
         <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 
