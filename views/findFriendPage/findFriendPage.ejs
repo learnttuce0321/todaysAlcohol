@@ -9,8 +9,15 @@
         <title>Document</title>
         <!-- <script src="/socket.io/socket.io.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		<link rel="stylesheet" href="/staticComponent/header2.css">
+		<link rel="stylesheet" href="/staticComponent/footer.css">
     </head>
     <body>
+        <div id='wrapper_ch'>
+            <header>
+        <div id='header'></div>
+		</header>
         <h1>방 만들기</h1>
         <input
             type="text"
@@ -44,7 +51,13 @@
             <div id="participation"></div>
             <div id="allRoom"></div>
         </div>
+        </div>
+        <footer>
+            <div id='footer'></div>
+        </footer>
 
         <script src="\findFriendPage\findFriendPage.js"></script>
+        <script src='/staticComponent/footer.js'></script>
+		<script src="/staticComponent/header.js"></script>
     </body>
 </html>
