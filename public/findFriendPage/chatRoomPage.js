@@ -9,12 +9,34 @@ let userId;
     });
 
     userId = result.data.loginUserId;
-    console.log(typeof userId);
 
     socket.emit('joinRoom', {
         chatRoomId,
+        userId,
     });
 })();
+
+socket.on('size', async (data) => {
+    const participantDiv = document.querySelector('#participant');
+    console.log('size', data.size);
+    console.log('p', data.participants);
+    document.querySelector('#size').innerText = `${data.size}명`;
+    participantDiv.innerHTML = '';
+
+    console.log('data', data);
+    const result = await axios({
+        method: 'POST',
+        url: '/find-friends/chat-room/getUserName',
+        data: {
+            userIdArr: data.participants,
+        },
+    });
+    result.data.userNameArr.forEach((user) => {
+        const p = document.createElement('p');
+        p.innerText = user;
+        participantDiv.appendChild(p);
+    });
+});
 
 (async () => {
     const chatRoomId = window.location.pathname.split('/')[3];
@@ -28,7 +50,6 @@ let userId;
         const chatArea = document.getElementById('chatArea');
         const chats = result.data.chat;
 
-        console.log(result.data.chat[0]);
         chats.forEach((chat) => {
             const p = document.createElement('p');
             p.innerText = `${chat.name}: ${chat.content} (${chat.createAt})`;
@@ -73,8 +94,4 @@ socket.on('newMessage', (data) => {
         p.style.color = 'red';
     }
     chatArea.appendChild(p);
-});
-socket.on('size', (data) => {
-    console.log(data.size);
-    document.querySelector('#size').innerText = `${data.size}명`;
 });

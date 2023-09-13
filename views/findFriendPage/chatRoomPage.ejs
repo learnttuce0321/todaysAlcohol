@@ -14,28 +14,48 @@
 		<link rel="stylesheet" href="/staticComponent/footer.css">
     </head>
     <body>
-        <div id='wrapper_ch'>
+        <div id="wrapper_ch">
             <header>
-                <div id='header'></div>
+                <div id="header"></div>
             </header>
+            <h1>방 만들기</h1>
             <input
                 type="text"
-                placeholder="chat"
-                name="chat"
+                placeholder="방이름"
+                name="roomName"
+            />
+            <input
+                type="text"
+                placeholder="info"
+                name="roomInfo"
             />
             <button
                 type="button"
-                class="send"
+                class="createRoomBtn"
             >
-                보내기
+                방 만들기
             </button>
-            <!-- <span id="size">0명</span> -->
-            <div id="chatArea"></div>
+            <input
+                type="text"
+                placeholder="find"
+                name="find"
+            />
+            <button
+                type="button"
+                class="find"
+            >
+                태그 등록
+            </button>
+            <div id="tags"></div>
+
+            <div style="display: flex; gap: 50px">
+                <div id="participation"></div>
+                <div id="allRoom"></div>
+            </div>
         </div>
         <footer>
-            <div id='footer'></div>
+            <div id="footer"></div>
         </footer>
-        
         <script src="\findFriendPage\chatRoomPage.js"></script>
         <script src='/staticComponent/footer.js'></script>
 		<script src="/staticComponent/header.js"></script>
