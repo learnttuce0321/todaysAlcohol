@@ -15,99 +15,101 @@
         <title>Document</title>
     </head>
     <body>
+        <div id='wrapper_ch'>
         <header>
             <div id="header"></div>
         </header>
-        <div>
-            <button
-                id="mobilePostBoardBtn"
-                type="button"
-                onclick="location.href='/community/write'"
-            >
-                <i class="fa-solid fa-plus"></i>
-            </button>
-        </div>
-        <section class="container">
-            <div class="main_container">
-                <div class="title">
-                    <p>커뮤니티</p>
-                    <p>게시글 클릭시 해당 게시글로 이동합니다.</p>
-                </div>
-                <table border="1" cellspacing="0">
-                    <thead>
-                        <tr class="menu">
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>글쓴이</th>
-                            <th>작성일</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% for (let i =0; i < posts.length; i++) { %>
-                        <tr id="tr_<%= posts[i].id %>">
-                            <td><%= posts[i].id %></td>
-
-                            <td>
-                                <a href="/community/detail/<%= posts[i].id %>">
-                                    <%= posts[i].title %>
-                                </a>
-                            </td>
-                            <td><%= posts[i].userId %></td>
-                            <td><%= posts[i].formattedCreatedAt %></td>
-                        </tr>
-                        <% } %>
-                    </tbody>
-                </table>
-
-                <!-- 페이징 -->
-                <nav aria-label="Page navigation example" class="boardPaging">
-                    <ul class="pagination my">
-                        <!-- 이전 -->
-                        <li class="page-item">
-                            <% if (page > 1) { %>
-                            <a
-                                class="page-link"
-                                href="?page=<%= page - 1 %>"
-                                aria-label="Previous"
-                            >
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                            <% } %>
-                        </li>
-                        <% for (let i = 1; i <= totalPages; i++) { %>
-                        <li class="page-item">
-                            <a
-                                href="?page=<%= i %>"
-                                class="<%= i === page ? 'active' : '' %> page-link"
-                                ><%= i %></a
-                            >
-                        </li>
-                        <% } %>
-
-                        <li class="page-item">
-                            <% if (page < totalPages) { %>
-                            <a
-                                class="page-link"
-                                href="?page=<%= page + 1 %>"
-                                aria-label="Next"
-                            >
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                            <% } %>
-                        </li>
-                    </ul>
-                </nav>
-                <div>
-                    <button
-                        class="postBoardBtn"
-                        type="button"
-                        onclick="location.href='/community/write'"
-                    >
-                        글쓰기
-                    </button>
-                </div>
+            <div>
+                <button
+                    id="mobilePostBoardBtn"
+                    type="button"
+                    onclick="location.href='/community/write'"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                </button>
             </div>
-        </section>
+            <section class="container">
+                <div class="main_container">
+                    <div class="title">
+                        <p>커뮤니티</p>
+                        <p>게시글 클릭시 해당 게시글로 이동합니다.</p>
+                    </div>
+                    <table border="1" cellspacing="0">
+                        <thead>
+                            <tr class="menu">
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>글쓴이</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (let i =0; i < posts.length; i++) { %>
+                            <tr id="tr_<%= posts[i].id %>">
+                                <td><%= posts[i].id %></td>
+    
+                                <td>
+                                    <a href="/community/detail/<%= posts[i].id %>">
+                                        <%= posts[i].title %>
+                                    </a>
+                                </td>
+                                <td><%= posts[i].userId %></td>
+                                <td><%= posts[i].formattedCreatedAt %></td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+    
+                    <!-- 페이징 -->
+                    <nav aria-label="Page navigation example" class="boardPaging">
+                        <ul class="pagination my">
+                            <!-- 이전 -->
+                            <li class="page-item">
+                                <% if (page > 1) { %>
+                                <a
+                                    class="page-link"
+                                    href="?page=<%= page - 1 %>"
+                                    aria-label="Previous"
+                                >
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                                <% } %>
+                            </li>
+                            <% for (let i = 1; i <= totalPages; i++) { %>
+                            <li class="page-item">
+                                <a
+                                    href="?page=<%= i %>"
+                                    class="<%= i === page ? 'active' : '' %> page-link"
+                                    ><%= i %></a
+                                >
+                            </li>
+                            <% } %>
+    
+                            <li class="page-item">
+                                <% if (page < totalPages) { %>
+                                <a
+                                    class="page-link"
+                                    href="?page=<%= page + 1 %>"
+                                    aria-label="Next"
+                                >
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                                <% } %>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <button
+                            class="postBoardBtn"
+                            type="button"
+                            onclick="location.href='/community/write'"
+                        >
+                            글쓰기
+                        </button>
+                    </div>
+                </div>
+            </section>    
+        </div>
         <footer>
             <div id="footer"></div>
         </footer>
