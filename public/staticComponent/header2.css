@@ -26,9 +26,9 @@ hr {
     margin: 0;
 }
 
-a {
-    color: white;
-    text-decoration-line: none;
+#header a {
+    color: #fbceb1;
+    text-decoration: none;
 }
 /*----------------------------------------------*/
 /* 로그인, 비로그인시 클래스 처리*/

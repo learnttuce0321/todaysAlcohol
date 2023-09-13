@@ -57,6 +57,9 @@ import {
     CmodifyBoardPatch,
 } from '../controll/communityPostPage/CmodifyBoard.js';
 
+import { Clogout } from '../controll/logout/Clogout.js';
+
+
 import {
     CcreateComment,
     CcommentList,

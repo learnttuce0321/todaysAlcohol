@@ -6,24 +6,37 @@
 		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
 		<link rel="stylesheet" href="/staticComponent/header2.css">
 		<link rel="stylesheet" href="/staticComponent/footer.css">
+		<link rel="stylesheet" href="/login/login.css">
 
 		<title>login</title>
 	</head>
 	<body>
 		<header>
-			<div id='header'></div>
+        <div id='header'></div>
 		</header>
-		<form id="loginform">
-			<label for="user_id">id:</label>
-			<input type="text" id="user_id" placeholder="ID" />
-			<label for="user_pw">pw:</label>
-			<input type="password" id="user_pw" placeholder="PW" />
-
-			<button type="button" onclick="loginFunc()">로그인</button>
+		<h1>로그인</h1>
+		<form class='login_form' id="loginform">
+        <div class='login_input'>
+					<div class='id_input'>
+              <input class='login-input' type="text" id="user_id" placeholder="아이디" />
+          </div>
+					<div class='pw_input'>
+						<input class='login-input' type="password" id="user_pw" placeholder="비밀번호" />
+					</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<div class='button'>
+            <button class='custom-btn check-btn' type="button" onclick="loginFunc()">로그인</button>
+        </div>
 		</form>
 		<footer>
-			<div id='footer'></div>
+        <div id='footer'></div>
 		</footer>
+
 		<script src="\login\login.js"></script>
 		<script src='/staticComponent/footer.js'></script>
 		<script src="/staticComponent/header.js"></script>
