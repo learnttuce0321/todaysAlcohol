@@ -1,25 +1,40 @@
 button {
     background-color: transparent;
+    border-radius: 10%;
     border: 1px solid gray;
+}
+
+.entireBtn > button:hover {
+    background-color: rgb(140, 111, 77);
+    color: white;
+}
+
+.commentBtn {
+    border: 1px solid gray;
+}
+.commentBtn:hover {
+    background-color: rgb(140, 111, 77);
+    color: white;
+    border: none;
 }
 
 .entireWrap {
     height: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    padding: 0 6rem;
 }
 #comment {
-    /* border: none; */
-    border: 1px solid black;
-    width: 60%;
-    margin-left: 50px;
+    border: 1px solid gray;
+    width: 30%;
+    /* margin-left: 50px; */
 }
 /* 댓글 다는 부분 */
 #comment_wrap {
     padding-top: 20px;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 /* 게시물 내용 */
@@ -37,23 +52,22 @@ li {
 .commentList {
     font-size: 15px;
 }
-
+/* 
 .backButton {
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-weight: bold;
     margin-top: 20px;
-}
+    margin-bottom: 5px;
+    margin-left: 100px;
+} */
 
-.deleteBtn,
-.modifyBtn {
-    margin-left: 10px;
+.entireBtn {
+    margin-bottom: 5px;
+    padding: 0 6rem;
+    /* margin-left: 100px; */
     margin-top: 20px;
     font-weight: bold;
-    border: 1px solid gray;
     justify-content: center;
     align-items: center;
-    /* margin-left: 50px; */
-    /* background-color: red; */
 }
 
 h1 {
@@ -67,15 +81,32 @@ h1 {
     margin-bottom: 10px;
     font-size: 13px;
 }
+.commentPagination > li > a {
+    color: #ec9704;
+    text-decoration: none;
+}
+.commentPagination > li > a:hover,
+.commentPagination > li > a:active {
+    color: #5a3b08;
+    text-decoration: none;
+}
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width: 768px) and (max-width: 1179px) {
     .entireWrap {
-        margin-left: 0px;
+        height: 100%;
+        /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+        padding: 0 2rem;
     }
     #comment {
         margin-top: 10px;
         /* border: none; */
+    }
+    .entireBtn {
+        padding: 0 2rem;
     }
 }
 
@@ -85,8 +116,14 @@ h1 {
         float: left;
     } */
     .entireWrap {
-        margin-left: 0px;
+        height: 100%;
+        /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+        padding: 0 2rem;
     }
+
     /* 댓글 다는 부분 */
     #comment_wrap {
         padding-top: 10px;
@@ -95,7 +132,7 @@ h1 {
 
     /* 댓글 전체 감싸는부분 */
     .comment_wrap {
-        /* margin-left: 20px; */
+        padding-left: 10px;
     }
 
     /* 게시물 부분 */
@@ -105,16 +142,22 @@ h1 {
     }
     #comment_wrap {
         padding-top: 20px;
-        padding-bottom: 50px;
     }
 
     #comment {
         margin-top: 10px;
         /* border: none; */
-        width: 70%;
+        margin-left: -50px;
+        width: 45%;
+    }
+    .entireBtn {
+        padding: 0 2rem;
     }
 
-    .commentList > li {
-        margin-left: -50px;
+    .commentPagination > li {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-size: 13px;
     }
 }

@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
         <title>Document</title>
         <link
             rel="stylesheet"
@@ -14,9 +17,18 @@
         />
         <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
-        <link rel="stylesheet" href="/staticComponent/header2.css" />
-        <link rel="stylesheet" href="/staticComponent/footer.css" />
-        <link rel="stylesheet" href="/boardDetail/boardDetail.css" />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/boardDetail/boardDetail.css"
+        />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -26,9 +38,9 @@
         <header>
             <div id="header"></div>
         </header>
-        <button class="deleteBtn">삭제하기</button>
-        <button class="modifyBtn">수정하기</button>
-        <div class="entireWrap">
+        <div class="entireBtn">
+            <button class="deleteBtn">삭제하기</button>
+            <button class="modifyBtn">수정하기</button>
             <button
                 class="backButton"
                 type="button"
@@ -36,20 +48,32 @@
             >
                 목록
             </button>
+        </div>
+        <div class="entireWrap">
             <h1><%=data.title%></h1>
             <section class="article_wrap">
                 <div id="viewer"></div>
                 <div class="like">
-                    <button class="likeBtn" type="button" value="enabled">
+                    <button
+                        class="likeBtn"
+                        type="button"
+                        value="enabled"
+                    >
                         좋아요
                     </button>
                 </div>
             </section>
             <!-- 댓글 테스트 -->
             <div class="comment_wrap">
-                <ul class="commentList" id="commentListContainer"></ul>
+                <ul
+                    class="commentList"
+                    id="commentListContainer"
+                ></ul>
 
-                <ul class="commentPagination" id="commentPagination"></ul>
+                <ul
+                    class="commentPagination"
+                    id="commentPagination"
+                ></ul>
 
                 <form name="commentList">
                     <section id="comment_wrap">
@@ -58,7 +82,12 @@
                             type="text"
                             placeholder="댓글 달기..."
                         />
-                        <button type="button" class="comment_btn">게시</button>
+                        <button
+                            type="button"
+                            class="commentBtn"
+                        >
+                            게시
+                        </button>
                         <!-- jquery -->
                     </section>
                 </form>
