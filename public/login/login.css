@@ -1,6 +1,12 @@
 body {
   width: 100%;
   height: auto;
+  /* background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/loginBackground.jpg);
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.bg-img {
   background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/loginBackground.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -24,11 +30,13 @@ h1 {
 .login-input {
   width: 40%;
   height: 48px;
-  padding: 0 10px;
+  padding: 0 15px;
   box-sizing: border-box;
   margin-bottom: 16px;
+  border: none;
   border-radius: 6px;
   background-color: #f8f8f8;
+  opacity: 0.8;
 }
 .login_input {
   text-align: center;
