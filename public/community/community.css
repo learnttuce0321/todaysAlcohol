@@ -1,59 +1,59 @@
 body {
-	margin: 0;
+    margin: 0;
 }
 
 .container {
-	display: flex;
+    display: flex;
 
-	justify-content: center;
-	align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 .main_container {
-	background-color: #f0f0f0;
+    background-color: #f0f0f0;
 
-	width: 900px;
-	height: 1000px;
+    width: 900px;
+    height: 1000px;
 
-	display: flex;
+    display: flex;
 
-	flex-direction: column;
+    flex-direction: column;
 }
 table {
-	width: 100%;
-	padding: 80px;
-	text-align: center;
-	border: 1px solid #f0f0f0;
-	border-collapse: collapse;
+    width: 100%;
+    padding: 80px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    border-collapse: collapse;
 }
 
 .menu {
-	font-size: 16px;
-	font-weight: 900;
-	padding: 20px;
-	height: 50px;
-	background-color: hsl(0, 3%, 93%);
+    font-size: 16px;
+    font-weight: 900;
+    padding: 20px;
+    height: 50px;
+    background-color: hsl(0, 3%, 93%);
 }
 
 tr,
 td {
-	border-bottom: 1px solid #d8d9da;
-	padding: 5px;
+    border-bottom: 1px solid #d8d9da;
+    padding: 5px;
 }
 
 .title {
-	padding: 20px 0 0 20px;
+    padding: 20px 0 0 20px;
 }
 
 .title > p:nth-child(1) {
-	font-size: 20px;
-	font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .title > p:nth-child(2) {
-	font-size: 13px;
-	columns: #b9b4c7;
+    font-size: 13px;
+    columns: #b9b4c7;
 }
 
 nav {
-	margin: 0 auto;
+    margin: 0 auto;
 }

@@ -21,12 +21,11 @@ img {
 	background-color: #352f44;
 	width: 100%;
 	height: 500px;
-
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	gap: 15px;
+	gap: 50px;
 }
 
 .alcohol_info {
@@ -34,16 +33,14 @@ img {
 	height: 60%;
 	display: flex;
 	flex-direction: column;
-	align-items: start;
-	justify-content: start;
-
-	gap: 75px;
+	justify-content: center;
+	gap: 40px;
 }
 
 .name {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
 }
 
 .name > div:nth-child(1) {
@@ -55,6 +52,7 @@ img {
 	color: #b9b4c7;
 	font-size: 13px;
 	line-height: 25px;
+	word-break: keep-all;
 }
 
 .name > div:nth-child(3) {
@@ -124,6 +122,18 @@ tr > td:nth-child(1) {
 td > p {
 	padding: 8px;
 	font-size: 15px;
+	word-break: keep-all;
+}
+
+.likeBtn {
+	width: 4rem;
+	height: 4rem;
+	background-color: #352f44;
+	border: 2px solid #b9b4c7;
+	border-radius: 50%;
+	font-size: 2rem;
+	color: #b9b4c7;
+	cursor: pointer;
 }
 
 .content1 > span,
@@ -132,4 +142,55 @@ td > p {
 	padding: 10px;
 	font-size: larger;
 	font-weight: 800;
+}
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1179px) {
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+	.info_container {
+		flex-direction: column;
+		height: 100%;
+		padding-top: 50px;
+	}
+
+	.alcohol_info {
+		width: 300px;
+	}
+
+	.btn_box {
+		padding: 0 0 50px 100px;
+	}
+
+	table {
+		width: 80%;
+	}
+	.recipe {
+		width: 90%;
+	}
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+	.info_container {
+		flex-direction: column;
+		height: 100%;
+		padding-top: 50px;
+	}
+
+	.alcohol_info {
+		width: 300px;
+	}
+
+	.btn_box {
+		padding: 0 0 50px 100px;
+	}
+
+	table {
+		width: 80%;
+	}
+	.recipe {
+		width: 90%;
+	}
 }

@@ -9,6 +9,7 @@ const Board = (sequelize) => {
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+            onDelete: 'CASCADE',
         },
         userId: {
             type: DataTypes.STRING(255),

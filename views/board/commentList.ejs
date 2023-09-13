@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="commentList">
+            <div class="comment_wrap">
+                <section class="article_wrap">
+                    <ul class="commentList">
+                        <% for (let i =0; i < comments.length; i++) { %>
+                        <li>
+                            <div><%= comments[i].content%></div>
+                        </li>
+                        <% } %>
+                    </ul>
+                </section>
+                <section id="comment_wrap">
+                    <input
+                        id="comment"
+                        type="text"
+                        placeholder="댓글 달기..."
+                    />
+                    <button
+                        type="button"
+                        class="comment_btn"
+                        onclick="writeComment()"
+                    >
+                        게시
+                    </button>
+                    <!-- jquery -->
+                </section>
+            </div>
+        </form>
+        <script src="board\comment.js"></script>
+    </body>
+</html>

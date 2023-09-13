@@ -1,25 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <title>Document</title>
-    </head>
-    <body>
-        <a href="/my-page/user-info"><p>회원정보 수정하러 가기</p></a>
-        <p>내가 누른 좋아요 수: <%=data.likeLength%></p>
-        <p>내가 누른 좋아요</p>
-        <% for(let i=0; i<data.likeLength; i++) {%> 
-            <a href="/alcohol-list/detail/<%=data.likedAlcohol[i].alcoholId%>">
-                <h3><%=data.likedAlcohol[i].alcohol.name%></h3>
-                <p><%=data.likedAlcohol[i].alcohol.info%></p>
-            </a>
-        <%}%>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		<link rel="stylesheet" href="/staticComponent/header2.css" />
+		<link rel="stylesheet" href="/staticComponent/footer.css" />
+		<link rel="stylesheet" href="\myPage\myPage.css" />
+		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
 
-        <a href="/">메인 페이지</a>
-    </body>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<div id="header"></div>
+		</header>
+
+		<div class="main_container">
+			<div class="userInfo_container">
+				<div>
+					<p><%= data.user.nickname %>님 환영합니다!</p>
+					<div class="like_box">
+						<p>좋아요 한 칵테일 <%=data.likeAlcoholLength%>개</p>
+						<p>좋아요 한 게시물 <%=data.likeBoardLength%>개</p>
+					</div>
+				</div>
+				<div>
+					<a href="/my-page/user-info"
+						><p class="move_update">회원정보 수정하기</p></a
+					>
+				</div>
+			</div>
+
+			<!-- -------------------------------------------------------- -->
+			<div class="likeAlcohol_container">
+				<div><p>좋아요 한 칵테일</p></div>
+
+				<div>
+					<section id="container">
+						<div id="wrapper" style="padding: 0">
+							<% for (let i=0; i < data.likeAlcoholLength; i++)
+							{%>
+							<div class="item">
+								<a
+									href="/alcohol-list/detail/<%=data.likedAlcohol[i].alcoholId%>"
+									class="a_box"
+								>
+									<div class="thumbsnail_box">
+										<img
+											class="thumbsnail"
+											src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data.likedAlcohol[i].alcohol.id%>.jpg"
+										/>
+									</div>
+									<p class="text_title">
+										<%=data.likedAlcohol[i].alcohol.name%>
+									</p>
+									<p class="info">
+										<%=data.likedAlcohol[i].alcohol.info%>
+									</p>
+								</a>
+							</div>
+
+							<%}%> <% for (let i=0; i < 4; i++) {%>
+							<div class="hidden">
+								<img class="thumbsnail" src="" />
+								<h3 class="text_title"></h3>
+								<p class="info"></p>
+							</div>
+							<%}%>
+						</div>
+					</section>
+				</div>
+			</div>
+			<!-- ------------------------------------------------------- -->
+
+			<div class="likeBoard_container">
+							<div><p>좋아요 한 게시글</p></div>
+			<div>
+			
+			<table class="likeBoard_table">
+				<tr class="table_menu">
+					<td>번호</td>
+					<td>제목</td>
+					<td>글쓴이</td>
+					<td>작성일</td>
+					
+				</tr>
+
+				<% for(let i=0; i<data.likeBoardLength; i++) {%> 
+					<tr class="table_vlaue">
+					<td><%=data.likedBoard[i].board.id%></td>
+					<td><a href="/community/detail/<%=data.likedBoard[i].boardId%>"><%=data.likedBoard[i].board.title%></a></td>
+					<td><%=data.likedBoard[i].board.userid%></td>
+					<td><%=data.likedBoard[i].board.createdAt%></td>
+				</tr>
+			<%}%>
+			</div>
+			</table>
+			</div>
+
+
+					
+		<!-- ---------------------------------------------------------------- -->
+		</div>
+
+		<footer>
+			<div id="footer"></div>
+		</footer>
+		<script src="/staticComponent/footer.js"></script>
+		<script src="/staticComponent/header.js"></script>
+	</body>
 </html>
-

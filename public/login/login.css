@@ -1,0 +1,84 @@
+body {
+  width: 100%;
+  height: auto;
+  background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/loginBackground.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  margin: 70px;
+  text-align: center;
+}
+
+/* .id_label {
+  margin: 20px 20px 20px 50px;
+}
+
+.pw_label {
+  margin: 20px 20px 20px 50px;
+} */
+
+.login-input {
+  width: 40%;
+  height: 48px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+}
+.login_input {
+  text-align: center;
+}
+.button {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+.check-btn {
+  background: #000;
+  color: #fff;
+  z-index: 1;
+}
+.check-btn:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #e0e5ec;
+  transition: all 0.3s ease;
+}
+.check-btn:hover {
+  color: #000;
+}
+.check-btn:hover::after {
+  top: 0;
+  height: 100%;
+}
+.check-btn:active {
+  top: 2px;
+}
+
+@media screen and (max-width: 390px) {
+  .login-input {
+    width: 60%;
+  }
+}
