@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <h1>방 만들기</h1>
+        <input
+            type="text"
+            placeholder="방이름"
+            name="roomName"
+        />
+        <input
+            type="text"
+            placeholder="info"
+            name="roomInfo"
+        />
+        <button
+            type="button"
+            class="createRoomBtn"
+        >
+            방 만들기
+        </button>
+        <input
+            type="text"
+            placeholder="find"
+            name="find"
+        />
+        <button
+            type="button"
+            class="find"
+        >
+            태그 등록
+        </button>
+        <div id="tags"></div>
+        <div style="display: flex; gap: 50px">
+            <div id="participation"></div>
+            <div id="allRoom"></div>
+        </div>
+
+        <script src="\findFriendPage\findFriendPage.js"></script>
+    </body>
+</html>
