@@ -76,7 +76,6 @@ window.addEventListener('resize', () => {
 
 (() => {
     const loginToken = localStorage.getItem('loginToken');
-    // console.log('123');
 
     if (loginToken) {
         const login = document.querySelector('#login');
@@ -95,7 +94,6 @@ window.addEventListener('resize', () => {
 const logout = document.querySelector('#logout');
 
 logout.addEventListener('click', () => {
-    console.log('logout');
     // 쿠키 만료일을 이전 날짜로 설정하여 쿠키를 삭제합니다.
     document.cookie =
         'loginCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';

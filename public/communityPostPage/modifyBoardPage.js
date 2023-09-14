@@ -1,6 +1,4 @@
 (async () => {
-    console.log(window.location.pathname);
-
     const result = await axios({
         method: 'POST',
         url: window.location.pathname,
@@ -31,7 +29,6 @@
 const submitHandler = async () => {
     const title = document.querySelector('input[name="title"]');
 
-    console.log(editor);
     if (title.value.length === 0) {
         alert('제목을 입력해주세요');
         return;

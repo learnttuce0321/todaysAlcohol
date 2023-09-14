@@ -14,7 +14,6 @@ const sequelize = new Sequelize(
     config
 );
 
-//
 // 모델
 // Users: 회원 정보 DB
 import User from './User.js';

@@ -1,9 +1,7 @@
-// const { DataTypes } = require('sequelize');
 import { DataTypes } from 'sequelize';
 
 const Comment = (sequelize) => {
     return sequelize.define('Comment', {
-        // 컬럼 정의
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,

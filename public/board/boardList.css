@@ -9,8 +9,6 @@ body {
     font-size: 15px;
 }
 .main_container {
-    /* background-color: #f0f0f0; */
-    /* background-color: #c7ab91; */
     width: 900px;
     height: 80vh;
     display: flex;
@@ -22,7 +20,6 @@ table {
     width: 100%;
     padding: 80px;
     text-align: center;
-    /* border: 1px solid #f0f0f0; */
     border: 1px solid #ffffff;
     border-collapse: collapse;
 }
@@ -86,8 +83,6 @@ td > a:hover {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
     .main_container {
-        /* background-color: #f0f0f0; */
-        /* background-color: #c7ab91; */
         width: 900px;
         height: 80vh;
         display: flex;
@@ -160,13 +155,6 @@ td > a:hover {
     }
 }
 
-/* .page-item.active .page-link:focus,
-.page-item.active .page-link:hover,
-.page-item.active .page-link:active,
-.page-item .page-link:focus {
-    background-color: #ff0000 !important;
-    color: #ffffff !important;
-} */
 .pagination > .page-item > .page-link {
     color: #9c4a1a;
     border: 1px solid #cfc4bb;

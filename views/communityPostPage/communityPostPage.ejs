@@ -21,16 +21,11 @@
             rel="stylesheet"
             href="/staticComponent/footer.css"
         />
-        <!-- 보기 편하게 CSS추가해주었습니다. -->
         <style>
             #editor {
-                /* border : 1px solid; */
                 margin: 0 auto;
             }
-            /* !!여기!! 새로운 div태그 스타일 추가해줫습니다. */
         </style>
-
-        <!-- TOAST UI Editor CDN URL(CSS)-->
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
@@ -84,7 +79,6 @@
                 editor.addHook('addImageBlobHook', async (blob, cb) => {
                     const formData = new FormData();
                     formData.append('data', blob);
-                    console.log(formData);
                     try {
                         const response = await axios({
                             method: 'POST',
@@ -94,12 +88,10 @@
                             },
                             data: formData,
                         });
-                        console.log(response);
                         imageArr.push(response.data.imageUrl);
-                        console.log(response.data.imageUrl);
                         cb(response.data.imageUrl, '이미지');
                     } catch (error) {
-                        console.log('S3업로드 중 오류 발생', error);
+                        console.log(error);
                     }
                 });
             </script>

@@ -102,14 +102,11 @@ const CdeleteBoardPost = async (req, res) => {
             id: req.params.id,
         },
     });
-    console.log('destroyTarget', destroyTarget);
     const result = await destroyTarget.destroy({
         where: {
             id: req.params.id,
         },
     });
-
-    console.log('result', result);
     res.json({ result: true });
 };
 export {

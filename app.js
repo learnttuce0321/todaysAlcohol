@@ -11,9 +11,6 @@ import http from 'http';
 import { Server } from 'socket.io';
 
 dotenv.config();
-console.log('DB_HOST:', process.env.MYSQL_HOST);
-console.log('DB_USER:', process.env.MYSQL_USERNAME);
-console.log('DB_PASS:', process.env.MYSQL_PASSWORD);
 
 const PORT = 8000;
 const app = express();
@@ -59,7 +56,6 @@ const upload = multer({
 });
 
 app.post('/community/write-img', upload.single('data'), (req, res) => {
-    console.log(req.file);
     res.json({ imageUrl: req.file.location });
 });
 
@@ -77,7 +73,6 @@ const getParticipant = (chatRoomId) => {
     if (clients) {
         clients.forEach((socketId) => {
             const userSocket = io.sockets.sockets.get(socketId);
-            // console.log(userSocket);
             participants.push(userSocket.userId);
         });
     }

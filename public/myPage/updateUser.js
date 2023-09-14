@@ -1,7 +1,6 @@
 // 회원정보 수정 함수, 유효성 검사
 
 const UpdateUser = async (req, res) => {
-    console.log(123123123);
     const userId = document.getElementById('userId');
     const password = document.getElementById('password');
     const passwordRe = document.getElementById('passwordRe');
@@ -77,11 +76,8 @@ const UpdateUser = async (req, res) => {
         if (res.data.result) {
             alert(`${nickname.value}님 환영합니다!`);
             document.location.href = '/';
-            // console.log(res.data);
         }
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (error) {}
 };
 
 const CancelUpdateUser = () => {

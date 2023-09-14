@@ -31,9 +31,7 @@ const CloginPost = async (req, res) => {
             res.json({ result: false, msg: '존재하지 않는 회원입니다.' });
         }
 
-        console.log(result.dataValues);
         const compare = await comparePassword(pw, result.dataValues.password);
-        console.log('확인', compare);
 
         if (compare == false) {
             res.json({
@@ -44,11 +42,10 @@ const CloginPost = async (req, res) => {
             res.cookie('loginCookie', userId, cookieConfig);
             res.cookie('userIdCookie', result.dataValues.id);
             const token = jwt.sign({ id: req.body.id }, SECRET);
-            console.log(token);
             res.json({ result: 'true', token });
         }
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
+        console.log(error);
     }
 };
 

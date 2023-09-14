@@ -18,12 +18,9 @@ let userId;
 
 socket.on('size', async (data) => {
     const participantDiv = document.querySelector('#participant');
-    console.log('size', data.size);
-    console.log('p', data.participants);
     document.querySelector('#size').innerText = `${data.size}명`;
     participantDiv.innerHTML = '';
 
-    console.log('data', data);
     const result = await axios({
         method: 'POST',
         url: '/find-friends/chat-room/getUserName',
@@ -51,11 +48,11 @@ socket.on('size', async (data) => {
         const chats = result.data.chat;
 
         chats.forEach((chat) => {
+            console.log(chat);
             const div = document.createElement('div');
-            const formmattedDate = moment(chat.createdAt).format(
+            const formmattedDate = moment(chat.createAt).format(
                 'YYYY. M. D. A h:mm:ss'
             );
-            // div.innerText = `${chat.name}: ${chat.content} (${chat.createAt})`;
             div.innerHTML = `<span style="font-weight: 600">${chat.name}</span><span class="dateSpan">(${formmattedDate})</span><p>${chat.content}</p>`;
             chatArea.appendChild(div);
         });
