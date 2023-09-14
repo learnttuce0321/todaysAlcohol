@@ -1,89 +1,102 @@
 .result_box {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 100px;
-	font-size: 20px;
-	font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    font-size: 20px;
+    font-weight: 600;
 }
-
+.title > p {
+    font-weight: bold;
+}
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+.rating-button {
+}
 /* modal 창 오버레이 */
 #modal.modal-overlay {
-	position: absolute;
-	width: 100%;
-
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.5);
 }
 /* modal 창 */
 #modal .modal-window {
-	background: #f7ca15b9;
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(13.5px);
-	-webkit-backdrop-filter: blur(13.5px);
-	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.18);
-	width: 300px;
-	height: 300px;
-	position: fixed;
-	top: 200px;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: center;
+    /* background: #    background-color: #ec9704;
+; */
+    background: #ec97045d;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 /* modal 타이틀 (필터) */
 #modal .title {
-	color: black;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #modal .title P {
-	display: inline;
-	font-size: 18px;
+    display: inline;
+    font-size: 18px;
 }
 #modal .close-area {
-	display: inline;
+    display: inline;
 
-	cursor: pointer;
-	text-shadow: 1px 1px 2px gray;
-	color: white;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
 }
 
 .rating-button {
-	background-color: #ff7f3f;
-	color: white;
-	width: 40px;
-	height: 40px;
-	border-radius: 7px;
-	border: 3px solid #9d5353;
-	cursor: pointer;
-	font-size: 15px;
-	font-weight: 400;
-	box-shadow: 0px 2px 2px #454545;
+    /* background-color: #ff7f3f; */
+    background-color: #ec9704;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+    /* border: 3px solid #9d5353; */
+    border: 3px solid #a16602;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    /* box-shadow: 0px 2px 2px #454545; */
 }
 
 /* 버튼 클릭 */
 .selected-button {
-	background-color: #ec9704;
-	color: white;
-	border: 3px solid #9c4a1a;
+    background-color: #d67006;
+    color: white;
+    border: 3px solid #9c4a1a;
 }
 
 .filter_btn {
-	background-color: #fcf0c8;
-	border: 3px solid #fcf0c8;
-	box-shadow: 0px 5px 5px #454545;
-	width: 222px;
-	height: 35px;
-	border-radius: 7px;
-	margin: auto;
-	display: block;
-	cursor: pointer;
-	font-size: 12px;
+    font-weight: bold;
+    /* background-color: #fcf0c8; */
+    background-color: #f6e4a9;
+    border: 3px solid #f6e4a9;
+    /* box-shadow: 0px 5px 5px #454545; */
+    width: 222px;
+    height: 35px;
+    border-radius: 7px;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    font-size: 12px;
 }
