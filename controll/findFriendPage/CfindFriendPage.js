@@ -6,6 +6,7 @@ const CfindFriends = (req, res) => {
 };
 
 const CcreateRoomPost = async (req, res) => {
+    console.log(req.body);
     if (req.cookies.loginCookie) {
         try {
             const resultRoom = await models.Room.create({
@@ -121,6 +122,7 @@ const CjoinRoomPost = async (req, res) => {
         console.log(error);
     }
 };
+
 export {
     CfindFriends,
     CcreateRoomPost,

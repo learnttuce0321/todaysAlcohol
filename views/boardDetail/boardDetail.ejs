@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>게시물</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
@@ -14,58 +17,88 @@
         />
         <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 
-        <link rel="stylesheet" href="/staticComponent/header2.css" />
-        <link rel="stylesheet" href="/staticComponent/footer.css" />
-        <link rel="stylesheet" href="/boardDetail/boardDetail.css" />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/boardDetail/boardDetail.css"
+        />
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
 
     <body>
-        <div id='wrapper_ch'>
-        <header>
-            <div id="header"></div>
-        </header>
-            <button class="deleteBtn">삭제하기</button>
-        <button class="modifyBtn">수정하기</button>
-        <div class="entireWrap">
-            <button
-                class="backButton"
-                type="button"
-                onclick="location.href='/community'"
-            >
-                목록
-            </button>
-            <h1><%=data.title%></h1>
-            <section class="article_wrap">
-                <div id="viewer"></div>
-                <div class="like">
-                    <button class="likeBtn" type="button" value="enabled">
-                        좋아요
-                    </button>
+        <div id="wrapper_ch">
+            <header>
+                <div id="header"></div>
+            </header>
+            <div class="entireBtn">
+                <button class="deleteBtn">삭제하기</button>
+                <button class="modifyBtn">수정하기</button>
+                <button
+                    class="backButton"
+                    type="button"
+                    onclick="location.href='/community'"
+                >
+                    목록
+                </button>
+            </div>
+            <div class="entireWrap">
+                <h1><%=data.title%></h1>
+                <section class="article_wrap">
+                    <div id="viewer"></div>
+                    <div class="like">
+                        <button
+                            class="likeBtn"
+                            type="button"
+                            value="enabled"
+                        >
+                            좋아요
+                        </button>
+                    </div>
+                </section>
+                <!-- 댓글 테스트 -->
+                <div class="comment_wrap">
+                    <h1 class="commentTitle">댓글</h1>
+                    <div class="commentListWrap">
+                        <ul
+                            class="commentList"
+                            id="commentListContainer"
+                        ></ul>
+
+                        <ul
+                            class="commentPagination"
+                            id="commentPagination"
+                        ></ul>
+                    </div>
+
+                    <form name="commentList">
+                        <section id="comment_wrap">
+                            <input
+                                id="comment"
+                                type="text"
+                                placeholder="댓글 달기..."
+                            />
+                            <button
+                                type="button"
+                                class="commentBtn"
+                            >
+                                게시
+                            </button>
+                            <!-- jquery -->
+                        </section>
+                    </form>
                 </div>
-            </section>
-            <!-- 댓글 테스트 -->
-            <div class="comment_wrap">
-                <ul class="commentList" id="commentListContainer"></ul>
-
-                <ul class="commentPagination" id="commentPagination"></ul>
-
-                <form name="commentList">
-                    <section id="comment_wrap">
-                        <input
-                            id="comment"
-                            type="text"
-                            placeholder="댓글 달기..."
-                        />
-                        <button type="button" class="comment_btn">게시</button>
-                        <!-- jquery -->
-                    </section>
-                </form>
             </div>
         </div>
-        </div>
+
         <footer>
             <div id="footer"></div>
         </footer>

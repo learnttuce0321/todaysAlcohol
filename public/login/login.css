@@ -102,7 +102,7 @@ h1 {
 @media screen and (max-width: 390px) {
   .bg-img {
     background-position: 50%;
-    background-image: url(/login/string-2559765_1920.jpg);
+    background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/loginPhone.jpg);
   }
   .login-location {
     margin-left: 20px;

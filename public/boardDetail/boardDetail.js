@@ -138,7 +138,7 @@ const ul = document.querySelector('.commentList');
 
 const postComment = () => {
     const commentInput = document.getElementById('comment');
-    const commentPostBtn = document.getElementsByClassName('comment_btn')[0];
+    const commentPostBtn = document.getElementsByClassName('commentBtn')[0];
 
     const writeComment = () => {
         const form = document.forms['commentList'];

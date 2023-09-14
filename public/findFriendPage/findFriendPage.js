@@ -1,17 +1,16 @@
-const participate = async (roomId, e) => {
-	if (!confirm('채팅방에 참여하시겠습니까?')) {
-	} else {
-		const result = await axios({
-			method: 'POST',
-			url: '/find-friends/joinRoom',
-			data: {
-				roomId,
-			},
-		});
+// const socket = io();
 
-		if (result.data.result) {
-			window.location.href = `/find-friends/chat-room/${roomId}`;
-		}
+const participate = async (roomId, e) => {
+	const result = await axios({
+		method: 'POST',
+		url: '/find-friends/joinRoom',
+		data: {
+			roomId,
+		},
+	});
+
+	if (result.data.result) {
+		window.location.href = `/find-friends/chat-room/${roomId}`;
 	}
 };
 
@@ -27,13 +26,12 @@ const participate = async (roomId, e) => {
 			const div = document.createElement('div');
 			div.classList.add('box1');
 			div.innerHTML = `
-			
-	            <span class='roomName_span'>
-	                <h1 class='roomName'>${room.roomName}</h1>
-	                <p>${room.roomInfo}</p>
-					<a href="/find-friends/chat-room/${room.roomId}"><button class='part_btn'><i class="fa-solid fa-comments"></i></button></a>
-	            </span>
-	        `;
+			<span class='roomName_span'>
+			<h1 class='roomName'>${room.roomName}</h1>
+			<p>${room.roomInfo}</p>
+			<a href="/find-friends/chat-room/${room.roomId}"><button class='part_btn'><i class="fa-solid fa-comments"></i></button></a>
+		</span>
+            `;
 			participationContainer.appendChild(div);
 		});
 	}
@@ -109,8 +107,3 @@ document.querySelector('.find').addEventListener('click', async () => {
 		allRoom.innerHTML = '<h1>검색결과 없음</h1>';
 	}
 });
-
-// socket.on('createRoom', (data) => {
-//     alert(`${data.roomName}이 생성되었습니다.`);
-//     window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
-// });

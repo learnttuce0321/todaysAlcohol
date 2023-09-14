@@ -3,13 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<!-- <script src="/socket.io/socket.io.js"></script> -->
+		<title>채팅방</title>
+		<script src="/socket.io/socket.io.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
 		<link rel="stylesheet" href="\findFriendPage\findFriendPage.css" />
-		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
-
 		<link rel="stylesheet" href="/staticComponent/header2.css" />
 		<link rel="stylesheet" href="/staticComponent/footer.css" />
 	</head>
@@ -18,15 +16,12 @@
 			<header>
 				<div id="header"></div>
 			</header>
-
-			<!-- <h1>방 만들기</h1> -->
+			<h1>방 만들기</h1>
 			<input type="text" placeholder="방이름" name="roomName" />
 			<input type="text" placeholder="info" name="roomInfo" />
 			<button type="button" class="createRoomBtn">방 만들기</button>
 			<input type="text" placeholder="find" name="find" />
 			<button type="button" class="find">태그 등록</button>
-
-			<!-- -------------------------------------------------------- -->
 			<div id="tags"></div>
 			<div class="wrapper">
 				<div>

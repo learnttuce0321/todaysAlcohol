@@ -7,6 +7,8 @@
             content="IE=edge"
         />
         <title>Page Title</title>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1"
@@ -19,7 +21,6 @@
             rel="stylesheet"
             href="/staticComponent/footer.css"
         />
-
         <!-- 보기 편하게 CSS추가해주었습니다. -->
         <style>
             #editor {
@@ -38,23 +39,77 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
+        <link
+            rel="stylesheet"
+            href="/communityPostPage/communityPostPage.css"
+        />
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
-        <div id="wrapper_ch">
-            <header>
-                <div id="header"></div>
-            </header>
+        <header>
+            <div id="header"></div>
+        </header>
+        <div class="wrapContainer">
             <input
                 type="text"
                 placeholder="제목을 입력하세요"
                 name="title"
                 required
             />
-
             <div id="editor"></div>
             <br />
+
+            <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+
+            <script>
+                const editor = new toastui.Editor({
+                    el: document.querySelector('#editor'),
+                    previewStyle: 'vertical',
+                    height: '80vh',
+                    toolbarItems: [
+                        ['heading', 'bold', 'italic', 'strike'],
+                        ['hr', 'quote'],
+                        ['ul', 'ol', 'task', 'indent', 'outdent'],
+                        ['table', 'image', 'link'],
+                        ['code', 'codeblock'],
+                        ['scrollSync'],
+                    ],
+                    initialEditType: 'wysiwyg',
+                    placeholder: '내용을 입력해 주세요',
+                });
+
+                const imageArr = [];
+
+                editor.addHook('addImageBlobHook', async (blob, cb) => {
+                    const formData = new FormData();
+                    formData.append('data', blob);
+                    console.log(formData);
+                    try {
+                        const response = await axios({
+                            method: 'POST',
+                            url: `/community/write-img`,
+                            headers: {
+                                'Cache-Control': 'no-cache',
+                            },
+                            data: formData,
+                        });
+                        console.log(response);
+                        imageArr.push(response.data.imageUrl);
+                        console.log(response.data.imageUrl);
+                        cb(response.data.imageUrl, '이미지');
+                    } catch (error) {
+                        console.log('S3업로드 중 오류 발생', error);
+                    }
+                });
+            </script>
+            <script src="\communityPostPage\communityPostPage.js"></script>
+            <button
+                type="button"
+                onclick="location.href='/community'"
+            >
+                취소
+            </button>
             <button
                 type="button"
                 onclick="submitHandler()"
@@ -65,53 +120,7 @@
         <footer>
             <div id="footer"></div>
         </footer>
-
-        <script src="/staticComponent/footer.js"></script>
-        <script src="/staticComponent/header.js"></script>
-
-        <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-
-        <script>
-            const editor = new toastui.Editor({
-                el: document.querySelector('#editor'),
-                previewStyle: 'vertical',
-                height: '80vh',
-                toolbarItems: [
-                    ['heading', 'bold', 'italic', 'strike'],
-                    ['hr', 'quote'],
-                    ['ul', 'ol', 'task', 'indent', 'outdent'],
-                    ['table', 'image', 'link'],
-                    ['code', 'codeblock'],
-                    ['scrollSync'],
-                ],
-                initialEditType: 'wysiwyg',
-                placeholder: '내용을 입력해 주세요',
-            });
-
-            const imageArr = [];
-
-            editor.addHook('addImageBlobHook', async (blob, cb) => {
-                const formData = new FormData();
-                formData.append('data', blob);
-                console.log(formData);
-                try {
-                    const response = await axios({
-                        method: 'POST',
-                        url: `/community/write-img`,
-                        headers: {
-                            'Cache-Control': 'no-cache',
-                        },
-                        data: formData,
-                    });
-                    console.log(response);
-                    imageArr.push(response.data.imageUrl);
-                    console.log(response.data.imageUrl);
-                    cb(response.data.imageUrl, '이미지');
-                } catch (error) {
-                    console.log('S3업로드 중 오류 발생', error);
-                }
-            });
-        </script>
-        <script src="\communityPostPage\communityPostPage.js"></script>
     </body>
+    <script src="/staticComponent/footer.js"></script>
+    <script src="/staticComponent/header.js"></script>
 </html>
