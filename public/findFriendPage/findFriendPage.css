@@ -135,6 +135,7 @@ body {
 #allRoom {
     height: 100%;
     overflow-y: scroll;
+    width: 100%;
 }
 .search-input {
     border-radius: 6px;
