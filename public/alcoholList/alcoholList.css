@@ -39,7 +39,7 @@ body {
 }
 
 .text_title {
-    font-weight: 600;
+    font-weight: 900;
     text-align: left;
     font-size: 20px;
     margin: 5px 0 5px 0;
@@ -99,4 +99,8 @@ body {
     width: 60px;
     height: 60px;
     font-size: 25px;
+}
+
+#container a {
+    color: #ec9704;
 }

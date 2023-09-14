@@ -16,38 +16,54 @@
         />
         <link
             rel="stylesheet"
-            href="/staticComponent/footer.css"
+            href="\findFriendPage\chatRoomPage.css"
         />
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+        ></script>
     </head>
     <body>
-        <div id="wrapper_ch">
+        <div
+            id="wrapper_ch"
+            style="width: 100%"
+        >
             <header>
                 <div id="header"></div>
             </header>
-            <input
-                type="text"
-                placeholder="chat"
-                name="chat"
-            />
-            <button
-                type="button"
-                class="send"
-            >
-                보내기
-            </button>
-            <span id="size">0명</span>
-            <div id="chatArea"></div>
-            <div
-                id="participant"
-                style="display: flex; flex-direction: column"
-            ></div>
-        </div>
-        <footer>
-            <div id="footer"></div>
-        </footer>
-        <script src="\findFriendPage\chatRoomPage.js"></script>
-        <script src="/staticComponent/footer.js"></script>
-        <script src="/staticComponent/header.js"></script>
+            <main class="mainContainer">
+                <section>
+                    <button>+</button>
+                    <span id="size">0명</span>
+                    <div
+                        id="participant"
+                        style="display: flex; flex-direction: column"
+                    ></div>
+                </section>
 
+                <section style="width: 100%">
+                    <div
+                        id="chatArea"
+                        class="chatArea"
+                    ></div>
+                </section>
+                <div class="chatInputContainer">
+                    <textarea
+                        type="text"
+                        placeholder="chat"
+                        name="chat"
+                    ></textarea>
+                    <input
+                        type="button"
+                        class="send"
+                        value="보내기"
+                        disabled
+                    />
+                </div>
+            </main>
+        </div>
+        <script src="\findFriendPage\chatRoomPage.js"></script>
+        <script src="/staticComponent/header.js"></script>
+        <script src="/staticComponent/header.js"></script>
     </body>
 </html>
