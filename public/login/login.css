@@ -80,6 +80,9 @@ h1 {
 .check-btn:active {
     top: 2px;
 }
+@media screen and (max-width: 1180px) {
+
+}
 @media screen and (max-width: 820px) {
     .login-location {
         top: 290px;
