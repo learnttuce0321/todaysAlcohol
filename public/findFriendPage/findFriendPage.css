@@ -183,8 +183,6 @@ body {
 .box1 {
     width: 220px;
     height: 220px;
-
-    /* border: 1px solid gray; */
     background: #f6f1f1;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
@@ -258,7 +256,6 @@ body {
     width: 220px;
     height: 220px;
 
-    /* border: 1px solid gray; */
     background: #ffe5ca;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 

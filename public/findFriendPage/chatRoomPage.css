@@ -12,7 +12,6 @@ p {
     width: 100%;
     background-color: #a78b71;
     height: 40px;
-    /* justify-content: space-between; */
     align-items: center;
     font-size: 15px;
 }
@@ -91,7 +90,6 @@ p {
     margin: 16px 0;
     padding-bottom: 0.3rem;
     width: 100%;
-    /* word-break: keep-all; */
 }
 .chatArea p {
     margin: 0.3rem 0rem;

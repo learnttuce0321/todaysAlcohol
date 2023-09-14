@@ -31,21 +31,6 @@ const CAlcoholListFiltering = async (req, res) => {
 };
 // modal filter값 출력
 const CdisplayFilteredResult = async (req, res) => {
-    // const abvScores = req.query.abvScores;
-    // const tasteScores = req.query.tasteScores;
-    // try {
-    //     const filteredData = await models.AlcoholList.findAll({
-    //         where: {
-    //             abvScore: abvScores.split(','),
-    //             tasteScore: tasteScores.split(','),
-    //         },
-    //     });
-
-    //     res.render('alcoholListFilter/filteredResult', { filteredData });
-    // } catch (error) {
-    //     console.error('Error:', error);
-    //     // res.status(500).send('Internal Server Error');
-    // }
     const abvScores = req.query.abvScores;
     const tasteScores = req.query.tasteScores;
     try {
@@ -65,8 +50,7 @@ const CdisplayFilteredResult = async (req, res) => {
 
         res.render('alcoholListFilter/filteredResult', { filteredData });
     } catch (error) {
-        console.error('Error:', error);
-        // res.status(500).send('Internal Server Error');
+        console.log('Error:', error);
     }
 };
 

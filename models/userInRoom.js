@@ -1,4 +1,3 @@
-// const { DataTypes } = require('sequelize');
 import { DataTypes } from 'sequelize';
 
 const UserInRoom = (sequelize) => {

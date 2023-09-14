@@ -62,15 +62,14 @@ async function loginFunc() {
     //-------------------------------------------------------------------------------------
 
     if (res.data.result == 'true') {
-        console.log(res.data.result);
         //로그인 인증이 필요한 경우 로컬 스토리지에 저장된 토큰 사용해서 확인 절차
         localStorage.setItem('loginToken', res.data.token);
-        console.log(res.data.result);
 
         //로그인에 성공하면 메인화면으로 이동
-        window.location.replace('/');
+        alert('로그인이 되었습니다.');
+        // window.location.replace('/');
+        history.back();
     } else {
-        console.log(res.data.result);
         alert(res.data.msg);
         window.location.reload();
     }

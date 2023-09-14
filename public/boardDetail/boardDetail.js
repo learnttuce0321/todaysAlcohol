@@ -1,8 +1,3 @@
-// loadComment 실행
-// $(document).ready(function () {
-//     loadComments();
-// });
-
 // client 좋아요 눌렀는지 확인
 (async () => {
     const likeBtn = document.querySelector('.likeBtn');
@@ -29,7 +24,6 @@
         }/writer`,
     });
 
-    // console.log(result.data);
     if (!result.data.result) {
         document.querySelector('.deleteBtn').style.display = 'none';
         document.querySelector('.modifyBtn').style.display = 'none';
@@ -55,14 +49,11 @@
 })();
 
 document.querySelector('.likeBtn').addEventListener('click', async () => {
-    // e.preventDefault();
     const likeBtn = document.querySelector('.likeBtn');
     const loginToken = localStorage.getItem('loginToken');
 
-    // console.log(loginToken);
     if (loginToken) {
         if (likeBtn.value === 'enabled') {
-            console.log(window.location.pathname.split('/')[3]);
             likeBtn.value = 'disabled';
             const result = await axios({
                 method: 'POST',
@@ -116,23 +107,7 @@ document.querySelector('.modifyBtn').addEventListener('click', () => {
     }
 });
 
-// comment.js
-
-//현재 날짜, 시간
-// let now = new Date();
-// let year = now.getFullYear().toString();
-// year = year.substr(2, 4);
-// console.log(year);
-// let month = now.getMonth();
-// let date = now.getDate();
-// let hours = now.getHours();
-// let minutes = now.getMinutes();
-// let seconds = now.getSeconds();
-// let setTime = `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
-// console.log(setTime);
-
 const postId = window.location.pathname.split('/')[3];
-// console.log(postId);
 
 const ul = document.querySelector('.commentList');
 
@@ -144,10 +119,8 @@ const postComment = () => {
         const form = document.forms['commentList'];
         const loginToken = localStorage.getItem('loginToken');
 
-        console.log(window.location.pathname);
         if (loginToken) {
             const currentTime = new Date().toLocaleString();
-            console.log(currentTime);
 
             axios({
                 method: 'POST',
@@ -158,16 +131,6 @@ const postComment = () => {
                     timestamp: currentTime,
                 },
             }).then((result) => {
-                console.log(result);
-                // const html = `
-                //         <li>
-                //         <div>${result.data.userId}:</div>
-                //         </li>
-                //         <li>
-                //         <div>${result.data.content}</div>
-                //         </li>
-                //        `;
-                // ul.insertAdjacentHTML('beforeend', html);
                 const listItem = document.createElement('li');
                 const commentDiv = document.createElement('div');
                 commentDiv.className = 'comment';
@@ -216,33 +179,6 @@ const postComment = () => {
 
 postComment();
 
-// 댓글 목록 불러오기 (페이징기능X)
-// async function loadComments() {
-//     try {
-//         const response = await axios({
-//             method: 'GET',
-//             url: `/community/detail/${postId}/comments`,
-//         });
-//         const comments = response.data.comments;
-//         console.log(comments);
-
-//         comments.forEach((comment) => {
-//             const listItem = document.createElement('li');
-//             const commentDiv = document.createElement('div');
-//             commentDiv.className = 'comment';
-//             commentDiv.innerHTML = `<strong> ${comment.userId}</strong><p>${comment.content}</p>`;
-//             listItem.appendChild(commentDiv);
-//             commentListContainer.appendChild(listItem);
-
-//             // console.log(`User: ${comment.userId}, Content: ${comment.content}`);
-//         });
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
-
-/////////////////////////////////////////////////////
-
 function getCurrentPageNumber() {
     const searchParams = new URLSearchParams(window.location.search);
     const page = parseInt(searchParams.get('page')) || 1;
@@ -256,7 +192,6 @@ async function loadComments(page) {
             url: `/community/detail/${postId}/comments?page=${page}`,
         });
         const comments = response.data.comments;
-        console.log(comments);
 
         const commentListContainer = document.getElementById(
             'commentListContainer'
@@ -276,7 +211,7 @@ async function loadComments(page) {
             commentListContainer.appendChild(listItem);
         });
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 }
 

@@ -13,7 +13,6 @@ const CchatRoomPost = async (req, res) => {
             userId: req.cookies.userIdCookie,
         });
 
-        console.log(result.dataValues);
         const resultName = await models.User.findOne({
             attributes: ['name', 'id'],
             where: {
@@ -23,7 +22,6 @@ const CchatRoomPost = async (req, res) => {
 
         if (result) {
             const value = result.dataValues;
-            console.log(value.createdA);
             res.json({
                 result: true,
                 id: value.id,
@@ -81,7 +79,6 @@ const CgetUserIdPost = (req, res) => {
     res.json({ loginUserId: req.cookies.userIdCookie });
 };
 const CgetUserNamePost = async (req, res) => {
-    console.log('arr', req.body);
     try {
         const result = await models.User.findAll({
             where: {
@@ -98,7 +95,7 @@ const CgetUserNamePost = async (req, res) => {
 
         res.json({ userNameArr });
     } catch (error) {
-        console.log('에러발생');
+        console.log(error);
     }
 };
 

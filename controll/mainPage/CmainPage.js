@@ -21,7 +21,6 @@ const CmainPost = async (req, res) => {
     result.forEach((item) => {
         recommendedAlcoholList.push(item.dataValues);
     });
-    console.log(recommendedAlcoholList);
     res.json({ randomAlcoholList: recommendedAlcoholList });
 };
 
