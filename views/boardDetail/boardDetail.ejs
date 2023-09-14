@@ -6,7 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <title>Document</title>
+        <title>게시물</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
@@ -35,62 +35,67 @@
     </head>
 
     <body>
-        <header>
-            <div id="header"></div>
-        </header>
-        <div class="entireBtn">
-            <button class="deleteBtn">삭제하기</button>
-            <button class="modifyBtn">수정하기</button>
-            <button
-                class="backButton"
-                type="button"
-                onclick="location.href='/community'"
-            >
-                목록
-            </button>
-        </div>
-        <div class="entireWrap">
-            <h1><%=data.title%></h1>
-            <section class="article_wrap">
-                <div id="viewer"></div>
-                <div class="like">
-                    <button
-                        class="likeBtn"
-                        type="button"
-                        value="enabled"
-                    >
-                        좋아요
-                    </button>
-                </div>
-            </section>
-            <!-- 댓글 테스트 -->
-            <div class="comment_wrap">
-                <ul
-                    class="commentList"
-                    id="commentListContainer"
-                ></ul>
-
-                <ul
-                    class="commentPagination"
-                    id="commentPagination"
-                ></ul>
-
-                <form name="commentList">
-                    <section id="comment_wrap">
-                        <input
-                            id="comment"
-                            type="text"
-                            placeholder="댓글 달기..."
-                        />
+        <div id="wrapper_ch">
+            <header>
+                <div id="header"></div>
+            </header>
+            <div class="entireBtn">
+                <button class="deleteBtn">삭제하기</button>
+                <button class="modifyBtn">수정하기</button>
+                <button
+                    class="backButton"
+                    type="button"
+                    onclick="location.href='/community'"
+                >
+                    목록
+                </button>
+            </div>
+            <div class="entireWrap">
+                <h1><%=data.title%></h1>
+                <section class="article_wrap">
+                    <div id="viewer"></div>
+                    <div class="like">
                         <button
+                            class="likeBtn"
                             type="button"
-                            class="commentBtn"
+                            value="enabled"
                         >
-                            게시
+                            좋아요
                         </button>
-                        <!-- jquery -->
-                    </section>
-                </form>
+                    </div>
+                </section>
+                <!-- 댓글 테스트 -->
+                <div class="comment_wrap">
+                    <h1 class="commentTitle">댓글</h1>
+                    <div class="commentListWrap">
+                        <ul
+                            class="commentList"
+                            id="commentListContainer"
+                        ></ul>
+
+                        <ul
+                            class="commentPagination"
+                            id="commentPagination"
+                        ></ul>
+                    </div>
+
+                    <form name="commentList">
+                        <section id="comment_wrap">
+                            <input
+                                id="comment"
+                                type="text"
+                                placeholder="댓글 달기..."
+                            />
+                            <button
+                                type="button"
+                                class="commentBtn"
+                            >
+                                게시
+                            </button>
+                            <!-- jquery -->
+                        </section>
+                    </form>
+                </div>
             </div>
         </div>
 
