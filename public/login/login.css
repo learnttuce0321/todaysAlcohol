@@ -8,8 +8,8 @@ body {
 
 .login-location {
   position: absolute;
-  top: 170px;
-  right: 220px;
+  top: 220px;
+  right: 340px;
 }
 
 .bg-img {
@@ -90,6 +90,9 @@ h1 {
 }
 .check-btn:active {
   top: 2px;
+}
+@media screen and (max-width: 1180px) {
+
 }
 @media screen and (max-width: 820px) {
   .login-location {
