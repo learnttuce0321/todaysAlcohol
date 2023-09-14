@@ -121,3 +121,22 @@ document.querySelector('#nav-list').addEventListener('click', () => {
     document.querySelector('.chat-add').classList.add('disappear');
     document.querySelector('.chat-search').classList.add('disppear');
 });
+// 
+
+//반응형(390px)
+window.addEventListener('resize', () => {
+    const windowWidth = window.innerWidth;
+    console.log('123');
+    
+    if (windowWidth <= 390) {
+        console.log('390');
+        
+        document.querySelector('.nav-list').innerHTML = '<i class="fa-solid fa-comments"></i>';
+        document.querySelector('.nav-chat-add').innerHTML = '<div>2</div>';
+        document.querySelector('.nav-search').innerHTML= '<div>3</div>'
+    } else if (windowWidth > 390) {
+        document.querySelector('.nav-list').innerText = '목록';
+        document.querySelector('.nav-chat-add').innerText = '채팅방 만들기';
+        document.querySelector('.nav-search').innerText= '채팅방 검색'
+    }
+})
