@@ -11,9 +11,12 @@
 		<title>login</title>
 	</head>
 	<body>
-		<header>
+		<div id="wrapper_ch">
+    <div class='bg-img'>
+			<header>
         <div id='header'></div>
 		</header>
+		<div class='login-location'>
 		<h1>로그인</h1>
 		<form class='login_form' id="loginform">
         <div class='login_input'>
@@ -24,22 +27,19 @@
 						<input class='login-input' type="password" id="user_pw" placeholder="비밀번호" />
 					</div>
 				</div>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
 				<div class='button'>
-            <button class='custom-btn check-btn' type="button" onclick="loginFunc()">로그인</button>
-        </div>
-		</form>
-		<footer>
+					<button class='custom-btn check-btn' type="button" onclick="loginFunc()">로그인</button>
+				</div>
+			</div>
+			</form>
+			
+		</div>
+	</div>
+	<footer>
         <div id='footer'></div>
 		</footer>
-
-		<script src="\login\login.js"></script>
+	<script src="\login\login.js"></script>
 		<script src='/staticComponent/footer.js'></script>
 		<script src="/staticComponent/header.js"></script>
-	
 	</body>
 </html>

@@ -4,12 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+		
 		<link rel="stylesheet" href="/staticComponent/header2.css" />
 		<link rel="stylesheet" href="/staticComponent/footer.css" />
 		<link rel="stylesheet" href="\myPage\myPage.css" />
 		<link rel="stylesheet" href="\alcoholList\alcoholList.css" />
+		
 
-		<title>Document</title>
+		<title>마이 페이지</title>
 	</head>
 	<body>
 		<header>
@@ -26,7 +28,7 @@
 					</div>
 				</div>
 				<div>
-					<a href="/my-page/user-info"
+					<a href="/my-page/user-info" class="a_tag"
 						><p class="move_update">회원정보 수정하기</p></a
 					>
 				</div>
@@ -71,35 +73,45 @@
 						</div>
 					</section>
 				</div>
+
+			
 			</div>
 			<!-- ------------------------------------------------------- -->
 
 			<div class="likeBoard_container">
 							<div><p>좋아요 한 게시글</p></div>
-			<div>
+
 			
-			<table class="likeBoard_table">
-				<tr class="table_menu">
-					<td>번호</td>
-					<td>제목</td>
-					<td>글쓴이</td>
-					<td>작성일</td>
+			
+				<div >
 					
-				</tr>
-
-				<% for(let i=0; i<data.likeBoardLength; i++) {%> 
-					<tr class="table_vlaue">
-					<td><%=data.likedBoard[i].board.id%></td>
-					<td><a href="/community/detail/<%=data.likedBoard[i].boardId%>"><%=data.likedBoard[i].board.title%></a></td>
-					<td><%=data.likedBoard[i].board.userid%></td>
-					<td><%=data.likedBoard[i].board.createdAt%></td>
-				</tr>
-			<%}%>
-			</div>
-			</table>
-			</div>
-
-
+					<table class="likeBoard_table">
+						<thead>
+							<tr class="menu">
+								<th>번호</th>
+								<th>제목</th>
+								<th>글쓴이</th>
+								<th>작성일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(let i=0; i<data.likeBoardLength; i++)  { %>
+							<tr>
+								<td><%=data.likedBoard[i].board.id%></td>
+	
+								<td>
+									<a class="a_tag" href="/community/detail/<%=data.likedBoard[i].boardId%>"><%=data.likedBoard[i].board.title%></a>
+								</td>
+								<td><%=data.likedBoard[i].board.userid%></td>
+								<td><%=data.likedBoard[i].boardDate%></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+	
+					
+			
+				</div>
 					
 		<!-- ---------------------------------------------------------------- -->
 		</div>

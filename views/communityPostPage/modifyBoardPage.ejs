@@ -6,10 +6,18 @@
             http-equiv="X-UA-Compatible"
             content="IE=edge"
         />
-        <title>Page Title</title>
+        <title>수정하기</title>
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
         />
 
         <!-- 보기 편하게 CSS추가해주었습니다. -->
@@ -30,30 +38,51 @@
             rel="stylesheet"
             href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
         />
-
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    </head>
-    <body>
-        <input
-            type="text"
-            placeholder="제목을 입력하세요"
-            name="title"
-            required
+        <link
+            rel="stylesheet"
+            href="/communityPostPage/communityPostPage.css"
         />
 
-        <div id="editor"></div>
-        <br />
-        <button
-            type="button"
-            onclick="submitHandler()"
-        >
-            수정하기
-        </button>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="header"></div>
+        </header>
+        <div class="wrapContainer">
+            <input
+                type="text"
+                placeholder="제목을 입력하세요"
+                name="title"
+                required
+            />
 
-        <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-        <script>
-            let editor;
-        </script>
-        <script src="\communityPostPage\modifyBoardPage.js"></script>
+            <div id="editor"></div>
+            <br />
+
+            <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+            <script>
+                let editor;
+            </script>
+            <script src="\communityPostPage\modifyBoardPage.js"></script>
+            <button
+                type="button"
+                onclick="location.href='/community'"
+            >
+                취소
+            </button>
+            <button
+                type="button"
+                onclick="submitHandler()"
+            >
+                수정하기
+            </button>
+        </div>
+        <footer>
+            <div id="footer"></div>
+        </footer>
     </body>
+    <script src="/staticComponent/footer.js"></script>
+    <script src="/staticComponent/header.js"></script>
 </html>

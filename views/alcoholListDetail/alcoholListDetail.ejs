@@ -16,67 +16,69 @@
 		<title>칵테일 상세리스트</title>
 	</head>
 	<body>
+		<div id='wrapper_ch'>
 		<header>
 			<div id='header'></div>
 		</header>
-		<div class="main_container">
-			<div class="info_container">
-				<div>
-					<img
-						src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data.id%>.jpg"
-					/>
-				</div>
-				<div class="alcohol_info">
-					<div class="name">
-						<div><%= data.name %></div>
-
-						<div><%= data.info %></div>
-						<div class="abv">도수: <%= data.abv %>도</div>
+			<div class="main_container">
+				<div class="info_container">
+					<div>
+						<img
+							src="https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/<%=data.id%>.jpg"
+						/>
 					</div>
-					<div class="btn_box">
-						<button class="likeBtn" type="button" value="enabled">
-							<i class="fa-solid fa-heart" ></i>
-						</button>
+					<div class="alcohol_info">
+						<div class="name">
+							<div><%= data.name %></div>
+	
+							<div><%= data.info %></div>
+							<div class="abv">도수: <%= data.abv %>도</div>
+						</div>
+						<div class="btn_box">
+							<button class="likeBtn" type="button" value="enabled">
+								<i class="fa-solid fa-heart" ></i>
+							</button>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="content1">
-			<span>재료 정보 </span>
-			<div class="ingredient_container">
-				<table>
-					
-				<% for (value of data.ingredient.split('/')) {%>
-					<tr>
-						<td><p><%= value.split(' ')[0].replace('-',' ') %></p></td>
-						<td><p><%= value.split(' ')[1] %></p></td>
-					</tr>
-
-				<%}%>
+				<div class="content1">
+				<span>재료 정보 </span>
+				<div class="ingredient_container">
+					<table>
+						
+					<% for (value of data.ingredient.split('/')) {%>
+						<tr>
+							<td><p><%= value.split(' ')[0].replace('-',' ') %></p></td>
+							<td><p><%= value.split(' ')[1] %></p></td>
+						</tr>
+	
+					<%}%>
+					</table>
+				</div>
+				</div>
+	
+	
+				<div class="content2">
+				<span>레시피 </span>
+				<div class="recipe_container">
+					<div class="recipe">
+					<% for (let i=0; i < data.recipe.split('/').length; i++ ) {%>
+					<p><%= data.recipe.split('/')[i] %></p>
+						
+					<%}%>
+				</div>
 				</table>
+				</div>
 			</div>
 			</div>
-
-
-			<div class="content2">
-			<span>레시피 </span>
-			<div class="recipe_container">
-				<div class="recipe">
-				<% for (let i=0; i < data.recipe.split('/').length; i++ ) {%>
-				<p><%= data.recipe.split('/')[i] %></p>
-					
-				<%}%>
-			</div>
-			</table>
-			</div>
+			<br>
+			<br>
+	
+			<br>
+	
+			<br>
+	
 		</div>
-		</div>
-		<br>
-		<br>
-
-		<br>
-
-		<br>
-
  <footer>
 	<div id='footer'></div>
  </footer>

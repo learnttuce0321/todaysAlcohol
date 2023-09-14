@@ -1,5 +1,3 @@
-// const socket = io();
-
 const participate = async (roomId, e) => {
     const result = await axios({
         method: 'POST',
@@ -24,17 +22,18 @@ const participate = async (roomId, e) => {
         const participationContainer = document.querySelector('#participation');
         result.data.participation.forEach((room) => {
             const div = document.createElement('div');
+            div.classList.add('box1');
             div.innerHTML = `
-                <a href="/find-friends/chat-room/${room.roomId}">
-                    <h1>${room.roomName}</h1>
-                    <p>${room.roomInfo}</p>
-                </a>
-            `;
+			<span class='roomName_span'>
+			<h1 class='roomName'>${room.roomName}</h1>
+			<p>${room.roomInfo}</p>
+			<a href="/find-friends/chat-room/${room.roomId}"><button class='part_btn'><i class="fa-solid fa-comments"></i></button></a>
+		</span>
+        `;
             participationContainer.appendChild(div);
         });
     }
 })();
-
 document.querySelector('.createRoomBtn').addEventListener('click', async () => {
     const loginToken = localStorage.getItem('loginToken');
 
@@ -109,3 +108,25 @@ document.querySelector('.find').addEventListener('click', async () => {
 //     alert(`${data.roomName}이 생성되었습니다.`);
 //     window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
 // });
+//채팅방 검색 클릭시 / x 버튼 눌렀을 때
+document.querySelector('.nav-search').addEventListener('click', () => {
+    document.querySelector('#chat-search').classList.add('search-div');
+    document.querySelector('.exit').addEventListener('click', () => {
+        document.querySelector('#chat-search').classList.remove('search-div');
+        document.querySelector('.chat-add').classList.add('disappear');
+        document.querySelector('.chat-list').classList.remove('disappear');
+    });
+});
+
+//채팅방 만들기 클릭했을 때
+document.querySelector('.nav-chat-add').addEventListener('click', () => {
+    document.querySelector('#chat-list').classList.add('disappear');
+    document.querySelector('#chat-add').classList.remove('disappear');
+});
+//목록 클릭했을 때
+document.querySelector('#nav-list').addEventListener('click', () => {
+    document.querySelector('.chat-list').classList.remove('disappear');
+    document.querySelector('.chat-search').classList.remove('search-div');
+    document.querySelector('.chat-add').classList.add('disappear');
+    document.querySelector('.chat-search').classList.add('disppear');
+});

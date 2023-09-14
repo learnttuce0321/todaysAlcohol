@@ -8,76 +8,132 @@
         />
         <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
         <script src="https:/cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="/staticComponent/header2.css">
-        <link rel="stylesheet" href="/staticComponent/footer.css">
-        <link rel="stylesheet" href="/register/register.css">
+        <link
+            rel="stylesheet"
+            href="/staticComponent/header2.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/staticComponent/footer.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/register/register.css"
+        />
         <title>회원가입</title>
     </head>
     <body>
-        <header>
-            <div id='header'></div>
-        </header>
-        <div class="title">
-            <br>
-            <h1>회원가입</h1>
-            <br>
-            <br>
+        <div id="wrapper_ch">
+            <header>
+                <div id="header"></div>
+            </header>
+            <div class="title">
+                <br />
+                <h1>회원가입</h1>
+                <br />
+                <br />
             </div>
-        <h2>회원정보입력</h2>
-        <hr class='top-hr'>
-        <form name="registerForm" method="POST">
-            <div class='div div_id'>
-                <input type="hidden" id="id"/>
-                <label for="userId"><b>아이디</b></label>
-                <input type="text" id="userId"/>
-            </div>
-            <hr>
-                <div class='div pw_div'>
-                <div class='pw_top'>
-                    <label class='pw_label'><b>비밀번호</b></label>
-                    <input type="password" id='password' class='password' name="pw" value="" class='password'>
+            <h2>회원정보입력</h2>
+            <hr class="top-hr" />
+            <form
+                name="registerForm"
+                method="POST"
+            >
+                <div class="div div_id">
+                    <input
+                        type="hidden"
+                        id="id"
+                    />
+                    <label for="userId"><b>아이디</b></label>
+                    <input
+                        type="text"
+                        id="userId"
+                    />
                 </div>
-                <div class='pw_down'>
-                        * 8 ~ 25자리 이내로 영어, 숫자, 특수문자를 조합하여 만들어 주세요.
+                <hr />
+                <div class="div pw_div">
+                    <div class="pw_top">
+                        <label class="pw_label"><b>비밀번호</b></label>
+                        <input
+                            type="password"
+                            id="password"
+                            class="password"
+                            name="pw"
+                            value=""
+                            class="password"
+                        />
+                    </div>
+                    <div class="pw_down">
+                        * 8 ~ 25자리 이내로 영어, 숫자, 특수문자를 조합하여
+                        만들어 주세요.
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class='div div_pwRe'>
-                <label for="passwordRe"><b>비밀번호 확인</b></label>
-                <input type="password" id="passwordRe"/>
-            </div>
-            <hr>
-            <div class='div div_nick'>
-                <div class='nick_top'>
-                    <label class='nick_label' for="nickname"><b>닉네임</b></label>
-                    <input type="text" id="nickname"/>
+                <hr />
+                <div class="div div_pwRe">
+                    <label for="passwordRe"><b>비밀번호 확인</b></label>
+                    <input
+                        type="password"
+                        id="passwordRe"
+                    />
                 </div>
-                <div class='nick_down'>
-                    * 영문, 숫자로 4 ~ 15자리 이내로 만들어 주세요.
+                <hr />
+                <div class="div div_nick">
+                    <div class="nick_top">
+                        <label
+                            class="nick_label"
+                            for="nickname"
+                            ><b>닉네임</b></label
+                        >
+                        <input
+                            type="text"
+                            id="nickname"
+                        />
+                    </div>
+                    <div class="nick_down">
+                        * 영문, 숫자로 4 ~ 15자리 이내로 만들어 주세요.
+                    </div>
                 </div>
-            </div>
-            <hr>
-            <div class='div nick_div'>
-                <label for="name"><b>이름</b></label>
-                <input type="text" id="name"/>
-            </div>
-            <hr>
-            <div class='div div_email'>
-                <label for="email"><b>이메일</b></label>
-                <input type="email" id="email"/>
-            </div>
-            <hr>
-            <div class='determine'>
-                <button class='custom-btn cencel-btn' type="button" onclick="cancelRegister()">취소</button>
-                <button class='custom-btn check-btn' type="button" onclick="allowRegister()">회원가입</button>
-            </div>
-        </form>
+                <hr />
+                <div class="div nick_div">
+                    <label for="name"><b>이름</b></label>
+                    <input
+                        type="text"
+                        id="name"
+                    />
+                </div>
+                <hr />
+                <div class="div div_email">
+                    <label for="email"><b>이메일</b></label>
+                    <input
+                        type="email"
+                        id="email"
+                    />
+                </div>
+                <hr />
+                <div class="determine">
+                    <button
+                        class="custom-btn cencel-btn"
+                        type="button"
+                        onclick="cancelRegister()"
+                    >
+                        취소
+                    </button>
+                    <button
+                        class="custom-btn check-btn"
+                        type="button"
+                        onclick="allowRegister()"
+                    >
+                        회원가입
+                    </button>
+                </div>
+            </form>
+        </div>
         <footer>
-            <div id='footer'></div>
+            <div id="footer"></div>
         </footer>
 
         <script src="\register\register.js"></script>
-        <script src='/staticComponent/footer.js'></script>
+        <script src="/staticComponent/footer.js"></script>
         <script src="/staticComponent/header.js"></script>
     </body>
 </html>

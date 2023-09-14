@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+}
+
+* {
+    font-family: 'S-CoreDream-3Light';
+}
+
+body,
+div,
+p,
+section,
+ul,
+li {
+    box-sizing: border-box;
+    font-family: 'S-CoreDream-3Light';
+}
+
+body,
+hr {
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.chat-nav {
+    display: flex;
+    width: 100%;
+    background-color: #a78b71;
+    height: 40px;
+    align-items: center;
+}
+
+.chat-nav div {
+    font-size: 15px;
+    margin-left: 60px;
+}
+.nav-search {
+    position: absolute;
+    right: 60px;
+}
+
+/*채팅방 만들기 css*/
+.chat-add {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+.chat-add > div {
+    margin: 20px 0px 20px 0px;
+    color: #f0eae7;
+}
+.backgroundImg {
+    background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/login.jpg);
+    background-size: cover;
+    height: 639.64px;
+    position: relative;
+    z-index: 1;
+    margin: 0 !important;
+}
+.chat-add input {
+    padding-left: 20px;
+    margin-left: 20px;
+    justify-content: center;
+    background-color: #eee;
+    border: 0px;
+    border-radius: 5px;
+    width: 230px;
+    height: 40px;
+    padding: 5px 10px;
+    opacity: 0.8;
+}
+.chatAddForm > div {
+    margin: 20px 0;
+}
+.createRoomBtn {
+    border-radius: 6px;
+    border: none;
+    background-color: rgb(231, 224, 216);
+    opacity: 0.8;
+    width: 220px;
+}
+.chat-list {
+    transition: all ease 0.3s;
+}
+
+/*채팅방 검색하기 css*/
+.chat-search {
+    color: white;
+    width: 440px;
+    background-color: rgba(20, 17, 17, 0.759);
+    position: absolute;
+    right: -1040px;
+    top: 110px;
+    height: 85.4vh;
+    transition: all ease 0.5s;
+    z-index: 90;
+}
+.chat-search-top {
+    display: flex;
+    justify-content: space-between;
+}
+.exit {
+    margin: 0 20px 0 0;
+}
+.chat-search > div {
+    padding: 20px 40px 20px 40px;
+    font-size: 15px;
+}
+.chat-search input {
+    padding: 2px 0px 2px 10px;
+}
+.chat-search button {
+    margin: 0 20px 0 20px;
+}
+.search-div {
+    transform: translateX(-1040px);
+    transition: all ease 0.5s;
+}
+.disappear {
+    display: none;
+}
+/*검색시 채팅방 리스트 스크롤*/
+.search-bottom {
+    height: 80%;
+    padding: 0px;
+}
+#allRoom {
+    height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+}
+.search-input {
+    border-radius: 6px;
+}
+.find {
+    border-radius: 6px;
+}
+
+#allRoom button {
+    width: 100px;
+    margin: 0 0 30px 240px;
+    border-radius: 6px;
+}
+#allRoom > div {
+    margin: 30px 0 30px 0;
+    border-bottom: 1px solid rgba(145, 143, 143, 0.759);
+}
+
+.wrapper {
+    width: 100%;
+}
+
+#participation {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, auto));
+    grid-auto-flow: row;
+
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+    grid-gap: 30px 20px;
+}
+
+.box1 {
+    width: 220px;
+    height: 220px;
+
+    /* border: 1px solid gray; */
+    background: #f6f1f1;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.title {
+    width: 80%;
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    padding: 60px 0 30px 0;
+}
+
+.roomName_span {
+    padding: 10px;
+    word-break: break-all;
+}
+.roomName_span > p {
+    height: 100px;
+}
+.roomName {
+    width: 200px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.box1 > a {
+    text-decoration-line: none;
+    height: 220px;
+    word-break: break-all;
+    padding: 10px;
+}
+
+.part_btn {
+    color: #fef01b;
+    background-color: #9bbbd4;
+    border: #fef01b;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+    bottom: 10px;
+    left: 150px;
+}
+
+.part_btn2 {
+    color: #fef01b;
+    background-color: #9bbbd4;
+    border: #fef01b;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 8px;
+    position: relative;
+    top: 20px;
+    left: 80px;
+}
+.part_btn:hover,
+.part_btn2:hover {
+    color: #ffffff !important;
+    background: #ff7f3f;
+}
+
+.box2 {
+    width: 220px;
+    height: 220px;
+
+    /* border: 1px solid gray; */
+    background: #ffe5ca;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+
+    padding: 10px;
+}
+
+.box2 > p {
+    height: 60px;
+    width: 100%;
+}
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width: 767px) {
+    .title {
+        padding: 20px 40px 0 40px;
+        justify-content: center;
+    }
+}
