@@ -90,7 +90,6 @@ window.addEventListener('resize', () => {
     }
 })();
 
-//로그아웃시 쿠키삭제 (하는중..)
 const logout = document.querySelector('#logout');
 
 logout.addEventListener('click', () => {
