@@ -1,29 +1,17 @@
-// const socket = io();
-
 const participate = async (roomId, e) => {
-    if (confirm('참가 하시겠습니까?')) {
-        const result = await axios({
-            method: 'POST',
-            url: '/find-friends/joinRoom',
-            data: {
-                roomId,
-            },
-        });
+    const result = await axios({
+        method: 'POST',
+        url: '/find-friends/joinRoom',
+        data: {
+            roomId,
+        },
+    });
 
-        if (result.data.result) {
-            window.location.href = `/find-friends/chat-room/${roomId}`;
-        }
+    if (result.data.result) {
+        window.location.href = `/find-friends/chat-room/${roomId}`;
     }
 };
 
-(() => {
-    const loginToken = localStorage.getItem('loginToken');
-
-    if (!loginToken) {
-        alert('로그인 후 사용 가능합니다.');
-        window.location.href = '/login';
-    }
-})();
 (async () => {
     const result = await axios({
         method: 'POST',
@@ -38,15 +26,14 @@ const participate = async (roomId, e) => {
             div.innerHTML = `
 			<span class='roomName_span'>
 			<h1 class='roomName'>${room.roomName}</h1>
-			<p>${room.info}</p>
+			<p>${room.roomInfo}</p>
 			<a href="/find-friends/chat-room/${room.roomId}"><button class='part_btn'><i class="fa-solid fa-comments"></i></button></a>
 		</span>
-            `;
+        `;
             participationContainer.appendChild(div);
         });
     }
 })();
-
 document.querySelector('.createRoomBtn').addEventListener('click', async () => {
     const loginToken = localStorage.getItem('loginToken');
 
@@ -103,17 +90,43 @@ document.querySelector('.find').addEventListener('click', async () => {
         allRoom.innerHTML = '';
         result.data.findResult.forEach((room) => {
             const div = document.createElement('div');
-            div.classList.add('box2');
             div.innerHTML = `
-                
-                    <h1 class='roomName'>${room.roomName}</h1>
+                <div>
+                    <h1>${room.roomName}</h1>
                     <p>${room.roomInfo}</p>
-                    <button class='part_btn2' onClick=participate(${room.id})><i class="fa-solid fa-comments"></i></button>
-             
+                    <button onClick=participate(${room.id})>참가하기</button>
+                </div>
             `;
             allRoom.appendChild(div);
         });
     } else {
         allRoom.innerHTML = '<h1>검색결과 없음</h1>';
     }
+});
+
+// socket.on('createRoom', (data) => {
+//     alert(`${data.roomName}이 생성되었습니다.`);
+//     window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
+// });
+//채팅방 검색 클릭시 / x 버튼 눌렀을 때
+document.querySelector('.nav-search').addEventListener('click', () => {
+    document.querySelector('#chat-search').classList.add('search-div');
+    document.querySelector('.exit').addEventListener('click', () => {
+        document.querySelector('#chat-search').classList.remove('search-div');
+        document.querySelector('.chat-add').classList.add('disappear');
+        document.querySelector('.chat-list').classList.remove('disappear');
+    });
+});
+
+//채팅방 만들기 클릭했을 때
+document.querySelector('.nav-chat-add').addEventListener('click', () => {
+    document.querySelector('#chat-list').classList.add('disappear');
+    document.querySelector('#chat-add').classList.remove('disappear');
+});
+//목록 클릭했을 때
+document.querySelector('#nav-list').addEventListener('click', () => {
+    document.querySelector('.chat-list').classList.remove('disappear');
+    document.querySelector('.chat-search').classList.remove('search-div');
+    document.querySelector('.chat-add').classList.add('disappear');
+    document.querySelector('.chat-search').classList.add('disppear');
 });
