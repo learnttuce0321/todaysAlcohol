@@ -68,11 +68,11 @@ async function loginFunc() {
         console.log(res.data.result);
 
         //로그인에 성공하면 메인화면으로 이동
-        document.location.href = '/';
+        window.location.replace('/');
     } else {
         console.log(res.data.result);
         alert(res.data.msg);
-        document.location.reload();
+        window.location.reload();
     }
 }
 
@@ -80,5 +80,5 @@ async function loginFunc() {
  * 회원가입 함수
  */
 function signupFunc() {
-    window.location.href = '/signup';
+    window.location.replace('/signup');
 }

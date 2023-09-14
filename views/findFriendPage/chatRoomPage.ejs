@@ -24,40 +24,23 @@
             <header>
                 <div id="header"></div>
             </header>
-            <h1>방 만들기</h1>
             <input
                 type="text"
-                placeholder="방이름"
-                name="roomName"
-            />
-            <input
-                type="text"
-                placeholder="info"
-                name="roomInfo"
+                placeholder="chat"
+                name="chat"
             />
             <button
                 type="button"
-                class="createRoomBtn"
+                class="send"
             >
-                방 만들기
+                보내기
             </button>
-            <input
-                type="text"
-                placeholder="find"
-                name="find"
-            />
-            <button
-                type="button"
-                class="find"
-            >
-                태그 등록
-            </button>
-            <div id="tags"></div>
-
-            <div style="display: flex; gap: 50px">
-                <div id="participation"></div>
-                <div id="allRoom"></div>
-            </div>
+            <span id="size">0명</span>
+            <div id="chatArea"></div>
+            <div
+                id="participant"
+                style="display: flex; flex-direction: column"
+            ></div>
         </div>
         <footer>
             <div id="footer"></div>
@@ -65,5 +48,6 @@
         <script src="\findFriendPage\chatRoomPage.js"></script>
         <script src="/staticComponent/footer.js"></script>
         <script src="/staticComponent/header.js"></script>
+
     </body>
 </html>
