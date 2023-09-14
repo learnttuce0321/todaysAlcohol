@@ -82,7 +82,7 @@ async function allowRegister() {
             },
         });
         if (res.data.result) {
-            alert(`${nickname.value}님 환영합니다!`);
+            alert(`회원가입이 완료되었습니다!`);
             document.location.href = '/';
         }
     } catch (error) {}

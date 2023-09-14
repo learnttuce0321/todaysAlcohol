@@ -12,6 +12,14 @@ const participate = async (roomId, e) => {
     }
 };
 
+(() => {
+    const loginToken = localStorage.getItem('loginToken');
+
+    if (!loginToken) {
+        alert('로그인 후 사용가능합니다.');
+        window.location.href = '/login';
+    }
+})();
 (async () => {
     const result = await axios({
         method: 'POST',
@@ -21,7 +29,6 @@ const participate = async (roomId, e) => {
     if (result.data.result) {
         const participationContainer = document.querySelector('#participation');
         result.data.participation.forEach((room) => {
-            console.log(room);
             const div = document.createElement('div');
             div.classList.add('box1');
             div.innerHTML = `
