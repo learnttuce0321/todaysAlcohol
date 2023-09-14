@@ -1,20 +1,29 @@
 // const socket = io();
 
 const participate = async (roomId, e) => {
-    const result = await axios({
-        method: 'POST',
-        url: '/find-friends/joinRoom',
-        data: {
-            roomId,
-        },
-    });
+    if (confirm('참가 하시겠습니까?')) {
+        const result = await axios({
+            method: 'POST',
+            url: '/find-friends/joinRoom',
+            data: {
+                roomId,
+            },
+        });
 
-    if (result.data.result) {
-        window.location.href = `/find-friends/chat-room/${roomId}`;
+        if (result.data.result) {
+            window.location.href = `/find-friends/chat-room/${roomId}`;
+        }
     }
 };
 
-(async () => {
+(() => {
+    const loginToken = localStorage.getItem('loginToken');
+
+    if (!loginToken) {
+        alert('로그인 후 사용 가능합니다.');
+        window.location.href = '/login';
+    }
+})(async () => {
     const result = await axios({
         method: 'POST',
         url: '/find-friends/participation',
