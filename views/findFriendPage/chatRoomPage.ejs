@@ -26,21 +26,31 @@
     <body>
         <div
             id="wrapper_ch"
-            style="width: 100%"
+            style="width: 100%; overflow: hidden"
         >
             <header>
                 <div id="header"></div>
             </header>
-            <main class="mainContainer">
-                <section>
-                    <button>+</button>
-                    <span id="size">0명</span>
-                    <div
-                        id="participant"
-                        style="display: flex; flex-direction: column"
-                    ></div>
-                </section>
+            <nav class="chat-nav">
+                <div
+                    class="nav-list"
+                    id="nav-list"
+                >
+                    <a href="/find-friends">목록</a>
+                </div>
 
+                <section class="user-container">
+                    <div>
+                        <span>참여 인원: </span>
+                        <span id="size">0명</span>
+                    </div>
+                    <hr />
+                    <div id="participant"></div>
+                </section>
+                <div class="nav-user">대화 상대</div>
+            </nav>
+
+            <main class="mainContainer">
                 <section style="width: 100%">
                     <div
                         id="chatArea"

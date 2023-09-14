@@ -129,3 +129,8 @@ socket.on('newMessage', (data) => {
     chatArea.appendChild(div);
     chatArea.scrollTop = chatArea.scrollHeight;
 });
+document.querySelector('.nav-user').addEventListener('click', () => {
+    document
+        .querySelector('.user-container')
+        .classList.toggle('user-container-toggle');
+});
