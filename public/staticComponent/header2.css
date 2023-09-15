@@ -30,6 +30,9 @@ hr {
     color: #fbceb1;
     text-decoration: none;
 }
+#header svg {
+    cursor: pointer;
+}
 /*----------------------------------------------*/
 /* 로그인, 비로그인시 클래스 처리*/
 .show {

@@ -48,7 +48,7 @@ body {
 
 .chat-nav div {
     font-size: 15px;
-    margin: 30px 0 20px 30px; 
+    margin: 30px 0 20px 30px;
 }
 .nav-search {
     position: absolute;
@@ -87,7 +87,8 @@ body {
 }
 .chatAddForm {
     padding-top: 210px;
-    opacity: 0.9;}
+    opacity: 0.9;
+}
 .chatAddForm > div {
     margin: 20px 0;
 }
@@ -115,18 +116,18 @@ body {
     position: relative;
     right: -1700px;
     top: 460px;
-    height: 90vh;
+    height: 94.5vh;
     transition: all ease 0.5s;
     z-index: 90;
 }
 .chat-search-top {
-    padding: 0!important;
-    margin: 0!important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex;
     justify-content: space-between;
 }
 .chat-search-top > div {
-    padding: 20px 40px 20px 40px!important;
+    padding: 20px 40px 20px 40px !important;
 }
 .exit {
     margin: 20px 40px 0 0 !important;
@@ -287,6 +288,11 @@ body {
     width: 100%;
 }
 
+.chatTitle {
+    font-size: 2rem;
+    margin: 2rem 5rem 0rem;
+}
+
 @media screen and (max-width: 1180px) {
     body {
         overflow-x: hidden;
@@ -306,10 +312,14 @@ body {
         transform: translateX(-990px);
     }
     .exit {
-        margin-right: 10px!important;
+        margin-right: 10px !important;
     }
     .chat-search div {
         margin-left: 0px;
+    }
+    .chatTitle {
+        font-size: 2rem;
+        margin: 2rem 3rem 0rem;
     }
 }
 
@@ -324,6 +334,10 @@ body {
     .search-div {
         transform: translateX(-1340px);
     }
+    .chatTitle {
+        font-size: 2rem;
+        margin: 2rem 3rem 0rem;
+    }
 }
 
 /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
@@ -335,7 +349,6 @@ body {
 }
 
 @media screen and (max-width: 390px) {
-
     .chat-search {
         width: 400px;
     }
@@ -353,10 +366,10 @@ body {
     }
     .chat-search {
         height: 850px;
-        width: 700px!important;;
+        width: 700px !important;
         top: 440px;
     }
     .search-div {
-        transform: translateX(-1730px);
+        transform: translateX(-1700px);
     }
 }
