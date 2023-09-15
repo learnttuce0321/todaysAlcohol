@@ -98,6 +98,10 @@ section {
     margin: 1.5rem;
     padding: 1.3px;
 }
+.subRecommendedAlcohol a {
+    text-decoration: none;
+    color: #ec9704;
+}
 .subCocktail__item {
     display: flex;
     flex-direction: column;
