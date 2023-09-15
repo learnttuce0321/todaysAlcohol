@@ -38,9 +38,11 @@ input {
 }
 .beforeQuestionBtn {
     transform: rotate(-90deg);
+    cursor: pointer;
 }
 .afterQuestionBtn {
     transform: rotate(90deg);
+    cursor: pointer;
 }
 form[name='Qform'] div {
     margin: 0.8rem 0.3rem;
