@@ -11,7 +11,6 @@ const CRegister = (req, res) => {
 ////////////////////////////
 // POST
 const CRegisterPost = async (req, res) => {
-    console.log(req.body);
     const { userId, name, password, nickname, email } = req.body;
     // create: 데이터 생성
     const hash = await bcryptPassword(password);

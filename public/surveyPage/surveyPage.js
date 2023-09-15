@@ -91,7 +91,6 @@ document.querySelector('.btn').addEventListener('click', () => {
         }
     });
 
-    console.log(checkedRadiosValue.length);
     if (checkedRadiosValue.length !== 9) {
         alert('누르지 않은 문항이 있습니다.');
     } else {
@@ -100,6 +99,5 @@ document.querySelector('.btn').addEventListener('click', () => {
         } else {
             AxiosForStoreSurveyResult('anonymous', checkedRadiosValue);
         }
-        console.log(123);
     }
 });

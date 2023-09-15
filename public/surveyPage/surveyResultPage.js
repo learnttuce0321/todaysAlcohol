@@ -1,79 +1,79 @@
 (async () => {
-	const userId = localStorage.getItem('loginToken');
-	const calculatedScore = JSON.parse(localStorage.getItem('surveyResult'));
-	localStorage.removeItem('surveyResult');
+    const userId = localStorage.getItem('loginToken');
+    const calculatedScore = JSON.parse(localStorage.getItem('surveyResult'));
+    localStorage.removeItem('surveyResult');
 
-	if (!userId) {
-		if (!calculatedScore) {
-			alert('로그인 후 이용해 주세요');
-			window.location.replace('/login');
-		} else {
-			const result = await axios({
-				method: 'POST',
-				url: '/survey/result/user',
-				data: {
-					calculatedScore,
-				},
-			});
+    if (!userId) {
+        if (!calculatedScore) {
+            alert('로그인 후 이용해 주세요');
+            window.location.replace('/login');
+        } else {
+            const result = await axios({
+                method: 'POST',
+                url: '/survey/result/user',
+                data: {
+                    calculatedScore,
+                },
+            });
 
-			if (result.data.result) {
-				document.querySelector('.loading').style.display = 'none';
-				recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
-				recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
-			}
-		}
-	} else {
-		if (calculatedScore) {
-			const result = await axios({
-				method: 'POST',
-				url: '/survey/result/user',
-				data: {
-					calculatedScore,
-				},
-			});
+            if (result.data.result) {
+                document.querySelector('.loading').style.display = 'none';
+                recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
+                recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
+            }
+        }
+    } else {
+        if (calculatedScore) {
+            const result = await axios({
+                method: 'POST',
+                url: '/survey/result/user',
+                data: {
+                    calculatedScore,
+                },
+            });
 
-			if (result.data.result) {
-				document.querySelector('.loading').style.display = 'none';
-				recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
-				recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
-			}
-		} else {
-			const recentData = await axios({
-				method: `POST`,
-				url: '/survey/result/recent',
-				data: {
-					userId,
-				},
-			});
+            if (result.data.result) {
+                document.querySelector('.loading').style.display = 'none';
+                recommendedAlcoholMainItem(result.data.alcoholList.mainAlcohol);
+                recommemdedAlcoholSubItem(result.data.alcoholList.subAlcohol);
+            }
+        } else {
+            const recentData = await axios({
+                method: `POST`,
+                url: '/survey/result/recent',
+                data: {
+                    userId,
+                },
+            });
 
-			if (recentData.data.result) {
-				const result = await axios({
-					method: 'POST',
-					url: '/survey/result/user',
-					data: {
-						calculatedScore: [
-							recentData.data.score1,
-							recentData.data.score2,
-							recentData.data.score3,
-						],
-					},
-				});
+            if (recentData.data.result) {
+                const result = await axios({
+                    method: 'POST',
+                    url: '/survey/result/user',
+                    data: {
+                        calculatedScore: [
+                            recentData.data.score1,
+                            recentData.data.score2,
+                            recentData.data.score3,
+                        ],
+                    },
+                });
 
-				if (result.data.result) {
-					document.querySelector('.loading').style.display = 'none';
-					recommendedAlcoholMainItem(
-						result.data.alcoholList.mainAlcohol
-					);
-					recommemdedAlcoholSubItem(
-						result.data.alcoholList.subAlcohol
-					);
-				}
-			} else {
-				alert('최근 결과 없음');
-				window.location.replace('/survey');
-			}
-		}
-	}
+                if (result.data.result) {
+                    document.querySelector('.loading').style.display = 'none';
+                    recommendedAlcoholMainItem(
+                        result.data.alcoholList.mainAlcohol
+                    );
+                    recommemdedAlcoholSubItem(
+                        result.data.alcoholList.subAlcohol
+                    );
+                }
+            } else {
+                alert('최근 결과 없음');
+                window.location.replace('/survey');
+            }
+        }
+    }
 })();
 
 /**
@@ -81,11 +81,10 @@
  * @param {object} item recommendedMainAlcohol
  */
 const recommendedAlcoholMainItem = (item) => {
-	const mainSection = document.querySelector('.mainRecommendedAlcohol');
+    const mainSection = document.querySelector('.mainRecommendedAlcohol');
 
-	console.log(item);
-	const div = document.createElement('div');
-	div.innerHTML = `
+    const div = document.createElement('div');
+    div.innerHTML = `
             <div class="main__alcohol">
 				<div>
 					<img
@@ -104,18 +103,17 @@ const recommendedAlcoholMainItem = (item) => {
 			</div>
         
     `;
-	mainSection.appendChild(div);
+    mainSection.appendChild(div);
 };
 /**
  * 추천받은 subAlcohols DOM객체 생성
  * @param {object[]} subAlcoholList recommendedSubalcoholList
  */
 const recommemdedAlcoholSubItem = (subAlcoholList) => {
-	const subSection = document.querySelector('.subRecommendedAlcohol');
+    const subSection = document.querySelector('.subRecommendedAlcohol');
 
-	// const div = document.createElement('div');
-	const subAlcoholSection = document.querySelector('.subRecommendedAlcohol');
-	subAlcoholSection.innerHTML = `
+    const subAlcoholSection = document.querySelector('.subRecommendedAlcohol');
+    subAlcoholSection.innerHTML = `
         <div class="subCocktail__item">
             <a href="/alcohol-list/detail/${subAlcoholList[0].id}">
                 <img
@@ -160,5 +158,5 @@ const recommemdedAlcoholSubItem = (subAlcoholList) => {
 };
 
 const clickedDetailBtn = (id) => {
-	window.location.href = `/alcohol-list/detail/${id}`;
+    window.location.href = `/alcohol-list/detail/${id}`;
 };

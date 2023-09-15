@@ -37,7 +37,7 @@ const CgetPosts = async (req, res) => {
             posts: formattedPosts,
         });
     } catch (err) {
-        console.error(err);
+        console.log(err);
         res.status(500).json({ error: 'Internal server error' });
     }
 };

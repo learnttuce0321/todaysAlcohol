@@ -10,7 +10,6 @@ input {
 button {
     font-size: 15px;
     background-color: transparent;
-    /* border: 2px solid rgb(206, 156, 102); */
     border: 1px solid gray;
     border-radius: 10%;
     float: right;
@@ -38,19 +37,12 @@ button:hover {
     button {
         font-size: 15px;
         background-color: transparent;
-        /* border: 1px solid rgb(206, 156, 102); */
         border: none;
-        /* float: right; */
-        border: 1px solid gray;
-        border-radius: 10%;
-        float: right;
-        margin: 0 5px;
     }
 }
 
 @media all and (max-width: 767px) {
     input {
-        /* margin-top: 23px; */
         font-size: 20px;
         border: none;
         outline: none;
@@ -58,12 +50,6 @@ button:hover {
     button {
         font-size: 12px;
         background-color: transparent;
-        /* border: 1px solid rgb(206, 156, 102); */
         border: none;
-        /* float: right; */
-        border: 1px solid gray;
-        border-radius: 10%;
-        float: right;
-        margin: 0 5px;
     }
 }

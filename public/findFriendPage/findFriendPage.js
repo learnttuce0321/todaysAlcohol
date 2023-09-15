@@ -12,6 +12,14 @@ const participate = async (roomId, e) => {
     }
 };
 
+(() => {
+    const loginToken = localStorage.getItem('loginToken');
+
+    if (!loginToken) {
+        alert('로그인 후 사용가능합니다.');
+        window.location.href = '/login';
+    }
+})();
 (async () => {
     const result = await axios({
         method: 'POST',
@@ -26,7 +34,7 @@ const participate = async (roomId, e) => {
             div.innerHTML = `
 			<span class='roomName_span'>
 			<h1 class='roomName'>${room.roomName}</h1>
-			<p>${room.roomInfo}</p>
+			<p>${room.info}</p>
 			<a href="/find-friends/chat-room/${room.roomId}"><button class='part_btn'><i class="fa-solid fa-comments"></i></button></a>
 		</span>
         `;
@@ -59,13 +67,8 @@ document.querySelector('.createRoomBtn').addEventListener('click', async () => {
             data,
         });
 
-        // socket.emit('createRoom', {
-        //     ...data,
-        //     // userName: result.data.userName,
-        //     chatRoomId: result.data.chatRoomId,
-        // });
         alert(`${data.roomName}이 생성되었습니다.`);
-        window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
+        window.location.href = `/find-friends/chat-room/${result.data.chatRoomId}`;
 
         roomName.value = '';
         roomInfo.value = '';
@@ -85,7 +88,6 @@ document.querySelector('.find').addEventListener('click', async () => {
         },
     });
 
-    console.log(result.data);
     if (result.data.result) {
         allRoom.innerHTML = '';
         result.data.findResult.forEach((room) => {
@@ -104,15 +106,11 @@ document.querySelector('.find').addEventListener('click', async () => {
     }
 });
 
-// socket.on('createRoom', (data) => {
-//     alert(`${data.roomName}이 생성되었습니다.`);
-//     window.location.href = `/find-friends/chat-room/${data.chatRoomId}`;
-// });
 //채팅방 검색 클릭시 / x 버튼 눌렀을 때
 document.querySelector('.nav-search').addEventListener('click', () => {
-    document.querySelector('#chat-search').classList.add('search-div');
+    document.querySelector('.chat-search').classList.add('search-div');
     document.querySelector('.exit').addEventListener('click', () => {
-        document.querySelector('#chat-search').classList.remove('search-div');
+        document.querySelector('.chat-search').classList.remove('search-div');
         document.querySelector('.chat-add').classList.add('disappear');
         document.querySelector('.chat-list').classList.remove('disappear');
     });
@@ -130,3 +128,22 @@ document.querySelector('#nav-list').addEventListener('click', () => {
     document.querySelector('.chat-add').classList.add('disappear');
     document.querySelector('.chat-search').classList.add('disppear');
 });
+// 
+
+//반응형(390px)
+window.addEventListener('resize', () => {
+    const windowWidth = window.innerWidth;
+    console.log('123');
+    
+    if (windowWidth <= 390) {
+        console.log('390');
+        
+        document.querySelector('.nav-list').innerHTML = '<i class="fa-solid fa-comments"></i>';
+        document.querySelector('.nav-chat-add').innerHTML = '<i class="fa-solid fa-plus"></i>';
+        document.querySelector('.nav-search').innerHTML= '<i class="fa-solid fa-magnifying-glass"></i>'
+    } else if (windowWidth > 390) {
+        document.querySelector('.nav-list').innerText = '목록';
+        document.querySelector('.nav-chat-add').innerText = '채팅방 만들기';
+        document.querySelector('.nav-search').innerText= '채팅방 검색'
+    }
+})

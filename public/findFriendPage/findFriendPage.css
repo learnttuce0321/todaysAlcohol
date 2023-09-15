@@ -27,7 +27,7 @@ hr {
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .chat-nav {
@@ -36,11 +36,19 @@ body {
     background-color: #a78b71;
     height: 40px;
     align-items: center;
+    /* overflow-x: hidden; */
+}
+.search-bottom {
+    padding: 20px 0px 20px 20px !important;
+    margin-left: 0px 0 0 0px !important;
+}
+#allRoom {
+    margin-left: 0px !important;
 }
 
 .chat-nav div {
     font-size: 15px;
-    margin-left: 60px;
+    margin: 30px 0 20px 30px;
 }
 .nav-search {
     position: absolute;
@@ -49,7 +57,7 @@ body {
 
 /*채팅방 만들기 css*/
 .chat-add {
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     color: white;
 }
@@ -60,7 +68,7 @@ body {
 .backgroundImg {
     background-image: url(https://todaysalcohols3.s3.ap-northeast-2.amazonaws.com/login.jpg);
     background-size: cover;
-    height: 639.64px;
+    height: 885px;
     position: relative;
     z-index: 1;
     margin: 0 !important;
@@ -77,15 +85,24 @@ body {
     padding: 5px 10px;
     opacity: 0.8;
 }
+.chatAddForm {
+    padding-top: 210px;
+    opacity: 0.9;
+}
 .chatAddForm > div {
     margin: 20px 0;
 }
+.chat-name {
+    align-items: center;
+}
+
 .createRoomBtn {
     border-radius: 6px;
     border: none;
     background-color: rgb(231, 224, 216);
     opacity: 0.8;
     width: 220px;
+    height: 30px;
 }
 .chat-list {
     transition: all ease 0.3s;
@@ -96,19 +113,24 @@ body {
     color: white;
     width: 440px;
     background-color: rgba(20, 17, 17, 0.759);
-    position: absolute;
-    right: -1040px;
-    top: 110px;
-    height: 85.4vh;
+    position: relative;
+    right: -1700px;
+    top: 460px;
+    height: 94.5vh;
     transition: all ease 0.5s;
     z-index: 90;
 }
 .chat-search-top {
+    padding: 0 !important;
+    margin: 0 !important;
     display: flex;
     justify-content: space-between;
 }
+.chat-search-top > div {
+    padding: 20px 40px 20px 40px !important;
+}
 .exit {
-    margin: 0 20px 0 0;
+    margin: 20px 40px 0 0 !important;
 }
 .chat-search > div {
     padding: 20px 40px 20px 40px;
@@ -121,7 +143,7 @@ body {
     margin: 0 20px 0 20px;
 }
 .search-div {
-    transform: translateX(-1040px);
+    transform: translateX(-460px);
     transition: all ease 0.5s;
 }
 .disappear {
@@ -131,6 +153,9 @@ body {
 .search-bottom {
     height: 80%;
     padding: 0px;
+}
+.search-bottom > div {
+    margin: 0px;
 }
 #allRoom {
     height: 100%;
@@ -174,8 +199,6 @@ body {
 .box1 {
     width: 220px;
     height: 220px;
-
-    /* border: 1px solid gray; */
     background: #f6f1f1;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
@@ -249,7 +272,6 @@ body {
     width: 220px;
     height: 220px;
 
-    /* border: 1px solid gray; */
     background: #ffe5ca;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
@@ -266,10 +288,88 @@ body {
     width: 100%;
 }
 
+.chatTitle {
+    font-size: 2rem;
+    margin: 2rem 5rem 0rem;
+}
+
+@media screen and (max-width: 1180px) {
+    body {
+        overflow-x: hidden;
+    }
+    .chat-search {
+        height: 710px;
+        top: 370px;
+    }
+    .search-bottom {
+        height: 600px;
+        padding: 20px 20px 20px 40px !important;
+    }
+    .backgroundImg {
+        height: 710px;
+    }
+    .search-div {
+        transform: translateX(-990px);
+    }
+    .exit {
+        margin-right: 10px !important;
+    }
+    .chat-search div {
+        margin-left: 0px;
+    }
+    .chatTitle {
+        font-size: 2rem;
+        margin: 2rem 3rem 0rem;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    body {
+        overflow-x: hidden;
+    }
+    .chat-search {
+        height: 850px;
+        top: 440px;
+    }
+    .search-div {
+        transform: translateX(-1340px);
+    }
+    .chatTitle {
+        font-size: 2rem;
+        margin: 2rem 3rem 0rem;
+    }
+}
+
 /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
 @media all and (max-width: 767px) {
     .title {
         padding: 20px 40px 0 40px;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .chat-search {
+        width: 400px;
+    }
+    .createRoomBtn {
+        margin: 15px 0 0 20px;
+    }
+    .backgroundImg {
+        height: 735px;
+    }
+    .exit {
+        margin: 0;
+    }
+    .chatAddForm input {
+        margin-top: 8px;
+    }
+    .chat-search {
+        height: 850px;
+        width: 700px !important;
+        top: 440px;
+    }
+    .search-div {
+        transform: translateX(-1670px);
     }
 }

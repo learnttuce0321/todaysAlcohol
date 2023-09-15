@@ -10,7 +10,6 @@ const submitHandler = async () => {
         return;
     }
 
-    // todos: 사진 s3 연결
     const result = await axios({
         method: 'POST',
         url: '/community/write/content',

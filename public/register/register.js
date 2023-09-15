@@ -1,6 +1,5 @@
 // 회원가입
 async function allowRegister() {
-    console.log('allow resgit');
     var userId = document.getElementById('userId');
     var password = document.getElementById('password');
     var passwordRe = document.getElementById('passwordRe');
@@ -8,7 +7,6 @@ async function allowRegister() {
     var name = document.getElementById('name');
     var email = document.getElementById('email');
 
-    console.log('email', email);
     if (userId.value == '') {
         //해당 입력값이 없을 경우 같은말: if(!uid.value)
         alert('아이디를 입력하세요.');
@@ -84,13 +82,10 @@ async function allowRegister() {
             },
         });
         if (res.data.result) {
-            alert(`${nickname.value}님 환영합니다!`);
+            alert(`회원가입이 완료되었습니다!`);
             document.location.href = '/';
-            // console.log(res.data);
         }
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (error) {}
 }
 
 function cancelRegister() {
