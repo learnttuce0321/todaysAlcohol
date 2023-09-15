@@ -31,88 +31,43 @@
                 <div id="header"></div>
             </header>
             <nav class="chat-nav">
-                <div
-                class="chat-search"
-                id="chat-search"
-            >
-                <div class="chat-search-top">
-                    <div>채팅방 검색하기</div>
-                    <div class="exit">x</div>
-                </div>
-                <hr />
-                <div>
-                    <input
-                        class="search-input"
-                        type="text"
-                        placeholder="원하는 검색명"
-                        name="find"
-                    />
-                    <button
-                        type="button"
-                        class="find"
-                    >
-                        검색버튼
-                    </button>
-                </div>
-                <hr />
-                <div class="search-bottom">
-                    <div
-                        class=""
-                        style="
-                            display: flex;
-                            gap: 50px;
-                            overflow: hidden;
-                            height: 100%;
-                        "
-                    >
-                        <div id="allRoom">검색을 해주세요.</div>
+                <div class="chat-search">
+                    <div class="chat-search-top">
+                        <div>채팅방 검색하기</div>
+                        <div class="exit">x</div>
+                    </div>
+                    <hr />
+                    <div>
+                        <input class="search-input" type="text" placeholder="원하는 검색명" name="find"/>
+                        <button type="button" class="find">검색버튼</button>
+                    </div>
+                    <hr />
+                    <div class="search-bottom">
+                        <div class="" style="display: flex; gap: 50px; overflow: hidden; height: 100%;">
+                            <div id="allRoom">검색을 해주세요.</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-                <div
-                    class="nav-list"
-                    id="nav-list"
-                >
-                    목록
-                </div>
+
+                <div class="nav-list" id="nav-list">목록</div>
                 <div class="nav-chat-add">채팅방 만들기</div>
                 <div class="nav-search">채팅방 검색</div>
             </nav>
-            <div
-                class="chat-list"
-                id="chat-list"
-            >
+            <div class="chat-list" id="chat-list">
                 <div id="participation"></div>
             </div>
-            <div
-                class="chat-add disappear"
-                id="chat-add"
-            >
+            <div class="chat-add disappear" id="chat-add">
                 <div class="backgroundImg">
-                    <div
-                        class="chatAddForm">
+                    <div class="chatAddForm">
                         <div class="chat-name">
                             <label>채팅방 이름</label>
-                            <input
-                                type="text"
-                                placeholder="방이름"
-                                name="roomName"
-                            />
+                            <input type="text" placeholder="방이름" name="roomName"/>
                         </div>
                         <div class="chat-info">
                             <label>채팅방 설명</label>
-                            <input
-                                type="text"
-                                placeholder='채팅방 설명'
-                                name="roomInfo"
-                            />
+                            <input type="text" placeholder='채팅방 설명' name="roomInfo"/>
                         </div>
-                        <button
-                            type="button"
-                            class="createRoomBtn"
-                        >
-                            채팅방 만들기
-                        </button>
+                        <button type="button" class="createRoomBtn">채팅방 만들기</button>
                     </div>
                 </div>
             </div>

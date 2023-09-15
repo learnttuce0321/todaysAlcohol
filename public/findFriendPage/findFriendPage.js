@@ -108,9 +108,9 @@ document.querySelector('.find').addEventListener('click', async () => {
 
 //채팅방 검색 클릭시 / x 버튼 눌렀을 때
 document.querySelector('.nav-search').addEventListener('click', () => {
-    document.querySelector('#chat-search').classList.add('search-div');
+    document.querySelector('.chat-search').classList.add('search-div');
     document.querySelector('.exit').addEventListener('click', () => {
-        document.querySelector('#chat-search').classList.remove('search-div');
+        document.querySelector('.chat-search').classList.remove('search-div');
         document.querySelector('.chat-add').classList.add('disappear');
         document.querySelector('.chat-list').classList.remove('disappear');
     });
@@ -139,8 +139,8 @@ window.addEventListener('resize', () => {
         console.log('390');
         
         document.querySelector('.nav-list').innerHTML = '<i class="fa-solid fa-comments"></i>';
-        document.querySelector('.nav-chat-add').innerHTML = '<div>2</div>';
-        document.querySelector('.nav-search').innerHTML= '<div>3</div>'
+        document.querySelector('.nav-chat-add').innerHTML = '<i class="fa-solid fa-plus"></i>';
+        document.querySelector('.nav-search').innerHTML= '<i class="fa-solid fa-magnifying-glass"></i>'
     } else if (windowWidth > 390) {
         document.querySelector('.nav-list').innerText = '목록';
         document.querySelector('.nav-chat-add').innerText = '채팅방 만들기';
