@@ -143,7 +143,7 @@ body {
     margin: 0 20px 0 20px;
 }
 .search-div {
-    transform: translateX(-440px);
+    transform: translateX(-460px);
     transition: all ease 0.5s;
 }
 .disappear {
@@ -370,6 +370,6 @@ body {
         top: 440px;
     }
     .search-div {
-        transform: translateX(-1700px);
+        transform: translateX(-1670px);
     }
 }

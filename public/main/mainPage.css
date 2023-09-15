@@ -82,11 +82,35 @@ h1 {
     flex-basis: 270px;
     content-visibility: hidden;
 }
+.carousel-link {
+    position: relative;
+    bottom: 150px;
+    display: block;
+    left: 650px;
+    width: 220px;
+    height: 75px;
+}
 
 @media screen and (min-width: 940px) {
     .randomCocktail__item {
         display: flex;
         flex-direction: column;
         width: 400px;
+    }
+}
+@media screen and (max-width: 820px) {
+    .carousel-link {
+        bottom: 160px;
+        left: 320px;
+        width: 160px;
+        height: 40px;
+    }
+}
+@media screen and (max-width: 390px) {
+    .carousel-link {
+        bottom: 75px;
+        left: 150px;
+        width: 80px;
+        height: 20px;
     }
 }
